@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký sức khỏe Covid</title>
+</head>
+<body>
+
+    <form action="/link_server" method="post">
+        <label>Họ và tên</label>
+        <input type="text" name="fullName" value="abc"/>
+        <br><br>
+        <label>Giới tính</label>
+        <input type="radio" name="gender" value="male">Nam
+        <input type="radio" name="gender" value="female">Nữ
+        <br><br>
+        <label>Bạn đang sinh sống ở đâu</label>
+        <select name="city">
+            <option value="dn">Đà Nẵng</option>
+            <option value="hcm">TP HCM</option>
+            <option value="hn">Hà Nội</option>
+        </select>
+        <br><br>
+        <label>Ngày sinh</label>
+        <input type="date" name="dateOfBirth">
+        <br><br>
+        <p>Trong vòng 21 ngày, bạn có triệu chứng gì dưới đây:</p>
+        <input type="checkbox" name="sick" value="sot">Sốt
+        <input type="checkbox" name="sick" value="ho">Ho
+        <input type="checkbox" name="sick" value="khotho">Khó thở
+        <br><br>
+        <input type="submit" value="Xác nhận">
+        <input type="reset" value="Khôi phục">
+    </form>
+</body>
+</html>

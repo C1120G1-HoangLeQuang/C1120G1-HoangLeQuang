@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIMPLE </title>
+    <style>
+        .form {
+            background-color: azure;
+            width: 500px;
+            height: 400px;
+        }
+        h2 {
+            background-color: orange;
+            color: white;
+            text-align: center;
+
+        }
+        label {
+            color: orange;
+        }
+        .a {
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+<form method="get" action="SIMPLEFORM1.html" class="form">
+    <h2>SỞ THÍCH CỦA BẠN</h2>
+    <table>
+        <tr>
+            <td><label class="a" for="">Họ và tên</label></td>
+            <td><input type="text" name="Họ và tên"></td>
+        </tr>
+        <tr>
+            <td><label class="a" for="">Email</label></td>
+            <td><input type="text" name="Email"></td>
+        </tr>
+        <tr>
+            <td><label class="a" for="">Sở thích</label></td>
+            <td>
+            <table>
+                <tr>
+            <td><label><input name="So thich" value="Sport" type="checkbox"/>Thể Thao</label></td>
+            <td><label><input name="Sơ thich" value="Musuc" type="checkbox"/>Âm nhạc</label></td>
+            <td><label><input name="So thich" value="Reading" type="checkbox"/>Đọc sách</label></td>
+                </tr>
+                <tr>
+            <td><label><input name="So thich" value="Surfing" type="checkbox"/>Lướt Web</label></td>
+            <td><label><input name="So thich" value="Playing game" type="checkbox"/>Chơi game</label></td>
+            <td><label><input name="So thich" value="Film" type="checkbox"/>Xem phim</label></td>
+                </tr>
+                <tr>
+            <td><label><input name="So thich" value="Travel" type="checkbox"/>Du lich</label></td>
+                </tr>
+            </table>
+            </td>
+            </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Send data"/>
+                <input type="reset" value="Reset"/>
+            </td>
+        </tr>
+    </table>
+
+
+
+</form>
+</body>
+</html>
