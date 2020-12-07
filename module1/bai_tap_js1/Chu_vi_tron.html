@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHU VI TRON</title>
+</head>
+<body>
+    <h1>TÍNH CHU VI HÌNH TRÒN</h1>
+    <table>
+        <tr>
+            <th>Bán kính</th>
+            <th>Kết quả</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="bankinh"/></td>
+            <td><input type="number" id="ketqua"/></td>
+        </tr>
+    </table>
+    <br>
+    <button type="button" onclick="hienthi1()">Hiển thị</button>
+    <button type="reset" onclick="taolai3()">Reset</button>
+    <script>
+        function hienthi1() {
+            let inputBankinh = document.getElementById("bankinh").value;
+            let inputKetqua = document.getElementById("ketqua").value;
+            let R = parseFloat(inputBankinh);
+            let CV = parseFloat(inputKetqua);
+                CV = (R * 2) * 3.14;
+            document.getElementById("ketqua").value = CV;
+        }
+        function taolai3() {
+            document.getElementById("bankinh").value = 0;
+        }
+    </script>
+</body>
+</html>

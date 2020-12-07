@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Celcius_Faren</title>
+</head>
+<body>
+    <h2>CHương trình chuyển đổi</h2>
+    <table>
+        <tr>
+            <th>CELCIUS</th>
+            <th>FAHRENHEIT</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="C"/>độ C</td>
+            <td><input type="number" id="F"/>độ F</td>
+        </tr>
+    </table>
+    <br>
+    <button type="button" onclick="chuyendoi()">Chuyển đổi</button>
+    <button type="reset" onclick="tinhlai()">Tạo lại</button>
+    <script>
+        function chuyendoi() {
+            let inputC = document.getElementById("C").value;
+            let inputF = document.getElementById("F").value;
+            let C = parseFloat(inputC);
+            let F = parseFloat(inputF);
+            F = (C / 5 * 9) + 32;
+            document.getElementById("F").value = F;
+        }
+
+        function tinhlai() {
+            document.getElementById("C").value = 0;
+        }
+
+    </script>
+</body>
+</html>

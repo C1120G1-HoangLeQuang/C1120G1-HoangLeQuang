@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> máy tính</title>
+</head>
+<body>
+<p>Caculator</p>
+<input type="number" id="number"/>
+<input type="number" id="number1"/><br><br>
+<input type="button" id="button" onclick="add()" value="Addition">
+<input type="button" id="button1" onclick="tru()" value="Subtraction">
+<input type="button" id="button2" onclick="nhan()" value="Multiplication">
+<input type="button" id="button3" onclick="chia()" value="Division">
+<p id="ket_qua"></p>
+<script>
+    let a= document.getElementById("number");
+    let b= document.getElementById("number1");
+    let a1, b1;
+    let result;
+    function add() {
+        let c = 3;
+        a1= parseInt(a.value);
+        b1 = parseInt(b.value);
+        result = a1+b1;
+        c += 4;
+        document.getElementById("ket_qua").innerText = result
+    }
+    function tru() {
+        result = a1-b1;
+        document.getElementById("ket_qua").innerText = result
+    }
+    function nhan() {
+        result = a1*b1;
+        document.getElementById("ket_qua").innerText = result
+    }
+    function chia() {
+        result= a1/b1;
+        document.getElementById("ket_qua").innerText = result
+    }
+</script>
+</body>
+</html>

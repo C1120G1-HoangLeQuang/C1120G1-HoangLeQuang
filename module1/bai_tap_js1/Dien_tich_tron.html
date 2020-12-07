@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DIEN TICH </title>
+</head>
+<body>
+    <h1>DIỆn TÍCH HÌNH TRÒN</h1>
+    <table>
+        <tr>
+            <th>Bán kính</th>
+            <th>Kết quả</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="bankinh"/></td>
+            <td><input type="number" id="ketqua"/></td>
+        </tr>
+    </table>
+    <br>
+    <button type="button" onclick="hienthi()">Hiển thị</button>
+    <button type="reset" onclick="taolai2()">Reset</button>
+    <script>
+        function hienthi() {
+            let inputBankinh = document.getElementById("bankinh").value;
+            let inputKetqua = document.getElementById("ketqua").value;
+            let R = parseFloat(inputBankinh);
+            let S = parseFloat(inputKetqua);
+                S = (R * R) * 3.14;
+            document.getElementById("ketqua").value = S;
+        }
+        function taolai2() {
+            document.getElementById("bankinh").value = 0;
+        }
+    </script>
+</body>
+</html>

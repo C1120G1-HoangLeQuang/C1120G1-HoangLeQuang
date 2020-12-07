@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHUYEN DOI TIEN</title>
+</head>
+<body>
+    <h1>CHUYỂN ĐỔI TIỀN TỆ</h1>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="number" id="amount"/></td>
+            <td>
+                <select>
+                    <option>Việt Nam</option>
+                    <option>Hàn Quốc</option>
+                    <option>Trung Quốc</option>
+                </select>
+            </td>
+            <td>
+                <select>
+                    <option>USD</option>
+                    <option>EUR</option>
+                </select>
+            </td>
+            <td><button type="button" onclick="convert()">Convert</button></td>
+        </tr>
+    </table>
+    <p><input type="number" id="R">Result</p>
+    <script>
+        function convert() {
+            let inputAmount = document.getElementById("amount").value;
+            let inputResult = document.getElementById("R").value;
+            let amount = parseFloat(inputAmount);
+            let R = parseFloat(inputResult);
+            R = 1 / 23.000;
+            document.getElementById("R").value = R;
+        }
+    </script>
+</body>
+</html>

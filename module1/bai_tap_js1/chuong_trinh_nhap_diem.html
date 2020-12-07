@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHUONG TRINH NHAP DIEM</title>
+</head>
+<body>
+    <h1>CHƯƠNG TRÌNH NHẬP ĐIỂM</h1>
+    <table>
+        <tr>
+            <th>Điểm Vật Lý</th>
+            <th>Điểm Hoá Học</th>
+            <th>Điểm Sinh Học</th>
+            <th>Tổng điểm 3 môn</th>
+            <th>Điểm trung bình 3 môn</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="Phy"/></td>
+            <td><input type="number" id="Chem"/></td>
+            <td><input type="number" id="Bio"/></td>
+            <td><input type="number" id="result"/></td>
+            <td><input type="number" id="result_everage"/></td>
+        </tr>
+    </table>
+    <br>
+    <button type="button" onclick="ketqua()">Kết quả</button>
+    <button type="reset" onclick="taolai()">Tạo lại</button>
+    <script>
+        function ketqua() {
+            let inputPhymark = document.getElementById("Phy").value;
+            let inputChemmark = document.getElementById("Chem").value;
+            let inputBiomark = document.getElementById("Bio").value;
+            let Phy = parseFloat(inputPhymark);
+            let Chem = parseFloat(inputChemmark);
+            let Bio = parseFloat(inputBiomark);
+            let total = Phy + Chem + Bio;
+            let everage = (Phy + Chem + Bio) / 3
+            //document.write("Tong diem 3 mon: " + total + "Diem trung binh 3 mon: " + everage);
+            document.getElementById("result_everage").value = everage;
+            document.getElementById("result").value = total;
+        }
+
+        function taolai() {
+            document.getElementById("Phy").value = 0;
+            document.getElementById("Chem").value = 0;
+            document.getElementById("Bio").value = 0;
+        }
+    </script>
+</body>
+</html>

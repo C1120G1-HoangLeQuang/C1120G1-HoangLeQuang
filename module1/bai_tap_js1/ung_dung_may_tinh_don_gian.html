@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ƯNG DUNG</title>
+</head>
+<body>
+    <h1>CALCULATOR</h1>
+        <input type="number" id="giatri1"/>
+        <input type="number" id="giatri2"/>
+    <br>
+    <button type="button" onclick="Add()">Addition(+)</button>
+    <button type="button" onclick="Sub()">Subtraction(-)</button>
+    <button type="button" onclick="Multi()">Multiplication(*)</button>
+    <button type="button" onclick="Div()">Division(/)</button>
+    <p><input type="number" id="kq"/>Result:</p>
+    <script>
+        let inputa = document.getElementById("giatri1").value;
+        let inputb = document.getElementById("giatri2").value;
+        let a = parseFloat(inputa);
+        let b = parseFloat(inputb);
+        let inputkq = document.getElementById("kq").value;
+        let kq = parseFloat(inputkq);
+        function Add() {
+        kq = a + b;
+        document.getElementById("kq").value = kq;
+        }
+        function Sub() {
+            kq = a - b;
+            document.getElementById("kq").value = kq;
+        }
+        function Multi() {
+            kq = a * b;
+            document.getElementById("kq").value = kq;
+        }
+        function Div() {
+            kq = a / b;
+            document.getElementById("kq").value = kq;
+        }
+    </script>
+</body>
+</html>
