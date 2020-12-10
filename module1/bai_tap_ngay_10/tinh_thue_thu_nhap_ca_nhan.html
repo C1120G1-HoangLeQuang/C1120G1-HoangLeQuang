@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th>Bậc</th>
+        <th>Thu nhập tính thuế (tt)</th>
+        <th>Thuế suất (ts)</th>
+        <th>Tiền thuế thu nhập luỹ tiến (lt)</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><input type="number" id="tt1" value="5000000"></td>
+        <td><input type="number" id="ts1" value="5"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><input type="number" id="tt2" value="10000000"></td>
+        <td><input type="number" id="ts2" value="10"></td>
+        <td><input type="number" id="lt2" value="250000"></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><input type="number" id="tt3" value="18000000"></td>
+        <td><input type="number" id="ts3" value="15"></td>
+        <td><input type="number" id="lt3" value="750000"></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><input type="number" id="tt4" value="32000000"></td>
+        <td><input type="number" id="ts4" value="20"></td>
+        <td><input type="number" id="lt4" value="1950000"></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><input type="number" id="tt5" value="52000000"></td>
+        <td><input type="number" id="ts5" value="25"></td>
+        <td><input type="number" id="lt5" value="4750000"></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><input type="number" id="tt6" value="80000000"></td>
+        <td><input type="number" id="ts6" value="30"></td>
+        <td><input type="number" id="lt6" value="9750000"></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td><input type="number" id="tt7" value=">80000000"></td>
+        <td><input type="number" id="ts7" value="35"></td>
+        <td><input type="number" id="lt7" value="18150000"></td>
+    </tr>
+    <tr>
+        <td>Thu nhập</td>
+        <td colspan="3"><input type="number" id="thunhap"></td>
+    </tr>
+</table>
+<p id="thue">Thuế thu nhập cá nhân:</p>
+<button type="button" onclick="tinh()">Hiển thị</button>
+<script src="tinh_thue.js"></script>
+</body>
+</html>

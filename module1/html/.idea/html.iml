@@ -9,5 +9,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="bai_tap_js1" />
+    <orderEntry type="module" module-name="thuc_hanh_ngay_8" />
+    <orderEntry type="module" module-name="bai_tap_ngay_9" />
+    <orderEntry type="module" module-name="module1_accountname" />
+    <orderEntry type="module" module-name="bai_tap_ngay_10" />
   </component>
 </module>

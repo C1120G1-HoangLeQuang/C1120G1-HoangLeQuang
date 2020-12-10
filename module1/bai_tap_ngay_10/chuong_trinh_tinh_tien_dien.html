@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th colspan="2">Chương trình tính tiền điện</th>
+        </tr>
+        <tr>
+            <td>Lượng điện tiêu thu trong thời gian t</td>
+            <td id="A"></td>
+        </tr>
+        <tr>
+            <td>Thời gian sử dung</td>
+            <td><input type="number" id="t"></td>
+        </tr>
+        <tr>
+            <td>Công suất</td>
+            <td><input type="number" id="P"></td>
+        </tr>
+        <tr>
+            <td>Số tiền phải trả</td>
+            <td><label id="payment"></label></td>
+        </tr>
+    </table>
+    <br>
+    <button type="button" onclick="tinh()">Hiển thị</button>
+    <script>
+        let payMent;
+        function tinh() {
+            let t = parseFloat(document.getElementById("t").value);
+            let P = parseFloat(document.getElementById("P").value);
+            a = P * t;
+            document.getElementById("A").innerText = a;
+            payMent = (a * 2.500) * 30;
+            document.getElementById("payment").innerText = payMent;
+        }
+    </script>
+</body>
+</html>

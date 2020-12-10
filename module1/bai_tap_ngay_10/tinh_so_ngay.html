@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="number" id="thang"></td>
+            <td><button type="button" onclick="tinhsongay()">Tính sô ngày</button></td>
+        </tr>
+        <tr>
+            <td id="result"></td>
+        </tr>
+    </table>
+    <script>
+        function tinhsongay() {
+            let result;
+            let thang = document.getElementById("thang").value;
+            switch (thang) {
+                case "1":
+                case '3' :
+                case '5' :
+                case '7' :
+                case '8' :
+                case '10' :
+                case '12' :
+                    result = "Tháng có 31 ngày";
+                    break;
+                case '4' :
+                case '6' :
+                case '9' :
+                case '11' :
+                    result = 'Tháng có 30 ngày';
+                    break;
+                case '2' :
+                    result = 'Tháng 2 có 28 hoặc 29 ngày';
+                    break;
+            }
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

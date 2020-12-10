@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th colspan="2">Chương trình tính lãi ngân hàng</th>
+    </tr>
+    <tr>
+        <td>Số tiền ban đầu</td>
+        <td><input type="number" id="money"></td>
+    </tr>
+    <tr>
+        <td>Lãi suất hàng năm</td>
+        <td><input type="number" id="rate"></td>
+    </tr>
+    <tr>
+        <td>Số năm</td>
+        <td><input type="number" id="y"></td>
+    </tr>
+    <tr>
+        <td>Số lần lãi kép trong một năm</td>
+        <td><input type="number" id="t"</td>
+    </tr>
+    <tr>
+        <td>Số tiền nhận được</td>
+        <td><label id="total"></label></td>
+    </tr>
+    <tr>
+        <td>Số tiền lãi</td>
+        <td><label id="income"></label></td>
+    </tr>
+</table>
+<br>
+<button type="button" onclick="tinhlai()">Hiển thị</button>
+<script>
+    let total, income;
+    function tinhlai() {
+        let money = parseFloat(document.getElementById("money").value);
+        let rate = parseFloat(document.getElementById("rate").value);
+        let y = parseFloat(document.getElementById("y").value);
+        let t = parseFloat(document.getElementById("t").value);
+        total = money * Math.pow(1 + (rate/100 * 1/t), (y*t))
+        document.getElementById("total").innerText = total;
+        income = total - money;
+        document.getElementById("income").innerText = income;
+    }
+</script>
+</body>
+</html>

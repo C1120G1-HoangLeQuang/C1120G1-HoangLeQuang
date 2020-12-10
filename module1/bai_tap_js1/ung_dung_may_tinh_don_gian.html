@@ -15,25 +15,31 @@
     <button type="button" onclick="Div()">Division(/)</button>
     <p><input type="number" id="kq"/>Result:</p>
     <script>
-        let inputa = document.getElementById("giatri1").value;
-        let inputb = document.getElementById("giatri2").value;
-        let a = parseFloat(inputa);
-        let b = parseFloat(inputb);
+        let inputa = document.getElementById("giatri1");
+        let inputb = document.getElementById("giatri2");
         let inputkq = document.getElementById("kq").value;
         let kq = parseFloat(inputkq);
         function Add() {
-        kq = a + b;
+            let a = parseFloat(inputa.value);
+            let b = parseFloat(inputb.value);
+            kq = a + b;
         document.getElementById("kq").value = kq;
         }
         function Sub() {
+            let a = parseFloat(inputa.value);
+            let b = parseFloat(inputb.value);
             kq = a - b;
             document.getElementById("kq").value = kq;
         }
         function Multi() {
+            let a = parseFloat(inputa.value);
+            let b = parseFloat(inputb.value);
             kq = a * b;
             document.getElementById("kq").value = kq;
         }
         function Div() {
+            let a = parseFloat(inputa.value);
+            let b = parseFloat(inputb.value);
             kq = a / b;
             document.getElementById("kq").value = kq;
         }

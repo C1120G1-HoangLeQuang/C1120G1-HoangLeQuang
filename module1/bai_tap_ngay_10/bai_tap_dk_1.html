@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>a chia hết cho b</p>
+    <script>
+        let a = prompt("nhập số a");
+        let b = prompt("nhập số b");
+        if (a % b == 0) {
+            alert('a chia het cho b');
+        } else {
+            alert('a khong chia het cho b');
+        }
+    </script>
+    <p>học sinh vào lớn 10</p>
+    <script>
+        let old = prompt("nhập tuổi học sinh");
+        if (old >= 16) {
+            alert("học sinh đủ điều kiện vào lớp 10");
+        } else {
+            alert('học sinh cần thi đầu vào lớp 10');
+        }
+    </script>
+    <p>kiểm tra số nguyên >< hơn 0</p>
+    <script>
+        let n = prompt("nhập số nguyên");
+        if (n > 0) {
+            alert('lớn hơn 0 và là số nguyên dương');
+        } else if (n = 0){
+            alert('bằng 0');
+        } else {
+            alert('nhỏ hơn 0 và là số nguyên âm');
+        }
+    </script>
+    <p>tìm số nguyên lớn nhất</p>
+    <script>
+        let d = prompt('nhập số nguyên thứ nhất');
+        let e = prompt('nhấp số nguyên thứ hai');
+        let f = prompt('nhập số nguyên thứ ba');
+        if (d > e && d > f ) {
+            alert('d là số lớn nhất');
+        } else if (e > d && e > f) {
+            alert('e là số lớn nhất');
+        } else {
+            alert('f là sô lớn nhất');
+        }
+    </script>
+    <p>xếp loại học sinh</p>
+    <script>
+        let g = prompt('nhập điểm trung bình các bài kiểm tra');
+        let h = prompt('điểm kiểm tra trung bình giữa kỳ các môn');
+        let i = prompt('điểm kiểm tra trung bình cuối kì các môn');
+        if (((g + h + i) / 3) > 8.5) {
+            alert('học lực giỏi');
+        } else if (((g + h + i) / 3) < 8.5) {
+            alert('học lực khá');
+        } else if (((g + h + i) / 3) < 6.5) {
+            alert('học lực trung bình');
+        } else {
+            alert('học lực yếu');
+        }
+    </script>
+    <p>tính hoa hồng</p>
+        <input type="number" id="revenue" />Doanh số
+        <p id="commission">Hoa hồng</p>
+        <button type="button" onclick="ketqua()">Kết quả</button>
+    <script>
+        function ketqua() {
+            let k = parseInt(document.getElementById("revenue").value);
+            let ketQua1;
+            if (k < 500) {
+                ketQua1 = (10 / 100) * k;
+            } else if (k < 1000) {
+                ketQua1 = (15 / 100) * k;
+            } else {
+                ketQua1 = (20 / 100) * k;
+            }
+            document.getElementById("commission").value = ketQua1;
+        }
+    </script>
+    <p>tính cước diện thoại</p>
+    <p><input type="number" id="countbysecond">số giây gọi</p>
+    <p id="payment"></p>
+    <button type="button" onclick="cuocphi()">Hiển thị</button>
+    <script>
+        function cuocphi() {
+            let second = parseInt(document.getElementById("countbysecond").value);
+            let hienThi;
+            if (second < 600) {
+                hienThi = second * 1000;
+            } else if (second < 1000) {
+                hienThi = second * 950;
+            } else if (second < 2000) {
+                hienThi = second * 800;
+            } else {
+                hienThi = second * 700;
+            }
+            document.getElementById("payment").innerText = hienThi;
+        }
+    </script>
+</body>
+</html>
