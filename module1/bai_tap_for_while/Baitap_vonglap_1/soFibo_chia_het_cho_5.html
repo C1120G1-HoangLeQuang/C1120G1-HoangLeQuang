@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let x1 = 0;
+        let x2 = 1;
+        let x3, number;
+        do {
+            number = parseInt(prompt("Bạn muốn trong dãy số chia hết cho mấy? "))
+        } while (number <0)
+        while (true) {
+                x3 = x1 + x2;
+                x1 = x2;
+                x2 = x3;
+                if (x3 % number === 0) {
+                    document.write("Số đầu tiên chia hết cho 5 là: " + x3);
+                    break;
+                }
+            }
+
+    </script>
+</body>
+</html>

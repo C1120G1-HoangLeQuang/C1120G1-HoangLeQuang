@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let money = parseInt(prompt("Nhập số tiền gửi: "));
+        let time = parseInt(prompt("Nhập số thời gian cần gửi: "));
+        for (let i = 0; i < time; i++) {
+            money = money + money * 0.3/100;
+        }
+        document.write("Số tiền lãi là:" + money);
+    </script>
+</body>
+</html>

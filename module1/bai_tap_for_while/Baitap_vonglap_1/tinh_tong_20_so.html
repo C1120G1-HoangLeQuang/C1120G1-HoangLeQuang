@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let x1 = 0;
+        let x2 = 1;
+        let x3;
+        let sum = parseInt(prompt("Bạn muốn tổng của bao nhiêu số đầu tiên: "));
+        for (let i = 0; i < sum; i++) {
+            x3 = x1 + x2;
+            x1 = x2;
+            x2 = x3;
+            sum = sum + x3;
+            document.write(sum);
+            }
+    </script>
+</body>
+</html>
