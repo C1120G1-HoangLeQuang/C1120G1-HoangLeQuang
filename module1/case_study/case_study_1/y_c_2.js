@@ -33,6 +33,9 @@ function thanhtoan() {
         case "room": rate = 100;
             break;
     }
+    console.log(rate);
+    console.log(rent_days);
+    console.log(dis_count);
     payment = rate * rent_days * (1 - (dis_count/100));
     document.getElementById("payment").innerText = payment;
 }
