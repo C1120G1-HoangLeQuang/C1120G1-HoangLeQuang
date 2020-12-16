@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let input = prompt("Hãy nhập chuỗi bạn muốn bằng tiếng Việt không dấu: " );
+        let count = 0;
+        for (let i = 0; i < input.length; i++) {
+            if ((input[i]==='u') || (input[i]==='e') || (input[i]==='o') || (input[i]==='a') || (input[i]==='i'))  {
+                count++;
+            }
+        }
+        document.write("Tổng số lượng nguyên âm trong chuỗi: " + "'" + input + "'" + " là: " + count);
+
+    </script>
+</body>
+</html>

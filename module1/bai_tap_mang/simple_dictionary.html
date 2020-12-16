@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>Tiếng Anh</th>
+            <th>Tiếng Viêt</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="txtValue"></td>
+            <td><input type="text" id="result"></td>
+        </tr>
+    </table> <br>
+    <button type="button" onclick="searching()" id="btnsearch">Search</button>
+    <script>
+        let engLish = ['Hello', 'Improve', 'Skill'];
+        let tiengViet = ['Xin Chào', 'Cải thiện', 'Kỹ năng'];
+        let ketqua;
+        function searching() {
+            let keyWord = document.getElementById("txtValue").value;
+            for (let i=0; i < engLish.length; i++) {
+                if (engLish[i] == keyWord) {
+                    ketqua = tiengViet[i];
+                }
+            }
+            document.getElementById("result").value = ketqua;
+        }
+
+
+    </script>
+</body>
+</html>

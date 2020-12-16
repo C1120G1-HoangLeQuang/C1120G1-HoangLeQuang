@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let soNguyen =[];
+        let input;
+        do {
+            input = parseInt(prompt("Bạn muốn nhập bao nhiêu phần tử: "));
+        } while (input <= 0);
+        for (let i = 0; i < input; i++) {
+            soNguyen [i]= prompt("Phần tử thứ: " +i);
+        }
+        let soNguyen1 = [];
+        for (let i = 0; i < input ; i++) {
+            if (soNguyen[i] >= 10) {
+                soNguyen1[i] = soNguyen[i];
+            }
+
+        }
+        alert(soNguyen1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let soNguyen = [];
+        let input;
+        do {
+            input = parseInt(prompt("Bạn muốn nhập bao nhiêu phần tử trong mảng: "));
+        } while (input <= 0)
+        for (let i = 0; i < input; i++) {
+            soNguyen[i] = parseInt(prompt("Nhập phần tử thử: " + i));
+        }
+
+        let max = soNguyen[0];
+        let average, sum = 0;
+        for (let i = 0; i < soNguyen.length; i++) {
+            if (soNguyen[i] > max) {
+                max = soNguyen[i];
+            }
+            sum = sum + soNguyen[i];
+        }
+        average = (sum / input);
+        document.write("max: " + max + " trung bình cộng của mảng: " + average);
+    </script>
+</body>
+</html>

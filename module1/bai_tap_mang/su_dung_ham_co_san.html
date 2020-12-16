@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng hàm có sẵn</title>
+</head>
+<body>
+    <p>Bài 1</p>
+    <script>
+        let myColor = ["Red", "Green", "White", "Black"];
+        document.write(myColor.join());
+    </script>
+    <p>Bài 2</p>
+    <script>
+        let numbers = [];
+        let input = parseInt(prompt("Bạn muốn mảng có bao nhiêu phần tử: "));
+        for (let j = 0; j < input; j++) {
+            numbers[j] = prompt("Hãy nhập số phần tử của mảng: ");
+        }
+        let numbers1 = [numbers[0]];
+        for (let i = 0; i < numbers.length; i++) {
+            if ((numbers[i] % 2 === 0) && (numbers[i + 1] % 2 === 0)) {
+                numbers1.push(' - ', numbers[i+1]);
+            } else {
+                numbers1.push(numbers[i+1]);
+            }
+        }
+        document.write(numbers1.join(""));
+    </script>
+    <p>Bài 3</p>
+    <script>
+        let str = 'The Quick Brown Fox';
+        let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        let str1 = [];
+        for (let i = 0; i < str.length; i++) {
+            if (UPPER.indexOf(str[i]) !== -1) {
+                str1.push(str[i].toLowerCase());
+            } else if (LOWER.indexOf(str[i]) !== -1) {
+                str1.push(str[i].toUpperCase());
+            } else {
+                str1.push(str[i]);
+            }
+        }
+        document.write(str1.join());
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let soNguyen = [];
+        let input;
+        do {
+            input = parseInt(prompt("Bạn muốn có bao nhiêu phần tử trong mảng: "));
+        } while (input <= 0)
+        for (let i = 0; i < input; i++) {
+            soNguyen[i] = parseInt(prompt("Phần tử thứ: " + i));
+        }
+        document.write(soNguyen.join(" ")+"<br>");
+        document.write(soNguyen.reverse().join(" "));
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let input;
+        let soNguyen = [];
+        do {
+            input = parseInt(prompt("Nhập số lượng phần tử có trong mảng bạn cần: "));
+        } while (input <=0);
+        for (i = 0; i < input; i++) {
+            soNguyen[i] = parseInt(prompt("Nhập phần tử thứ: " + i));
+        }
+        document.write(soNguyen, "<br>");
+        soNguyen.sort(function (a, b) {
+            return b - a
+        })
+        document.write(soNguyen);
+    </script>
+</body>
+</html>

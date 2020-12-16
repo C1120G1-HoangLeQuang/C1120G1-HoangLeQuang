@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let soNguyen =[];
+        let input = parseInt(prompt("Bạn muốn nhập bao nhiêu phần tử: "));
+        for (let i = 0; i < input; i++) {
+            soNguyen [i]= prompt("Hãy nhập số phần tử của mảng: ");
+        }
+        let max = soNguyen[0];
+        let index = 0;
+        for (let j = 0; j < soNguyen.length; j++) {
+            if (soNguyen[j] > max) {
+                max = soNguyen[j];
+                index = j;
+            }
+        }
+        alert("max: " + max + " at possiton: " + index);
+    </script>
+</body>
+</html>

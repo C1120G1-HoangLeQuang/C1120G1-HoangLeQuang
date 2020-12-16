@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let senTen = prompt("Nhập thông tin của chuỗi: ");
+        let count = 0;
+        let number = senTen.trim().length // bỏ đi khoảng trống 2 đầu và chỉ tính chuỗi ở giữa
+        document.write(senTen + "<br>");
+        for (i = 0; i < number; i++) {
+            if (senTen[i] === (" ")) {
+                if (senTen[i+1] !== (" ")) {
+                    count++;
+                }
+            }
+        }
+        document.write("tổng số từ trong chuỗi là: " + (count + 1));
+    </script>
+</body>
+</html>

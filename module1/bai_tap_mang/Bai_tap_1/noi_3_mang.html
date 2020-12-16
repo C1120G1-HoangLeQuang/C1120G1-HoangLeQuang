@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let input1;
+        let a = [];
+        do {
+            input1 = parseInt(prompt("Nhập số lượng phần tử có trong mảng bạn cần: "));
+        } while (input1 <=0);
+        for (i = 0; i < input1; i++) {
+            a[i] = parseInt(prompt("Nhập phần tử thứ: " + i));
+        }
+        document.write("Phần tử của mảng a: " + a + "<br>");
+        let input2;
+        let b = [];
+        do {
+            input2 = parseInt(prompt("Nhập số lượng phần tử có trong mảng bạn cần: "));
+        } while (input2 <=0);
+        for (i = 0; i < input2; i++) {
+            b[i] = parseInt(prompt("Nhập phần tử thứ: " + i));
+        }
+        document.write("Phần tử của mảng b: " + b + "<br>");
+        let c = a.concat(b);
+        document.write("Phần tử của mảng c: " + c);
+    </script>
+</body>
+</html>

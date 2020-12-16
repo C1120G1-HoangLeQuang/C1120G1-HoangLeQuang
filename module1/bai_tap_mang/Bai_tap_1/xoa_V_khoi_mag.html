@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let input;
+        let soNguyen = [];
+
+        do {
+            input = parseInt(prompt("Bạn muốn mảng số nguyên có bao nhiêu phần tử: "));
+        } while (input <= 0);
+
+        for (let i = 0; i < input; i++) {
+            soNguyen [i] = parseInt(prompt("Phần tử theo thứ: " + i));
+        }
+
+        let V = parseInt(prompt("Nhập số V cần kiểm tra: "));
+        let index = soNguyen.indexOf(V);
+        if (index !== -1) {
+            soNguyen.splice(index, 1, "");
+            document.write(soNguyen)
+        }
+    </script>
+</body>
+</html>
