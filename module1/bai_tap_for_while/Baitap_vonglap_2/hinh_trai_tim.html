@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //dòng 1
+        for (let a = 0; a < 2; a++) {
+            document.write("&ensp;");
+        }
+        for (let a = 0; a < 3; a++) {
+            document.write("*")
+        }
+        for (let a = 0; a < 3; a++) {
+            document.write("&ensp;");
+        }
+        for (let a = 0; a < 3; a++) {
+            document.write("*");
+        }
+        for (let a = 0; a < 2; a++) {
+            document.write("&ensp;");
+        }
+        document.write("<br>");
+        // dòng 2
+        for (let b = 0; b < 2; b++) {
+               for (let c = 0; c < 1; c++) {
+                   document.write("&ensp;");
+                   for (let d = 0; d < 5; d++) {
+                       document.write("*");
+                   }
+               }
+        }
+        for (let c = 0; c < 1; c++) {
+            document.write("&ensp;");
+        }
+        document.write("<br>");
+        // dòng 3, 4, 5
+        for (let e = 0; e < 3; e++) {
+            for (let f = 0; f < 13; f++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        // nhứng dòng cuối cùng;
+        let a = 1, b = 11, c = 1;
+        for (let g = 0; g < 6; g++) {
+            for (let i = 0; i < a; i++) {
+                document.write("&ensp;");
+            }
+            for (let i = 0; i < b; i++) {
+                document.write("*");
+            }
+            for (let i = 0; i < c; i++) {
+                document.write("&ensp;");
+            }
+            document.write("<br>");
+            a = a+1;
+            b -= 2;
+            c +=1;
+        }
+    </script>
+</body>
+</html>

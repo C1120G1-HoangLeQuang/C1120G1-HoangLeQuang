@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>dung lệnh for</p>
+    <script>
+        let i = 10;
+        // in 1 dòng đầu tiên, i vừa là hàng ngang và j là biến đếm
+        for (let j = 1; j <= i; j++) {
+            document.write("*");
+        }
+        // in 1 dấu sao xuống dòng
+        document.write("<br>");
+        // in phần ruột của hình chữ nhật - không tính 2 dòng đầu và cuối
+        let k = 7;
+        for (let l = 1; l <= k-2; l++) {
+            document.write("*"); // in dấu sao đầu tiên ở dòng 2
+            for (let u = 1; u <= i-2; u++) {
+                document.write("&ensp;"); // in dấu ký tự khoảng trống không bị phá vỡ
+            }
+            document.write("*"); // in dấu sao cuối cùng ở dòng 2
+            document.write("<br>"); // xuống dòng và lặp lại
+        }
+        for (let j = 1; j <= i; j++) {
+            document.write("*"); // in hàng cuối cùng
+        }
+
+    </script>
+</body>
+</html>
