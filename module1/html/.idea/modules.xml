@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../bai_tap_for_while/.idea/bai_tap_for_while.iml" filepath="$PROJECT_DIR$/../bai_tap_for_while/.idea/bai_tap_for_while.iml" />
       <module fileurl="file://$PROJECT_DIR$/../bai_tap_js1/.idea/bai_tap_js1.iml" filepath="$PROJECT_DIR$/../bai_tap_js1/.idea/bai_tap_js1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bai_tap_mang/.idea/bai_tap_mang_buoi11.iml" filepath="$PROJECT_DIR$/../bai_tap_mang/.idea/bai_tap_mang_buoi11.iml" />
       <module fileurl="file://$PROJECT_DIR$/../bai_tap_ngay_10/.idea/bai_tap_ngay_10.iml" filepath="$PROJECT_DIR$/../bai_tap_ngay_10/.idea/bai_tap_ngay_10.iml" />
       <module fileurl="file://$PROJECT_DIR$/../bai_tap_ngay_9/.idea/bai_tap_ngay_9.iml" filepath="$PROJECT_DIR$/../bai_tap_ngay_9/.idea/bai_tap_ngay_9.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/html.iml" filepath="$PROJECT_DIR$/.idea/html.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../module1_accountname/.idea/module1_accountname.iml" filepath="$PROJECT_DIR$/../module1_accountname/.idea/module1_accountname.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../case_study/.idea/module1_accountname.iml" filepath="$PROJECT_DIR$/../case_study/.idea/module1_accountname.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../thuc_hanh_for_while/.idea/thuc_hanh_for_while.iml" filepath="$PROJECT_DIR$/../thuc_hanh_for_while/.idea/thuc_hanh_for_while.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../thuchanh/thuc_hanh_mang_ham/.idea/thuc_hanh_mang_ham.iml" filepath="$PROJECT_DIR$/../../thuchanh/thuc_hanh_mang_ham/.idea/thuc_hanh_mang_ham.iml" />
       <module fileurl="file://$PROJECT_DIR$/../thuc_hanh_ngay_8/.idea/thuc_hanh_ngay_8.iml" filepath="$PROJECT_DIR$/../thuc_hanh_ngay_8/.idea/thuc_hanh_ngay_8.iml" />
     </modules>
   </component>
