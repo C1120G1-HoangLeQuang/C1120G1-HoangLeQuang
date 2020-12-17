@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>INFORMATION FORM</h2>
+<table>
+    <tr>
+        <td>Họ và tên</td>
+        <td><input type="text" name="hovaten" id="name"/></td>
+    </tr>
+    <tr>
+        <td>Số CMND</td>
+        <td><input type="number" name="socmnd" id="cmnd" pattern="[1-9]"/></td>
+    </tr>
+    <tr>
+        <td>Ngày sinh</td>
+        <td><input type="date" name="ngaysinh" id="dob"/></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="text" name="email" id="mail"/></td>
+    </tr>
+    <tr>
+        <td>Địa chỉ</td>
+        <td><input type="text" name="diachi" id="add"/></td>
+    </tr>
+    <tr>
+        <td>Loại Customer</td>
+        <td>
+            <select id="pack">
+                <option value="Diamond">Diamond 15$</option>
+                <option value="Platinum">Platinum 10$</option>
+                <option value="Gold">Gold 5$</option>
+                <option value="Silver">Silver 2$</option>
+                <option value="Member">Member</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Giảm giá</td>
+        <td>
+            <select id="discount">
+                <option value="Đà Nẵng(20$)">Đà Nẵng 20$</option>
+                <option value="Huế(10$)">Huế 10$</option>
+                <option value="Quảng Nam(5$)">Quảng Nam 5$</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Số lượng đi kèm</td>
+        <td><input type="text" name="sldk" id="attach"/></td>
+    </tr>
+    <tr>
+        <td>Số ngày thuê</td>
+        <td><input type="number" name="ngaythue" id="numdays"/></td>
+    </tr>
+    <tr>
+        <td>Giảm giá dựa trên số ngày thuê</td>
+        <td>
+            <select id="numdaydiscount">
+                <option value="2-4 ngày(10$)">2-4 ngày 10$</option>
+                <option value="5-7 ngày(20$)">5-7 ngày 20$</option>
+                <option value="Trên 7 ngày(30$)">Trên 7 ngày 30$</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Loại dịch vụ</td>
+        <td>
+            <select id="service">
+                <option value="Villa">Villa 500$/day</option>
+                <option value="House">House 300$/day</option>
+                <option value="Room">Room 100$/day</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Loại phòng thuê</td>
+        <td>
+            <select id="room">
+                <option value="vip">Vip</option>
+                <option value="business">Business</option>
+                <option value="normal">Normal</option>
+            </select>
+        </td>
+    </tr>
+</table>
+<br>
+<button type="button" onclick="thanhtoan()">Thanh Toán</button>
+<button type="reset" onclick="taolai()">Tạo lại</button>
+<button type="button" onclick="chinhsua()">Chỉnh sửa</button>
+<h2>INFORMATION DISPLAY</h2>
+<table border="2px" width="600px" >
+    <tr>
+        <td width="50%">Họ và tên</td>
+        <td id="name1" width="50%"></td>
+    </tr>
+    <td>Số CMND</td>
+    <td id="cmnd1"></td>
+    </tr>
+    <tr>
+        <td>Ngày sinh</td>
+        <td id="dob1"></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td id="mail1"></td>
+    </tr>
+    <tr>
+        <td>Địa chỉ</td>
+        <td id="add1"></td>
+    </tr>
+    <tr>
+        <td>Loại Customer</td>
+        <td id="pack1"></td>
+    </tr>
+    <tr>
+        <td>Giảm giá</td>
+        <td id="discount1"></td>
+    </tr>
+    <tr>
+        <td>Số lượng đi kèm</td>
+        <td id="attach1"></td>
+    </tr>
+    <tr>
+        <td>Số ngày thuê</td>
+        <td id="numdays1"></td>
+    </tr>
+    <tr>
+        <td>Được giảm giá dựa theo số ngày</td>
+        <td id="numdaydiscount1"></td>
+    </tr>
+    <tr>
+        <td>Loại dịch vụ</td>
+        <td id="service1"></td>
+    </tr>
+    <tr>
+        <td>Loại phòng thuê</td>
+        <td id="room1"></td>
+    </tr>
+    <tr>
+        <td>Số tiền phải trả</td>
+        <td id="payment"></td>
+    </tr>
+</table>
+<script src="yeu_cau_3.js"></script>
+</body>
+</html>
