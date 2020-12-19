@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            this.C = doC;
+        }
+        getDoC() {
+            return this.C;
+        }
+        getCtoF() {
+            let F = (9/5 * this.C) + 32;
+            return F;
+        }
+        getCtoK() {
+            let K = this.C + 273;
+            return K;
+        }
+    }
+    let temperature = new Temperature (parseInt(prompt("Nhao do C: ")));
+    temperature.getDoC;
+    let result = temperature.getCtoF();
+    let result1 = temperature.getCtoK();
+    alert("Do F: " + result);
+    alert("Do K: " + result1);
+</script>
+</body>
+</html>

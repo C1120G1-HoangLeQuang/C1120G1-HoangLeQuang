@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rectangle {
+        constructor(dai, rong) {
+            this.chieudai = dai;
+            this.chieurong = rong;
+        }
+        getChieudai () {
+            return this.chieudai;
+        }
+        getChieurong () {
+            return this.chieurong;
+        }
+        getDientich () {
+            let S = this.chieudai * this.chieurong;
+            return S;
+        }
+        getChuvi () {
+            let C = (this.chieurong + this.chieudai) * 2;
+            return C;
+        }
+        setChieudai (da) {
+            this.chieudai = da;
+        }
+        setChieurong (ro) {
+            this.chieurong = ro;
+        }
+    }
+    let a = parseInt(prompt("Nhap chieu dai: "));
+    let b = parseInt(prompt("Nhap chieu rong: "));
+    let rectangle = new Rectangle (a, b);
+    rectangle.getChieudai();
+    rectangle.getChieurong();
+    let s = rectangle.getDientich();
+    let c = rectangle.getChuvi();
+    alert("Dien tich: " + s + " chu vi: " + c); // cach 1 và cach 2
+    rectangle.setChieudai(parseInt(prompt("Nhap chieu dai : ")));
+    rectangle.setChieurong(parseInt(prompt("Nhap chieu rong moi: ")));
+    rectangle.getChieudai();
+    rectangle.getChieurong();
+    let s1 = rectangle.getDientich();
+    let c1 = rectangle.getChuvi();
+    alert("Dien tich: " + s1 + " chu vi: " + c1);
+
+</script>
+</body>
+</html>
