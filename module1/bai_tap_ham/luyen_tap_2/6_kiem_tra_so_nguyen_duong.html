@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ChecknumberDuong(number) {
+        if (number > 0) {
+            return "Day la so nguyen duong";
+        } else if (number < 0) {
+            return "Day la so nguyen am";
+        } else {
+            return "";
+        }
+    }
+    let x = parseInt(prompt("Nhap so nguyen can kiem tra: "));
+    let reSult = ChecknumberDuong(x);
+    alert(reSult);
+</script>
+</body>
+</html>

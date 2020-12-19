@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function TimSoNguyenMin(arrSoNguyen) {
+        let min = arrSoNguyen[0];
+        for (let i = 0; i < arrSoNguyen.length; i++) {
+            if (arrSoNguyen[i] < min) {
+                min = arrSoNguyen[i];
+            }
+        }
+        return min;
+    }
+    let arr1 = [23, 34, 54, 9, 4, 6, 7, 3];
+    let result1 = TimSoNguyenMin(arr1);
+    alert(result1);
+</script>
+</body>
+</html>

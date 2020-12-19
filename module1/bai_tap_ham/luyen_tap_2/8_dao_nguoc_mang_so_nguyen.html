@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function SwapSoNguyen(array) {
+        let first = 0;
+        let last = array.length - 1;
+        while (first < last) {
+            let b = array[first];
+            array[first] = array[last];
+            array[last] = b;
+            first++;
+            last--;
+        }
+        return array;
+    }
+    let array1 = [34, 63, 21, 7, 9, 12, 15, 27];
+    let disPlay = SwapSoNguyen(array1);
+    alert(disPlay);
+</script>
+</body>
+</html>

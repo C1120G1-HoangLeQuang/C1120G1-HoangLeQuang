@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function FindKyTu(sTring, characters) {
+        let count = 0;
+        for (let i = 0; i < sTring.length; i++) {
+            if (sTring[i] === characters) {
+                count++;
+            }
+            if (sTring.indexOf(characters) === -1) {
+                return -1;
+            }
+        }
+        return count;
+    }
+    let sTring1 = prompt("Nhap vao chuoi ky tu: ");
+    let characters1 = prompt("Nhap vao ky tu can kiem tra: ");
+    disPlay1 = FindKyTu(sTring1, characters1);
+    alert(disPlay1);
+</script>
+</body>
+</html>
