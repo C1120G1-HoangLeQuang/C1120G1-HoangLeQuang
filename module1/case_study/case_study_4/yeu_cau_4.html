@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhap" placeholder="Nhập tên khách"> <input type="button" onclick="themmoi()" value="Thêm tên khách"/>
+<p>Số lượng khách:</p> <span id="soLuong"></span>
+<p id="inTable"></p>
+<script>
+    let listKhach = [];
+    let inPut;
+    do {
+        inPut = parseInt(prompt("Ban muon danh sach có bao nhieu khach: "));
+    } while (inPut <= 0)
+    for (let k = 0; k < inPut; k ++) {
+        listKhach [k] = prompt("Vui long nhap ten khach thu: " + k);
+
+    }
+    hienThi();
+    function hienThi() { // su dung function hienThi de tenKhach & listKhach nhan gia tri de dua vao bang
+        let bangChuoiInfor= '<table border="1">\n' + // dung scrip de in bang
+            '    <tr>\n' +
+            '        <th>Stt</th>\n' +
+            '        <th>Tên khách</th>\n' +
+            '        <th>Sửa</th>\n' +
+            '        <th>Huỷ</th>\n' +
+            '    </tr>\n';
+        for (let j = 0; j < listKhach.length; j++) {                // dung vong lap for de in chuoi ten khach
+            bangChuoiInfor +=  '<tr>\n' +
+                '      <td>'+(j+1)+'</td>\n' +
+                '      <td>'+listKhach.sort()[j]+'</td>\n' +
+                '      <td><input type="button" onclick="Sua('+j+')" value="Sửa"></td>\n' + //truyền tham số i để biết vị trí
+                '      <td><input type="button" onclick="Xoa('+j+')" value="Xoá"></td>\n' +
+                '    </tr>';
+        }
+        document.getElementById("inTable").innerHTML = bangChuoiInfor;
+        document.getElementById("soLuong").innerHTML = listKhach.length;
+    }
+    function themmoi() {
+        let tenKhach = document.getElementById("nhap").value;
+        // chen lệnh if để tránh trường bắt buộc nhập tên khách thì thông tin mới được in ra bảng
+        if (tenKhach !== "") {
+            listKhach.push(tenKhach);   //them value tenKhach vao mang listKhach để hiển thị ra bảng
+        } else {
+            alert("Vui long nhap ten khach hang: ");
+        }
+        hienThi();
+    }
+    function Sua(id) {
+        let suaTen = prompt("Nhap ten khach moi: ");
+        if ((suaTen !== "") && (suaTen != null)) {
+            listKhach[id] = suaTen;  // đây tên khách cần sửa vào mảng hiên thị tương ứng với vị trí đã chon trước đó
+        } else {
+            alert("Vui long nhap ten khach: ");
+        }
+        hienThi();
+    }
+    function Xoa(id) {
+        let xoaTen = confirm("Ban có muon xoa ten khach: " + listKhach[id]);
+        if (xoaTen) {
+            listKhach.splice(id,1);
+        }
+        hienThi();
+    }
+</script>
+</body>
+</html>
