@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="DisplayMainMenu()" id="displayMain" value="DisplayMainMenu">
+<div onclick="DisplayMainMenu()" id="main"></div>
+<table border="1" id="tb">
+</table>
+<script>
+    function DisplayMainMenu() {
+        let print ="";
+        print += ('<input type="button" onclick="addNewCustomer()" id="addNewCustomer" value="Add New Customer">');
+        print += ('<input type="button" onclick="DisplayInformation()" id="displayInfor" value="Display Information">');
+        print += ('<input type="button" onclick="EditInformation()" id="editInfor" value="Edit Information Customer">');
+        print += ('<input type="button" onclick="DeleteCustomer()" id="deleteCustomer" value="Delete Customer">');
+        print += ('<input type="button" onclick="Exit()" id="exit" value="Exit">' + "<br>" + "<br>" + "<br>");
+        document.getElementById("main").innerHTML = print;
+    }
+    let inforCustomer = [];
+    let bienCon = [];
+    function addNewCustomer() {
+        let inputFullName = prompt("Nhap ten khach hang: ");
+        bienCon.push(inputFullName);
+        let inputDateOB = prompt("Nhap ngày sinh khach hàng theo cu phap dd/mm/yyyy: ");
+        bienCon.push(inputDateOB);
+        let inputNationality = prompt("Nhap quoc tich khach hang: ");
+        bienCon.push(inputNationality);
+        let inputPeriodOT = prompt("Nhap thoi gian khach luu tru theo cu phap dd/mm/yyyy - dd/mm/yyyy: ");
+        bienCon.push(inputPeriodOT);
+       if ((inputFullName!=="")&&(inputDateOB!=="")&&(inputNationality!=="")&&(inputPeriodOT!=="")) {
+           inforCustomer.push(bienCon);
+       } else {
+            alert("Vui long nhap thong tin khach hang: ");
+       }
+        bienCon = [];
+    }
+    function DisplayInformation() {
+       document.getElementById("tb").innerHTML = "";
+       let tableDisplay = '    <tr>\n' +
+            '        <th>Stt</th>\n' +
+            '        <th>FullName</th>\n' +
+            '        <th>Date of birth</th>\n' +
+            '        <th>Nationalily</th>\n' +
+            '        <th>Period of time</th>\n' +
+            '        </tr>';
+       //console.log(inforCustomer.length);
+        for (let i = 0; i < inforCustomer.length; i++) {
+
+            tableDisplay += '<tr>\n' +
+                    '<td>' + (i+1) + '</td>\n' +
+                    '<td>' + inforCustomer[i][0] + '</td>\n' +
+                    '<td>' + inforCustomer[i][1] + '</td>\n' +
+                    '<td>' + inforCustomer[i][2] + '</td>\n' +
+                    '<td>' + inforCustomer[i][3] + '</td>\n' +
+                '</tr>';
+        }
+        document.getElementById("tb").innerHTML = tableDisplay;
+    }
+    function EditInformation() {
+        let inPut = prompt("Nhap so thu tu can sua: ");
+        if (inPut > inforCustomer.length) {
+            alert("Vuot qua so thu tu trong danh sach, vui long nhap lai: ");
+            EditInformation();
+        }
+        let edit1 = parseInt(prompt("1. FullName" +
+                                    "2. Date of birth" +
+                                    "3. Nationality" +
+                                    "4. Period of time"));
+        switch (edit1) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                Edit(inPut -1, edit1 -1);
+        }
+    }
+    function Edit(index1, index2) {
+        let edit2 = prompt("Nhap noi dung muon sua: ");
+        inforCustomer[index1].splice(index2, 1, edit2);
+        DisplayInformation();
+    }
+    function DeleteCustomer() {
+        let index3 = parseInt(prompt("Ban muon xoa khach o so thu tu nao? "));
+        if (index3 > inforCustomer.length) {
+            alert("Vuot qua so thu tu trong danh sach, vui long nhap lai: ");
+            DeleteCustomer();
+        } else {
+            inforCustomer.splice((index3-1), 1);
+        }
+        DisplayInformation();
+    }
+    function Exit() {
+        let exit1 = confirm("bạn có chắc muốn thoát không");
+        window.close(exit1);
+    }
+</script>
+</body>
+</html>
