@@ -78,27 +78,34 @@ function taolai() {
 }
 
 function chinhsua() {
-    let inPut = prompt("Nhập đơn vị cần chỉnh sửa: ");
+    let inPut = parseInt(prompt("Nhập đơn vị cần chỉnh sửa: " +
+                        "1. Name" +
+                        " 2. id" +
+                        " 3. Date of birth" +
+                        " 4. email" +
+                        " 5. Address" +
+                        " 6. Number of days" +
+                        " 7. attach"));
     switch (inPut) {
-        case 'name' :
+        case 1 :
             document.getElementById("name1").innerText = prompt("Nhập tên mới: ");
             break;
-        case 'cmnd' :
+        case 2 :
             document.getElementById( "cmnd1").innerText = prompt("Nhập số mới: ");
             break;
-        case 'ngày sinh' :
+        case 3 :
             document.getElementById( "dob1").innerText = prompt("Nhập lại ngày sinh: ");
             break;
-        case 'email' :
+        case 4 :
             document.getElementById( "mail1").innerText = prompt("Nhập lại email: ");
             break;
-        case 'địa chỉ' :
+        case 5 :
             document.getElementById( "add1").innerText = prompt("Nhập lại địa chỉ: ");
             break;
-        case 'số ngày thuê' :
+        case 6 :
             document.getElementById( "numdays1").innerText = prompt("Nhập lại số ngày: ");
             break;
-        case 'đi kèm' :
+        case 7 :
             document.getElementById("attach1").innerText = prompt("Nhập lại người đi cùng: ");
     }
 }
