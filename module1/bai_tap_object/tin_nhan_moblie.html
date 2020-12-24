@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button"  value="OnOff" onclick="onOff('iphone')">
+<input type="text" id="iphone" placeholder="iphone">
+<input type="button" value="Send" onclick="gui('iphone')">
+<input type="button" value="Show" onclick="show('iphone')"><br><br><br>
+
+<input type="button"  value="OnOff" onclick="onOff('nokia')">
+<input type="text" id="nokia" placeholder="nokia" >
+<input type="button" value="Send" onclick="gui('nokia')">
+<input type="button" value="Show" onclick="show('nokia')">
+<script>
+    class Mobile {
+        constructor(status = false, battery = 12) {
+            this.status = false;
+            this.battery = 12;
+            this.draftMemory = [];
+            this.receiveMemory = [];
+            this.sentMemory = [];
+        }
+        checkStatus () {
+           return this.status;
+        }
+        turnOnOff () {
+            this.status = !this.status;
+        }
+        chargeBattery () {
+            this.battery = 100;
+        }
+        textMessage (message) { //function soạn tin nhắn
+           if (this.battery < 10) {
+               alert("Pin yeu! Ban can sac pin: ");
+               this.chargeBattery();
+           } else {
+               this.draftMemory.push(message);
+           }
+            this.battery--;
+        }
+        receiveMessage (message) {
+            this.receiveMemory.push(message);
+            this.battery--;
+        }
+        sendMessage (mobile, message) {
+            if (this.status) {
+                this.textMessage(message);
+                this.sentMemory.push(this.draftMemory);
+                mobile.receiveMessage(this.draftMemory);
+                this.draftMemory = []; //hien thi tin nhan gui den thong qua vung nho
+                this.battery--;
+            } else {
+                alert("Ban can bat nguon dien thoai: ");
+            }
+        }
+        getReceive () {
+            let mess = this.receiveMemory;
+            this.receiveMemory = [];
+            this.battery--;
+            return mess;
+        }
+    }
+    let iphone = new Mobile();
+    let nokia = new Mobile();
+    function gui(ten) {
+        if (ten === "iphone") {
+            let mess = document.getElementById("iphone").value;
+            iphone.sendMessage(nokia, mess);
+        } else {
+            let mess = document.getElementById("nokia").value;
+            nokia.sendMessage(iphone, mess);
+        }
+    }
+    function show(ten) {
+        if (ten === "iphone") {
+            document.getElementById("iphone").value = iphone.getReceive();
+        } else {
+            document.getElementById("nokia").value = nokia.getReceive();
+        }
+    }
+    function onOff(ten) {
+        if (ten ==="iphone"){
+            iphone.turnOnOff();
+            document.getElementById("iphone").value;
+            alert("điện thoai đã bật");
+        }else {
+            nokia.turnOnOff();
+            document.getElementById("nokia").value;
+            alert("điện thoai đã bật");
+        }
+    }
+</script>
+</body>
+</html>

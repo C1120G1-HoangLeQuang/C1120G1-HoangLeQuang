@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+<canvas id="veHinh" width="600" height="600"></canvas>
+
 <script>
     class Rectangle {
         constructor(dai, rong) {
@@ -25,6 +27,14 @@
             let C = (this.chieurong + this.chieudai) * 2;
             return C;
         }
+        getDraw () {
+            let drawRectangle = document.getElementById("veHinh");
+            let conText = drawRectangle.getContext("2d");
+            conText.rect(100, 100, this.chieudai, this.chieurong);
+            conText.stroke();
+            conText.fillStyle = "FF0000FF"
+            conText.fill();
+        }
         setChieudai (da) {
             this.chieudai = da;
         }
@@ -32,21 +42,22 @@
             this.chieurong = ro;
         }
     }
-    let a = parseInt(prompt("Nhap chieu dai: "));
-    let b = parseInt(prompt("Nhap chieu rong: "));
-    let rectangle = new Rectangle (a, b);
-    rectangle.getChieudai();
-    rectangle.getChieurong();
-    let s = rectangle.getDientich();
-    let c = rectangle.getChuvi();
-    alert("Dien tich: " + s + " chu vi: " + c); // cach 1 và cach 2
+    //let a = parseInt(prompt("Nhap chieu dai: "));
+    //let b = parseInt(prompt("Nhap chieu rong: "));
+    let rectangle = new Rectangle ();
+    //rectangle.getChieudai();
+    //rectangle.getChieurong();
+    //let s = rectangle.getDientich();
+    //let c = rectangle.getChuvi();
+    //alert("Dien tich: " + s + " chu vi: " + c); // cach 1 và cach 2
     rectangle.setChieudai(parseInt(prompt("Nhap chieu dai : ")));
     rectangle.setChieurong(parseInt(prompt("Nhap chieu rong moi: ")));
     rectangle.getChieudai();
     rectangle.getChieurong();
+    rectangle.getDraw();
     let s1 = rectangle.getDientich();
     let c1 = rectangle.getChuvi();
-    alert("Dien tich: " + s1 + " chu vi: " + c1);
+    document.write("Dien tich: " + s1 + " chu vi: " + c1);
 
 </script>
 </body>
