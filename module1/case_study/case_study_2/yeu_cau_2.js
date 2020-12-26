@@ -79,7 +79,7 @@ function taolai() {
 
 function chinhsua() {
     let inPut = parseInt(prompt("Nhập đơn vị cần chỉnh sửa: " +
-                        "1. Name" +
+                        " 1. Name" +
                         " 2. id" +
                         " 3. Date of birth" +
                         " 4. email" +
