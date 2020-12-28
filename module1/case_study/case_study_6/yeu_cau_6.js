@@ -165,8 +165,7 @@ function addNewCustomer() {
     customer.setTypeOfRoom(prompt("Vui long nhap loai phong (Vip, Bussiness, Normal): "));
     let result = customer.calculateMoney();
     customer.setTotal(result);
-    arrayCon.push(customer);
-    listCustom.push(arrayCon);
+    listCustom.push(customer);
 }
 function displayInformation() {
     document.getElementById("tb").innerHTML = "";
@@ -184,24 +183,26 @@ function displayInformation() {
         '        <th>Type Room</th>\n' +
         '        <th>Payment($)</th>\n' +
         '    </tr>';
-    for (let v = 0; v < listCustom.length; v++) {
+    for (let f = 0; f < listCustom.length; f++) {
         tableDisplay += '<tr>\n' +
-            '        <td>' +(v+1)+ '</td>\n' +
-            '        <td>' +customer.getFullName(listCustom[v][0])+ '</td>\n' +
-            '        <td>' +customer.getId(listCustom[v][1])+ '</td>\n' +
-            '        <td>' +customer.getDateOfBirth(listCustom[v][2])+ '</td>\n' +
-            '        <td>' +customer.getEmail(listCustom[v][3])+ '</td>\n' +
-            '        <td>' +customer.getAddress(listCustom[v][4])+ '</td>\n' +
-            '        <td>' +customer.getDisCount(listCustom[v][5])+ '</td>\n' +
-            '        <td>' +customer.getTypeOfCus(listCustom[v][6])+ '</td>\n' +
-            '        <td>' +customer.getNumOfDay(listCustom[v][7])+ '</td>\n' +
-            '        <td>' +customer.getTypeOfSer(listCustom[v][8])+ '</td>\n' +
-            '        <td>' +customer.getTypeOfRoom(listCustom[v][9])+ '</td>\n' +
-            '        <td>' +customer.calculateMoney(listCustom[v][10])+ '</td>\n' +
-            '    </tr>';
-    }
+            '        <td>' +(f+1)+ '</td>\n' +
+        '        <td>' +customer.getFullName()+ '</td>\n' +
+                '        <td>' +customer.getId()+ '</td>\n' +
+                '        <td>' +customer.getDateOfBirth()+ '</td>\n' +
+                '        <td>' +customer.getEmail()+ '</td>\n' +
+                '        <td>' +customer.getAddress()+ '</td>\n' +
+                '        <td>' +customer.getDisCount()+ '</td>\n' +
+                '        <td>' +customer.getTypeOfCus()+ '</td>\n' +
+                '        <td>' +customer.getNumOfDay()+ '</td>\n' +
+                '        <td>' +customer.getTypeOfSer()+ '</td>\n' +
+                '        <td>' +customer.getTypeOfRoom()+ '</td>\n' +
+                '        <td>' +customer.calculateMoney()+ '</td>\n' +
+                '    </tr>';
+            }
+
     document.getElementById("tb").innerHTML = tableDisplay;
 }
+
 function editInformation() {
     let input = prompt("Nhap so thu tu can sua: ");
     if(input > listCustom.length) {
@@ -220,31 +221,91 @@ function editInformation() {
                                         " 10. Type of room"));
     switch (edit1) {
         case 1:
+            listCustom[0].setFullName(prompt("Nhap ten moi: "));
+            break;
         case 2:
+            let id;
+            do {
+                id = (prompt("Vui long nhap so id moi: "));
+            } while (isNaN(id) || (id < 10000000) || (id > 99999999));
+       //     checkId = true;
+            listCustom[0].setId(id);
+            break;
         case 3:
+            let checkDayOfBirth = true;
+            let dateOfBirth;
+            do {
+                dateOfBirth = prompt("Vui long nhap ngay thang nam sinh moi: ");
+                if ((dateOfBirth.charAt(2) === "/") && (dateOfBirth.charAt(5) === "/")) {
+                    day = dateOfBirth.substring(0,2);
+                    month = dateOfBirth.substring(3,5);
+                    year = dateOfBirth.substring(6,10);
+                }
+                if((!isNaN(day)) && (!isNaN(month)) && (!isNaN(year))) {
+                    day = Number.parseFloat(day);
+                    month = Number.parseFloat(month);
+                    year = Number.parseFloat(year);
+                }
+                if ((Number.isInteger(day)) && (Number.isInteger(month)) && (Number.isInteger(year))) {
+                    if ((day < 32) && (month < 13) && (year > 1900)) {
+                        checkDayOfBirth = false;
+                    }
+                }
+                if (checkDayOfBirth) {
+                    alert("Ngay sinh khong dung dinh dang: ");
+                }
+            } while (checkDayOfBirth);
+            listCustom[0].setDateOfBirth(dateOfBirth);
+            break;
         case 4:
+            let checkEmail = true;
+            let email;
+            do {
+                let countA = 0;
+                let countDot = 0;
+                email = prompt("Vui long nhap email moi: ");
+                for (let i = 0; i < email.length; i++) {
+                    if (email.charAt(i) === "@") {
+                        countA++;
+                        for (let k = 0; k < email.length; k++) {
+                            if (email.charAt(k) === ".") {
+                                countDot++;
+                            }
+                        }
+                    }
+                }
+                if ((countA !== 1) && (countDot !== 1)) {
+                    alert("Email khong dung dinh dang: ");
+                } else {
+                    checkEmail = false;
+                }
+            } while (checkEmail);
+            listCustom[0].setEmail(email);
+            break;
         case 5:
+            listCustom[0].setAddress(prompt("Nhap dia chi moi: "));
+            break;
         case 6:
+            listCustom[0].setDisCount(parseInt(prompt("Nhap so discount moi: ")));
+            break;
         case 7:
+            listCustom[0].setTypeOfCus(prompt("Vui long nhap loai khach hang (Diamond, Platinum, Gold, Silver, Member): "));
+            break;
         case 8:
+            listCustom[0].setNumOfDay(parseInt(prompt("Nhap so ngay luu tru moi: ")));
+            break;
         case 9:
+            listCustom[0].setTypeOfSer(prompt("Vui long nhap loai dich vu (Villa, House, Room): "));
+            break;
         case 10:
-            editCon(input - 1, edit1 -1);
+            listCustom[0].setTypeOfRoom(prompt("Vui long nhap loai phong (Vip, Bussiness, Normal): "));
+            break;
+          //  editCon(input - 1,);
     }
+    editCon(input - 1,);
+    displayInformation();
 }
 function editCon(index, index2) {
-    let edit2 = prompt("Nhap noi dung muon sua: ");
-    listCustom[index].setFullName(edit2);
-    listCustom[index].setId(edit2);
-    listCustom[index].setDateOfBirth(edit2);
-    listCustom[index].setEmail(edit2);
-    listCustom[index].setAddress(edit2);
-    listCustom[index].setDisCount(edit2);
-    listCustom[index].setTypeOfCus(edit2);
-    listCustom[index].setNumOfDay(edit2);
-    listCustom[index].setTypeOfSer(edit2);
-    listCustom[index].setTypeOfRoom(edit2);
-    displayInformation();
 }
 function deleteCustomer() {
     let index3 = parseInt(prompt("Ban muon xoa khach o so thu tu nao? "));
