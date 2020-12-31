@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class SanPham {
+        constructor(maSP, tenSP, hangSX, gia) {
+            this.maSP = maSP;
+            this.tenSP = tenSP;
+            this.hangSX = hangSX;
+            this.gia = gia;
+        }
+        getMaSanPham() {
+            return this.maSP;
+        }
+        setMaSanPham(name) {
+            this.maSP = name;
+        }
+        getTenSP() {
+            return this.tenSP;
+        }
+        setTenSP(name) {
+            this.tenSP = name;
+        }
+        getHangSX() {
+            return this.hangSX;
+        }
+        setHangSX(name) {
+            this.hangSX = name;
+        }
+        getGia() {
+            return this.gia;
+        }
+        setGia(number) {
+            this.gia = number;
+        }
+    }
+let sanPham = new SanPham();
+sanPham.setMaSanPham(prompt("Nhap ma san pham: "));
+sanPham.setTenSP(prompt("Nhap ten san pham: "));
+sanPham.setHangSX(prompt("Nhap hang san xuat: "));
+sanPham.setGia(parseInt(prompt("Nhap gia san pham: ")));
+sanPham.getMaSanPham();
+sanPham.getTenSP();
+sanPham.getHangSX();
+sanPham.getGia();
+alert("Ma san pham: " + sanPham.getMaSanPham() + " Ten san pham: " + sanPham.getTenSP() + " Hang san xuat: " + sanPham.getHangSX() + " Gia: " + sanPham.getGia());
+
+</script>
+</body>
+</html>

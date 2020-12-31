@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input;
+    let countU = 0;
+    let countE = 0;
+    let countO = 0;
+    let array = [];
+    do {
+        input = parseInt(prompt("Bạn muốn mảng có bao nhiêu phần tử: "));
+    } while (input <= 0);
+
+    for (let i = 0; i < input; i++) {
+        array [i] = prompt("Phần tử theo thứ: " + i);
+    }
+    for (let i = 0; i < array.length; i++) {
+        if (array[i]==='u') {
+            countU++;
+        }
+        if (array[i]==='e') {
+            countE++;
+        }
+        if (array[i]==='o') {
+            countO++;
+        }
+    }
+    document.write("U: " + countU + " E: " + countE + " O: " + countO);
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+</head>
+<body>
+// iphone
+<input type="button"  value="OnOff" onclick="onOff('iphone')">
+<input type="text" id="iphone" placeholder="iphone">
+<input type="button" value="Send" onclick="gui('iphone')">
+<input type="button" value="Show" onclick="show('iphone')"><br><br><br>
+// nokia
+<input type="button"  value="OnOff" onclick="onOff('nokia')">
+<input type="text" id="nokia" placeholder="nokia" >
+<input type="button" value="Send" onclick="gui('nokia')">
+<input type="button" value="Show" onclick="show('nokia')">
+<script>
+    ​
+    class Mobile{
+        constructor() {
+            this.status= false;
+            this.pin =12;
+            this.draftMemory=[];
+            this.sentMemory=[];
+            this.receiveMemory=[];
+        }
+        checkStatus(){
+            return this.status;
+        }
+        turnOnOff(){
+            this.status =!this.status;
+        }
+        charge(){
+            this.pin=100;
+        }
+        makeMessage(message){
+            if (this.pin<10){
+                alert("pin yếu cần phải nap pin")
+                this.charge();
+            }else {
+                this.draftMemory.push(message);
+            }
+            this.pin--;
+​
+        }
+        receiveMessage(message){
+            this.receiveMemory.push(message);
+            this.pin--;
+        }
+        sendMessage(mobile, message){
+            if (this.status){
+                this.makeMessage(message);
+                this.sentMemory.push(this.draftMemory);
+                mobile.receiveMessage(this.draftMemory);
+                this.draftMemory=[];
+                this.pin--;
+            }else {
+                alert("bạn cần phải bật điện thoại");
+            }
+​
+        }
+        showSent(){
+            alert(this.sentMemory);
+        }
+        showReceived(){
+            alert(this.receiveMemory);
+        }
+        getReceived(){
+            let mess =this.receiveMemory;
+            this.receiveMemory=[];
+            this.pin--;
+            return mess
+​
+        }
+    }
+​
+    let iphone = new Mobile();
+    let nokia = new Mobile();
+    function gui(ten) {
+        if (ten=="iphone"){
+            let mess = document.getElementById("iphone").value;
+            iphone.sendMessage(nokia,mess);
+            // document.getElementById("iphone").value="Tin đã gửi thành công"
+        }else {
+            let mess = document.getElementById("nokia").value;
+            nokia.sendMessage(iphone,mess);
+            // document.getElementById("nokia").value="Tin đã gửi thành công"
+        }
+    }
+    function show(ten) {
+        if (ten=="iphone"){
+            document.getElementById("iphone").value= iphone.getReceived();
+        }else {
+            document.getElementById("nokia").value= nokia.getReceived();
+        }
+    }
+    // iphone.sendMessage(nokia, "xin chao nokia from iphone with love");
+    // nokia.showReceived();
+    // nokia.sendMessage(iphone, "Love you iphone")
+    // iphone.showReceived()
+    function onOff(ten) {
+        if (ten=="iphone"){
+            iphone.turnOnOff();
+            document.getElementById("iphone").value="điện thoai đã bật"
+        }else {
+            nokia.turnOnOff();
+            document.getElementById("nokia").value="điện thoai đã bật"
+        }
+​     }
+​
+</script>
+</body>
+</html>

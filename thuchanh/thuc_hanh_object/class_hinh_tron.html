@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(ra, col) {
+            this.radius = ra;
+            this.color = col;
+        }
+        getRadius () {
+            return this.radius;
+        }
+        getArea () {
+            let S = Math.PI * this.radius * this.radius;
+            return S;
+        }
+    }
+    let circle = new Circle (parseInt(prompt("Hãy nhập bán kính: ")));
+    circle.getRadius;
+    let s = circle.getArea();
+    alert("Dien tich hinh tron: " + s); //
+
+</script>
+</body>
+</html>

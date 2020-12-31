@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function CheckDoiXung(string) {
+        let first = 0;
+        let last = string.length - 1;
+        for (let i = 0; i < string.length; i++) {
+
+            if (string[first] === string[last]) {
+                alert("Chuoi doi xung")
+            } else {
+                alert("Chuoi khong doi xung: ");
+            }
+            first++;
+            last--;
+        }
+        return string;
+    }
+    let string1 = prompt("Vui long nhap chuoi: ");
+    let disPlay = CheckDoiXung(string1);
+    alert(disPlay);
+</script>
+</body>
+</html>

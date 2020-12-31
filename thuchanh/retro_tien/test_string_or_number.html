@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function isMyNumber(numberToCheck) {
+
+        if (typeof numberToCheck === "number") {
+            return true;
+        }
+
+        return false;
+    }
+
+    let c = isMyNumber("23");
+    if (c) {
+        console.log("This is a number");
+    } else {
+        console.log("This is a string");
+    }
+
+    let a = "sang";
+    let b = 123;
+    // let c = typeof a === "number";
+    let d = [];
+    console.log(typeof a);
+    console.log(typeof b);
+    console.log(typeof d);
+
+    let a = [1, 2, 3];
+    a.push(4);
+
+</script>
+</body>
+</html>

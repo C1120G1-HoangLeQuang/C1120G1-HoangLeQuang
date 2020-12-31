@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        let count = 0;
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0) {
+                count++;
+            }
+        }
+        if (count === 2) {
+            return true;
+        }
+    }
+    let soNguyen = [];
+    let input;
+    do {
+        input = parseInt(prompt("Bạn muốn nhập bao nhiêu phần tử trong mảng: "));
+    } while (input <= 0)
+    for (let k = 0; k < input; k++) {
+        soNguyen[k] = parseInt(prompt("Nhập phần tử thử: " + k));
+    }
+    for (let j = 0; j < soNguyen.length; j++) {
+        if (isPrime(soNguyen[j])) {
+            soNguyen.sort(function (a, b) {
+                return a - b
+            })
+            document.write(soNguyen[j] + "");
+        }
+    }
+</script>
+</body>
+</html>

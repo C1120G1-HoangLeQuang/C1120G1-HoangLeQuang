@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        function isPrimeNumber(numberCheck) {
+            let count = 0;
+
+            for (let i = 1; i <= numberCheck; i++) {
+                if (numberCheck % i === 0) {
+                    count++;
+                }
+            }
+
+            if (count === 2) {
+                return true;
+            }
+
+            console.log("Hello World");
+
+            return false;
+        }
+
+        // console.log(isPrimeNumber(5));
+
+        let countPrimeNumber = 0;
+        // let count;
+        let num = 1;
+
+        while(countPrimeNumber < 10) {
+
+            // kiem tra so nguyen to 16 - 28
+            // count = 0;
+            //
+            // for (let i = 1; i <= num; i++) {
+            //     if (num % i === 0) {
+            //         count++;
+            //     }
+            // }
+            //
+            // if (count === 2) {
+            //     console.log(num);
+            //     countPrimeNumber++;
+            // }
+
+            if (isPrimeNumber(num)) {
+                console.log(num);
+                countPrimeNumber++;
+            }
+
+            num++;
+        }
+    </script>
+</body>
+</html>
