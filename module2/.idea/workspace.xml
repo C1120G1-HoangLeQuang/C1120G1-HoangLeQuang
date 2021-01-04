@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1f9065a5-16f4-45a7-ab43-d46a5a4a993b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1mPYsUgKYq6XaIp8Qo59V4AfGBg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="Application.PrimeFirstNhoHon100">
+    <configuration name="DisplayHinh" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_2_vong_lap.bai_tap.DisplayHinh" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ngay_2_vong_lap.bai_tap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DisplayMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_2_vong_lap.thuc_hanh.DisplayMenu" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ngay_2_vong_lap.thuc_hanh.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FirstPrime20" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_2_vong_lap.bai_tap.FirstPrime20" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ngay_2_vong_lap.bai_tap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrimeFirstNhoHon100" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_2_vong_lap.bai_tap.PrimeFirstNhoHon100" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ngay_2_vong_lap.bai_tap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_2_vong_lap.bai_tap.Test" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ngay_2_vong_lap.bai_tap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PrimeFirstNhoHon100" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.FirstPrime20" />
+        <item itemvalue="Application.DisplayHinh" />
+        <item itemvalue="Application.DisplayMenu" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f9065a5-16f4-45a7-ab43-d46a5a4a993b" name="Default Changelist" comment="" />
+      <created>1609396899129</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609396899129</updated>
+      <workItem from="1609396904090" duration="79000" />
+      <workItem from="1609397041268" duration="5993000" />
+      <workItem from="1609403140761" duration="148000" />
+      <workItem from="1609403317528" duration="2722000" />
+      <workItem from="1609509389213" duration="12893000" />
+      <workItem from="1609527402402" duration="3389000" />
+      <workItem from="1609530986391" duration="389000" />
+      <workItem from="1609563678910" duration="1181000" />
+      <workItem from="1609590670724" duration="6301000" />
+      <workItem from="1609668123463" duration="12952000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1398" height="258" key="GridCell.Tab.0.bottom" timestamp="1609687549461">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="205" key="GridCell.Tab.0.bottom/0.23.1440.807@0.23.1440.807" timestamp="1609681925205" />
+    <state width="1398" height="258" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1609687549461" />
+    <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1609527496377" />
+    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1609405066304" />
+    <state width="1398" height="258" key="GridCell.Tab.0.center" timestamp="1609687549460">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="205" key="GridCell.Tab.0.center/0.23.1440.807@0.23.1440.807" timestamp="1609681925203" />
+    <state width="1398" height="258" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1609687549460" />
+    <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1609527496375" />
+    <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1609405066301" />
+    <state width="1398" height="258" key="GridCell.Tab.0.left" timestamp="1609687549459">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="205" key="GridCell.Tab.0.left/0.23.1440.807@0.23.1440.807" timestamp="1609681925202" />
+    <state width="1398" height="258" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1609687549459" />
+    <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1609527496374" />
+    <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1609405066300" />
+    <state width="1398" height="258" key="GridCell.Tab.0.right" timestamp="1609687549460">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="205" key="GridCell.Tab.0.right/0.23.1440.807@0.23.1440.807" timestamp="1609681925204" />
+    <state width="1398" height="258" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1609687549460" />
+    <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1609527496376" />
+    <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1609405066303" />
+    <state width="1398" height="258" key="GridCell.Tab.1.bottom" timestamp="1609687549462">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="258" key="GridCell.Tab.1.bottom/0.23.1440.810@0.23.1440.810" timestamp="1609687549462" />
+    <state width="1398" height="258" key="GridCell.Tab.1.center" timestamp="1609687549461">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="258" key="GridCell.Tab.1.center/0.23.1440.810@0.23.1440.810" timestamp="1609687549461" />
+    <state width="1398" height="258" key="GridCell.Tab.1.left" timestamp="1609687549461">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="258" key="GridCell.Tab.1.left/0.23.1440.810@0.23.1440.810" timestamp="1609687549461" />
+    <state width="1398" height="258" key="GridCell.Tab.1.right" timestamp="1609687549461">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="258" key="GridCell.Tab.1.right/0.23.1440.810@0.23.1440.810" timestamp="1609687549461" />
+    <state x="420" y="23" width="600" height="807" key="find.popup" timestamp="1609668614591">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state x="420" y="23" width="600" height="807" key="find.popup/0.23.1440.807@0.23.1440.807" timestamp="1609668614591" />
+    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup" timestamp="1609526041234">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1609526041234" />
+  </component>
+</project>
