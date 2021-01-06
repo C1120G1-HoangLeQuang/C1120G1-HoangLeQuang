@@ -20,10 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f9065a5-16f4-45a7-ab43-d46a5a4a993b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ngay_2_vong_lap/bai_tap/PrimeFirstNhoHon100.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ngay_2_vong_lap/bai_tap/PrimeFirstNhoHon100.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngay_1/bai_tap/NumberIntoWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_1_introduceJava/bai_tap/NumberIntoWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngay_1/bai_tap/SayHello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_1_introduceJava/bai_tap/SayHello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngay_1/bai_tap/TransferMoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_1_introduceJava/bai_tap/TransferMoney.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngay_1/thuc_hanh/AreaRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_1_introduceJava/thuc_hanh/AreaRectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngay_1/thuc_hanh/BodyWeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_1_introduceJava/thuc_hanh/BodyWeight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngay_1/thuc_hanh/CountDayInMonth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_1_introduceJava/thuc_hanh/CountDayInMonth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngay_1/thuc_hanh/KhaiBaoBien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_1_introduceJava/thuc_hanh/KhaiBaoBien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngay_1/thuc_hanh/LeapYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_1_introduceJava/thuc_hanh/LeapYear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ngay_1/thuc_hanh/PhuongTrinhBac1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_1_introduceJava/thuc_hanh/PhuongTrinhBac1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +66,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Application.PrimeFirstNhoHon100">
-    <configuration name="DisplayHinh" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_2_vong_lap.bai_tap.DisplayHinh" />
+  <component name="RunManager" selected="Application.DisplayRectangle">
+    <configuration name="DisplayRectangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_4_OOP.thuc_hanh.DisplayRectangle" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_2_vong_lap.bai_tap.*" />
+          <option name="PATTERN" value="ngay_4_OOP.thuc_hanh.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -73,12 +80,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DisplayMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_2_vong_lap.thuc_hanh.DisplayMenu" />
+    <configuration name="GopArrayC1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_3_array.bai_tap.GopArrayC1" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_2_vong_lap.thuc_hanh.*" />
+          <option name="PATTERN" value="ngay_3_array.bai_tap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,12 +93,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstPrime20" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_2_vong_lap.bai_tap.FirstPrime20" />
+    <configuration name="GopArrayC2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_3_array.bai_tap.GopArrayC2" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_2_vong_lap.bai_tap.*" />
+          <option name="PATTERN" value="ngay_3_array.bai_tap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +106,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrimeFirstNhoHon100" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_2_vong_lap.bai_tap.PrimeFirstNhoHon100" />
+    <configuration name="MaxOfArray2Way" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_3_array.bai_tap.MaxOfArray2Way" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_2_vong_lap.bai_tap.*" />
+          <option name="PATTERN" value="ngay_3_array.bai_tap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,12 +119,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_2_vong_lap.bai_tap.Test" />
+    <configuration name="MinArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_3_array.bai_tap.MinArray" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_2_vong_lap.bai_tap.*" />
+          <option name="PATTERN" value="ngay_3_array.bai_tap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PrimeFirstNhoHon100" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.FirstPrime20" />
-        <item itemvalue="Application.DisplayHinh" />
-        <item itemvalue="Application.DisplayMenu" />
+        <item itemvalue="Application.DisplayRectangle" />
+        <item itemvalue="Application.MinArray" />
+        <item itemvalue="Application.MaxOfArray2Way" />
+        <item itemvalue="Application.GopArrayC2" />
+        <item itemvalue="Application.GopArrayC1" />
       </list>
     </recent_temporary>
   </component>
@@ -155,6 +162,13 @@
       <workItem from="1609563678910" duration="1181000" />
       <workItem from="1609590670724" duration="6301000" />
       <workItem from="1609668123463" duration="12952000" />
+      <workItem from="1609724097842" duration="607000" />
+      <workItem from="1609771241739" duration="3860000" />
+      <workItem from="1609779112997" duration="236000" />
+      <workItem from="1609779764312" duration="5836000" />
+      <workItem from="1609820537276" duration="20980000" />
+      <workItem from="1609850957491" duration="96000" />
+      <workItem from="1609866201071" duration="1175000" />
     </task>
     <servers />
   </component>
@@ -174,33 +188,33 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="258" key="GridCell.Tab.0.bottom" timestamp="1609687549461">
-      <screen x="0" y="23" width="1440" height="810" />
+    <state width="1398" height="205" key="GridCell.Tab.0.bottom" timestamp="1609867379244">
+      <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1398" height="205" key="GridCell.Tab.0.bottom/0.23.1440.807@0.23.1440.807" timestamp="1609681925205" />
-    <state width="1398" height="258" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1609687549461" />
-    <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1609527496377" />
+    <state width="1398" height="205" key="GridCell.Tab.0.bottom/0.23.1440.807@0.23.1440.807" timestamp="1609867379244" />
+    <state width="1398" height="205" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1609785846080" />
+    <state width="1398" height="205" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1609850926212" />
     <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1609405066304" />
-    <state width="1398" height="258" key="GridCell.Tab.0.center" timestamp="1609687549460">
-      <screen x="0" y="23" width="1440" height="810" />
+    <state width="1398" height="205" key="GridCell.Tab.0.center" timestamp="1609867379243">
+      <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1398" height="205" key="GridCell.Tab.0.center/0.23.1440.807@0.23.1440.807" timestamp="1609681925203" />
-    <state width="1398" height="258" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1609687549460" />
-    <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1609527496375" />
+    <state width="1398" height="205" key="GridCell.Tab.0.center/0.23.1440.807@0.23.1440.807" timestamp="1609867379243" />
+    <state width="1398" height="205" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1609785846079" />
+    <state width="1398" height="205" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1609850926211" />
     <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1609405066301" />
-    <state width="1398" height="258" key="GridCell.Tab.0.left" timestamp="1609687549459">
-      <screen x="0" y="23" width="1440" height="810" />
+    <state width="1398" height="205" key="GridCell.Tab.0.left" timestamp="1609867379242">
+      <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1398" height="205" key="GridCell.Tab.0.left/0.23.1440.807@0.23.1440.807" timestamp="1609681925202" />
-    <state width="1398" height="258" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1609687549459" />
-    <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1609527496374" />
+    <state width="1398" height="205" key="GridCell.Tab.0.left/0.23.1440.807@0.23.1440.807" timestamp="1609867379242" />
+    <state width="1398" height="205" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1609785846079" />
+    <state width="1398" height="205" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1609850926210" />
     <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1609405066300" />
-    <state width="1398" height="258" key="GridCell.Tab.0.right" timestamp="1609687549460">
-      <screen x="0" y="23" width="1440" height="810" />
+    <state width="1398" height="205" key="GridCell.Tab.0.right" timestamp="1609867379243">
+      <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1398" height="205" key="GridCell.Tab.0.right/0.23.1440.807@0.23.1440.807" timestamp="1609681925204" />
-    <state width="1398" height="258" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1609687549460" />
-    <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1609527496376" />
+    <state width="1398" height="205" key="GridCell.Tab.0.right/0.23.1440.807@0.23.1440.807" timestamp="1609867379243" />
+    <state width="1398" height="205" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1609785846080" />
+    <state width="1398" height="205" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1609850926212" />
     <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1609405066303" />
     <state width="1398" height="258" key="GridCell.Tab.1.bottom" timestamp="1609687549462">
       <screen x="0" y="23" width="1440" height="810" />
@@ -222,9 +236,9 @@
       <screen x="0" y="23" width="1440" height="807" />
     </state>
     <state x="420" y="23" width="600" height="807" key="find.popup/0.23.1440.807@0.23.1440.807" timestamp="1609668614591" />
-    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup" timestamp="1609526041234">
+    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup" timestamp="1609846859975">
       <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1609526041234" />
+    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1609846859975" />
   </component>
 </project>
