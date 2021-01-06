@@ -35,13 +35,13 @@ public class QuadraticEquation {
         this.c = c;
     }
     public double getDiscriminant() {
-        return Math.pow(this.b, 2) - (4 * this.a * this.c);
+        return (this.b * this.b) - (4 * this.a * this.c);
     }
     public double getRoot1() {
-        return (-this.b + Math.sqrt(getDiscriminant()) / (this.a * 2));
+        return (-this.b + Math.sqrt(getDiscriminant())) / (this.a * 2);
     }
     public double getRoot2() {
-        return (-this.b - Math.sqrt(getDiscriminant()) / (this.a * 2));
+        return (-this.b - Math.sqrt(getDiscriminant())) / (this.a * 2);
     }
     public String display() {
         return "a = " + this.a + " b = " + this.b + " c = " + this.c;
@@ -58,7 +58,7 @@ public class QuadraticEquation {
         QuadraticEquation quadraticEquation = new QuadraticEquation(a, b, c);
         double delta = quadraticEquation.getDiscriminant();
         System.out.println("Display a, b, c: " + quadraticEquation.display());
-        if (delta >= 0) {
+        if (delta > 0) {
             System.out.print("r1= " + quadraticEquation.getRoot1() + " and "+ " r2= " + quadraticEquation.getRoot2());
         } else if (delta == 0) {
             System.out.print("Only one r= " + quadraticEquation.getRoot1());

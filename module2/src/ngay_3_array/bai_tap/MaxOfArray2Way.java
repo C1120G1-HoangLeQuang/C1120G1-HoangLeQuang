@@ -13,6 +13,7 @@ public class MaxOfArray2Way {
             }
         }
         for (int row = 0; row < matrix.length;row++) {
+            System.out.println("table is: " + row);
             for (int column = 0; column < matrix[row].length; column++) {
                 System.out.println(matrix[row][column] + " ");
             }
