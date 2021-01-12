@@ -35,15 +35,8 @@ public class Circle extends Shape{
         return "A Circle with radius = "
                 + getRadius()
                 + ", which is a subclass of "
-                + super.toString();
-    }
+                + " Area: "
+                + getArea();
 
-    public static void main(String[] args) {
-        Circle circle = new Circle();
-        System.out.println(circle);
-        circle = new Circle(5.8);
-        System.out.println(circle);
-        circle = new Circle("black", false, 6.9);
-        System.out.println(circle);
     }
 }

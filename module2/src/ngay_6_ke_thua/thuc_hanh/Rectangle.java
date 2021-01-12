@@ -47,7 +47,9 @@ public class Rectangle extends Shape{
                 + " and length="
                 + getHeight()
                 + ", which is a subclass of "
-                + super.toString();
+                + " Area: "
+                + getArea();
+
     }
 
     public static void main(String[] args) {

@@ -16,8 +16,8 @@ public class Square extends Rectangle {
         return getWidth();
     }
     public void setSide(double side) {
-        setHeight(side);
-        setWidth(side);
+        super.setHeight(side);
+        super.setWidth(side);
     }
 
     @Override
@@ -35,7 +35,10 @@ public class Square extends Rectangle {
         return "A square with side = "
                 + getSide()
                 + ", which is a subclass of "
-                + super.toString();
+                +" Area: "
+                + getArea();
+
+
     }
 
     public static void main(String[] args) {
