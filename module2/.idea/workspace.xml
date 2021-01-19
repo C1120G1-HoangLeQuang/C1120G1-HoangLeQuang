@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1f9065a5-16f4-45a7-ab43-d46a5a4a993b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ngay_9_danh_sach/bai_tap/LinkedList/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ngay_9_danh_sach/bai_tap/LinkedList/LinkedList.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,14 +61,17 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="ngay_7_abtracts_interface.thuc_hanh.comparable" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ngay_11_collection_framework.bai_tap.production_linkedlist" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Solution">
-    <configuration name="CountElementInMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_10_stack_queue.baif_tap.CountElementInMap" />
+  <component name="RunManager" selected="Application.TestBinaryTree">
+    <configuration name="RableVsRator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_11_collection_framework.thuc_hanh.RableVsRator" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_10_stack_queue.baif_tap.*" />
+          <option name="PATTERN" value="ngay_11_collection_framework.thuc_hanh.BinaryTree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,12 +79,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemergingQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_10_stack_queue.baif_tap.DemergingQueue" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_11_collection_framework.thuc_hanh.BinaryTree.Test" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_10_stack_queue.baif_tap.*" />
+          <option name="PATTERN" value="ngay_11_collection_framework.thuc_hanh.BinaryTree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,12 +92,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseArrayByStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_10_stack_queue.baif_tap.ReverseArrayByStack" />
+    <configuration name="TestArrayList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_11_collection_framework.bai_tap.production_arrayedlist.TestArrayList" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_10_stack_queue.baif_tap.*" />
+          <option name="PATTERN" value="ngay_11_collection_framework.bai_tap.production_arrayedlist.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,12 +105,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_10_stack_queue.baif_tap.QueueByLinkedList.Solution" />
+    <configuration name="TestBinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_11_collection_framework.bai_tap.BinarySearchTree.TestBinaryTree" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_10_stack_queue.baif_tap.QueueByLinkedList.*" />
+          <option name="PATTERN" value="ngay_11_collection_framework.bai_tap.BinarySearchTree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,12 +118,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransferIntoBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_10_stack_queue.baif_tap.TransferIntoBinary" />
+    <configuration name="TestLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_11_collection_framework.bai_tap.production_linkedlist.TestLinkedList" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_10_stack_queue.baif_tap.*" />
+          <option name="PATTERN" value="ngay_11_collection_framework.bai_tap.production_linkedlist.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Solution" />
-        <item itemvalue="Application.ReverseArrayByStack" />
-        <item itemvalue="Application.CountElementInMap" />
-        <item itemvalue="Application.DemergingQueue" />
-        <item itemvalue="Application.TransferIntoBinary" />
+        <item itemvalue="Application.TestBinaryTree" />
+        <item itemvalue="Application.TestArrayList" />
+        <item itemvalue="Application.TestLinkedList" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.RableVsRator" />
       </list>
     </recent_temporary>
   </component>
@@ -184,6 +186,10 @@
       <workItem from="1610647708009" duration="10000" />
       <workItem from="1610673780354" duration="21152000" />
       <workItem from="1610791225589" duration="8248000" />
+      <workItem from="1610910722163" duration="2823000" />
+      <workItem from="1610934239922" duration="11050000" />
+      <workItem from="1610957273519" duration="16119000" />
+      <workItem from="1611019622895" duration="15677000" />
     </task>
     <servers />
   </component>
@@ -203,12 +209,16 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser" timestamp="1610694599232">
+    <state x="320" y="92" width="800" height="717" key="#Intentions" timestamp="1611031253277">
       <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state x="533" y="116" key="#com.intellij.ide.util.MemberChooser/0.23.1440.807@0.23.1440.807" timestamp="1610303323690" />
+    <state x="320" y="92" width="800" height="717" key="#Intentions/0.23.1440.812@0.23.1440.812" timestamp="1611031253277" />
+    <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser" timestamp="1611029389836">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="533" y="116" key="#com.intellij.ide.util.MemberChooser/0.23.1440.807@0.23.1440.807" timestamp="1611020952199" />
     <state x="533" y="116" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810@0.23.1440.810" timestamp="1610350800700" />
-    <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser/0.23.1440.812@0.23.1440.812" timestamp="1610694599232" />
+    <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser/0.23.1440.812@0.23.1440.812" timestamp="1611029389836" />
     <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser/0.23.1440.813@0.23.1440.813" timestamp="1610206452155" />
     <state x="495" y="328" width="450" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1610189039709">
       <screen x="0" y="23" width="1440" height="807" />
@@ -226,34 +236,34 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="458" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.812@0.23.1440.812" timestamp="1610377539632" />
-    <state width="1398" height="205" key="GridCell.Tab.0.bottom" timestamp="1610802141641">
-      <screen x="0" y="23" width="1440" height="807" />
+    <state width="1398" height="261" key="GridCell.Tab.0.bottom" timestamp="1611047434219">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="205" key="GridCell.Tab.0.bottom/0.23.1440.807@0.23.1440.807" timestamp="1610802141641" />
+    <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.23.1440.807@0.23.1440.807" timestamp="1611025919644" />
     <state width="1398" height="217" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1610711712721" />
-    <state width="1398" height="205" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1610711528072" />
-    <state width="1398" height="205" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1610210499967" />
-    <state width="1398" height="205" key="GridCell.Tab.0.center" timestamp="1610802141640">
-      <screen x="0" y="23" width="1440" height="807" />
+    <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1611047434219" />
+    <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1611038700181" />
+    <state width="1398" height="261" key="GridCell.Tab.0.center" timestamp="1611047434218">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="205" key="GridCell.Tab.0.center/0.23.1440.807@0.23.1440.807" timestamp="1610802141640" />
+    <state width="1398" height="261" key="GridCell.Tab.0.center/0.23.1440.807@0.23.1440.807" timestamp="1611025919641" />
     <state width="1398" height="217" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1610711712720" />
-    <state width="1398" height="205" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1610711528071" />
-    <state width="1398" height="205" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1610210499965" />
-    <state width="1398" height="205" key="GridCell.Tab.0.left" timestamp="1610802141639">
-      <screen x="0" y="23" width="1440" height="807" />
+    <state width="1398" height="261" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1611047434218" />
+    <state width="1398" height="261" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1611038700179" />
+    <state width="1398" height="261" key="GridCell.Tab.0.left" timestamp="1611047434217">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="205" key="GridCell.Tab.0.left/0.23.1440.807@0.23.1440.807" timestamp="1610802141639" />
+    <state width="1398" height="261" key="GridCell.Tab.0.left/0.23.1440.807@0.23.1440.807" timestamp="1611025919640" />
     <state width="1398" height="217" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1610711712719" />
-    <state width="1398" height="205" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1610711528070" />
-    <state width="1398" height="205" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1610210499964" />
-    <state width="1398" height="205" key="GridCell.Tab.0.right" timestamp="1610802141640">
-      <screen x="0" y="23" width="1440" height="807" />
+    <state width="1398" height="261" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1611047434217" />
+    <state width="1398" height="261" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1611038700178" />
+    <state width="1398" height="261" key="GridCell.Tab.0.right" timestamp="1611047434218">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="205" key="GridCell.Tab.0.right/0.23.1440.807@0.23.1440.807" timestamp="1610802141640" />
+    <state width="1398" height="261" key="GridCell.Tab.0.right/0.23.1440.807@0.23.1440.807" timestamp="1611025919643" />
     <state width="1398" height="217" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1610711712720" />
-    <state width="1398" height="205" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1610711528072" />
-    <state width="1398" height="205" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1610210499966" />
+    <state width="1398" height="261" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1611047434218" />
+    <state width="1398" height="261" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1611038700180" />
     <state width="1398" height="217" key="GridCell.Tab.1.bottom" timestamp="1610711712722">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
@@ -278,11 +288,11 @@
       <screen x="0" y="23" width="1440" height="807" />
     </state>
     <state x="420" y="23" width="600" height="807" key="find.popup/0.23.1440.807@0.23.1440.807" timestamp="1609668614591" />
-    <state x="385" y="158" width="670" height="672" key="search.everywhere.popup" timestamp="1610188249423">
-      <screen x="0" y="23" width="1440" height="807" />
+    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup" timestamp="1610952911466">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="385" y="158" width="670" height="672" key="search.everywhere.popup/0.23.1440.807@0.23.1440.807" timestamp="1610188249423" />
-    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1609846859975" />
+    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1610952911466" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
