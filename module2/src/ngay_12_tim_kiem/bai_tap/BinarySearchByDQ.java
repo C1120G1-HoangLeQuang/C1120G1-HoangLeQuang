@@ -1,4 +1,4 @@
-package ngay_12_thuat_toan.bai_tap;
+package ngay_12_tim_kiem.bai_tap;
 
 public class BinarySearchByDQ {
     public int binarySearching(int[] arr, int low, int high, int x) {

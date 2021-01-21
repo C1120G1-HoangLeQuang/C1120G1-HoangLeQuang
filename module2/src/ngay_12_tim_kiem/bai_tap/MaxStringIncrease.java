@@ -1,4 +1,4 @@
-package ngay_12_thuat_toan.bai_tap;
+package ngay_12_tim_kiem.bai_tap;
 
 import java.util.LinkedList;
 import java.util.Scanner;

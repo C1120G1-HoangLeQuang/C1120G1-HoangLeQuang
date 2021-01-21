@@ -1,4 +1,4 @@
-package ngay_12_thuat_toan.thuc_hanh;
+package ngay_12_tim_kiem.thuc_hanh;
 
 public class BinarySearching {
     static int[] list = {2, 4, 7, 10, 11, 45, 50, 59, 60, 66, 69, 70, 79};
