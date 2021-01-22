@@ -21,10 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1f9065a5-16f4-45a7-ab43-d46a5a4a993b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ngay_12_thuat_toan/bai_tap/BinarySearchByDQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_12_tim_kiem/bai_tap/BinarySearchByDQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ngay_12_thuat_toan/bai_tap/MaxStringConsecutive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_12_tim_kiem/bai_tap/MaxStringConsecutive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ngay_12_thuat_toan/bai_tap/MaxStringIncrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_12_tim_kiem/bai_tap/MaxStringIncrease.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ngay_12_thuat_toan/thuc_hanh/BinarySearching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ngay_12_tim_kiem/thuc_hanh/BinarySearching.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +67,20 @@
       <recent name="ngay_11_collection_framework.bai_tap.production_linkedlist" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BubbleSort">
+  <component name="RunManager" selected="Application.IllegalTriangleException">
+    <configuration name="ArrayExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_14_exception.thuc_hanh.ArrayExample" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ngay_14_exception.thuc_hanh.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ngay_13_sap_xep.thuc_hanh.BubbleSort" />
       <module name="module2" />
@@ -85,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BubbleSortDescribe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_13_sap_xep.thuc_hanh.BubbleSortDescribe" />
+    <configuration name="CalculationExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_14_exception.thuc_hanh.CalculationExample" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_13_sap_xep.thuc_hanh.*" />
+          <option name="PATTERN" value="ngay_14_exception.thuc_hanh.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InsertSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_13_sap_xep.bai_tap.InsertSort" />
+    <configuration name="IllegalTriangleException" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ngay_14_exception.bai_tap.IllegalTriangleException" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ngay_13_sap_xep.bai_tap.*" />
+          <option name="PATTERN" value="ngay_14_exception.bai_tap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,26 +133,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SelectionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ngay_13_sap_xep.thuc_hanh.SelectionSort" />
-      <module name="module2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ngay_13_sap_xep.thuc_hanh.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IllegalTriangleException" />
+        <item itemvalue="Application.CalculationExample" />
+        <item itemvalue="Application.ArrayExample" />
         <item itemvalue="Application.BubbleSort" />
         <item itemvalue="Application.InsertSortDescribe" />
-        <item itemvalue="Application.InsertSort" />
-        <item itemvalue="Application.SelectionSort" />
-        <item itemvalue="Application.BubbleSortDescribe" />
       </list>
     </recent_temporary>
   </component>
@@ -200,6 +196,7 @@
       <workItem from="1611075132877" duration="875000" />
       <workItem from="1611112432330" duration="11337000" />
       <workItem from="1611193193684" duration="12736000" />
+      <workItem from="1611287429055" duration="10321000" />
     </task>
     <servers />
   </component>
@@ -223,12 +220,12 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="320" y="92" width="800" height="717" key="#Intentions/0.23.1440.812@0.23.1440.812" timestamp="1611031253277" />
-    <state x="533" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1611067526105">
-      <screen x="0" y="23" width="1440" height="807" />
+    <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser" timestamp="1611300412110">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="533" y="116" key="#com.intellij.ide.util.MemberChooser/0.23.1440.807@0.23.1440.807" timestamp="1611067526105" />
     <state x="533" y="116" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810@0.23.1440.810" timestamp="1610350800700" />
-    <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser/0.23.1440.812@0.23.1440.812" timestamp="1611050229078" />
+    <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser/0.23.1440.812@0.23.1440.812" timestamp="1611300412110" />
     <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser/0.23.1440.813@0.23.1440.813" timestamp="1610206452155" />
     <state x="495" y="328" width="450" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1610189039709">
       <screen x="0" y="23" width="1440" height="807" />
@@ -246,36 +243,36 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="458" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.812@0.23.1440.812" timestamp="1610377539632" />
-    <state width="1398" height="237" key="GridCell.Tab.0.bottom" timestamp="1611219180685">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state width="1398" height="237" key="GridCell.Tab.0.bottom" timestamp="1611306496865">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state width="1398" height="321" key="GridCell.Tab.0.bottom/0.23.1440.807@0.23.1440.807" timestamp="1611076031778" />
-    <state width="1398" height="321" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1611067651466" />
-    <state width="1398" height="321" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1611160148095" />
+    <state width="1398" height="237" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1611305217640" />
+    <state width="1398" height="237" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1611306496865" />
     <state width="1398" height="237" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1611219180685" />
     <state width="1398" height="321" key="GridCell.Tab.0.bottom/0.23.1440.815@0.23.1440.815" timestamp="1611128299645" />
-    <state width="1398" height="237" key="GridCell.Tab.0.center" timestamp="1611219180684">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state width="1398" height="237" key="GridCell.Tab.0.center" timestamp="1611306496863">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state width="1398" height="321" key="GridCell.Tab.0.center/0.23.1440.807@0.23.1440.807" timestamp="1611076031777" />
-    <state width="1398" height="321" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1611067651465" />
-    <state width="1398" height="321" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1611160148094" />
+    <state width="1398" height="237" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1611305217638" />
+    <state width="1398" height="237" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1611306496863" />
     <state width="1398" height="237" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1611219180684" />
     <state width="1398" height="321" key="GridCell.Tab.0.center/0.23.1440.815@0.23.1440.815" timestamp="1611128299644" />
-    <state width="1398" height="237" key="GridCell.Tab.0.left" timestamp="1611219180684">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state width="1398" height="237" key="GridCell.Tab.0.left" timestamp="1611306496862">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state width="1398" height="321" key="GridCell.Tab.0.left/0.23.1440.807@0.23.1440.807" timestamp="1611076031776" />
-    <state width="1398" height="321" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1611067651464" />
-    <state width="1398" height="321" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1611160148093" />
+    <state width="1398" height="237" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1611305217636" />
+    <state width="1398" height="237" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1611306496862" />
     <state width="1398" height="237" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1611219180684" />
     <state width="1398" height="321" key="GridCell.Tab.0.left/0.23.1440.815@0.23.1440.815" timestamp="1611128299643" />
-    <state width="1398" height="237" key="GridCell.Tab.0.right" timestamp="1611219180684">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state width="1398" height="237" key="GridCell.Tab.0.right" timestamp="1611306496864">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state width="1398" height="321" key="GridCell.Tab.0.right/0.23.1440.807@0.23.1440.807" timestamp="1611076031777" />
-    <state width="1398" height="321" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1611067651466" />
-    <state width="1398" height="321" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1611160148094" />
+    <state width="1398" height="237" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1611305217639" />
+    <state width="1398" height="237" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1611306496864" />
     <state width="1398" height="237" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1611219180684" />
     <state width="1398" height="321" key="GridCell.Tab.0.right/0.23.1440.815@0.23.1440.815" timestamp="1611128299644" />
     <state width="1398" height="217" key="GridCell.Tab.1.bottom" timestamp="1610711712722">
