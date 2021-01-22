@@ -18,7 +18,7 @@ public class IllegalTriangleException {
                 throw new SideTriangleException("Sides is smaller 0");
             }
             if (side1 + side2 < side3 || side1 + side3 < side2 || side2 + side3 < side1) {
-                throw new SideTriangleException("total of 2 sides isn't smaller the rest");
+                throw new SideTriangleException("total of 2 sides is smaller the rest");
             }
         } catch (InputMismatchException e) {
             throw new SideTriangleException("Side have to be a number");
@@ -29,7 +29,7 @@ public class IllegalTriangleException {
     public static void main(String[] args) {
        try {
            int[] array = enterSide();
-           System.out.println("Length of three side is: ");
+           System.out.println("Length of three side (side1, side2, side3) is: ");
            for (int side: array) {
                System.out.print(side + " ");
            }
