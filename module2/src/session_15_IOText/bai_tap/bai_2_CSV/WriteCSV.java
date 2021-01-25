@@ -35,7 +35,7 @@ public class WriteCSV {
             System.out.println("CSV file was created successfully !!!");
 
         } catch (Exception e) {
-            System.out.println("Error in CsvFileWriter !!!");
+            System.out.println("Error in Writer !!!");
             e.printStackTrace();
         } finally {
             try {
