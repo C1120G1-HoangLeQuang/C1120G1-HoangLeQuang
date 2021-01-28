@@ -1,5 +1,6 @@
 package ngay_1_introduceJava.thuc_hanh;
 
+import java.util.Collections;
 import java.util.Scanner;
 
 public class AreaRectangle {
@@ -13,5 +14,6 @@ public class AreaRectangle {
         height = scanner.nextFloat();
         float area = width * height;
         System.out.println(area);
+       
     }
 }
