@@ -1,12 +1,19 @@
 package Controllers;
 
+import Libs.CustomerManager;
+import Libs.HouseManager;
+import Libs.RoomManager;
+import Libs.VillaManager;
+
 import java.util.Scanner;
 
 public class MainController {
-
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
+    static VillaManager villaManager = new VillaManager();
+    static HouseManager houseManager = new HouseManager();
+    static RoomManager roomManager = new RoomManager();
+    static CustomerManager customerManager = new CustomerManager();
+    public static void disPlayMainMenu() {
         while (true) {
             System.out.println(" Enter function\n" +
                     "1. Add New Service\n" +
@@ -16,7 +23,133 @@ public class MainController {
                     "5. Add New Booking\n" +
                     "6. Show Information of Employee\n" +
                     "7. Exit");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choiceMain = Integer.parseInt(scanner.nextLine());
+            switch (choiceMain) {
+                case 1:
+                    addNewService();
+                    break;
+                case 2:
+                    showService();
+                    break;
+                case 3:
+                    addNewCustomer();
+                    break;
+                case 4:
+                    showInformationCustomer();
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    System.exit(7);
+                    break;
+            }
+        }
+    }
+    public static void addNewService() {
+        while (true) {
+            System.out.println(" Enter function Add Service\n" +
+                    "1. Add New Villa\n" +
+                    "2. Add New House\n" +
+                    "3. Add New Room\n" +
+                    "4. Back to Main Menu\n" +
+                    "5. Exit");
+            int choiceAddService = Integer.parseInt(scanner.nextLine());
+            switch (choiceAddService) {
+                case 1:
+                    villaManager.addVilla();
+                    break;
+                case 2:
+                    houseManager.addHouse();
+                    break;
+                case 3:
+                    roomManager.addRoom();
+                    break;
+                case 4:
+                    disPlayMainMenu();
+                    break;
+                case 5:
+                    System.exit(5);
+                    break;
+            }
+        }
+    }
+    public static void showService() {
+        while (true) {
+            System.out.println(" Enter function Show Service\n" +
+                    "1. Show all Villa\n" +
+                    "2. Show all House\n" +
+                    "3. Show all Room\n" +
+                    "4. Show All Name Villa Not Duplicate\n" +
+                    "5. Show All Name House Not Duplicate\n" +
+                    "6. Show All Name Room Not Duplicate\n" +
+                    "7. Back to Main Menu\n" +
+                    "8. Exit");
+            int choiceShowService = Integer.parseInt(scanner.nextLine());
+            switch (choiceShowService) {
+                case 1:
+                    villaManager.showVilla();
+                    break;
+                case 2:
+                    houseManager.showHouse();
+                    break;
+                case 3:
+                    roomManager.showRoom();
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    disPlayMainMenu();
+                    break;
+                case 8:
+                    System.exit(8);
+                    break;
+            }
+        }
+    }
+    public static void addNewCustomer() {
+        while (true) {
+            System.out.println(" Enter function Add Customer\n" +
+                    "1. Add New Villa\n" +
+                    "2. Back to Main Menu\n" +
+                    "3. Exit");
+            int choiceAddCustomer = Integer.parseInt(scanner.nextLine());
+            switch (choiceAddCustomer) {
+                case 1:
+                    customerManager.addCustomer();
+                    break;
+                case 2:
+                    disPlayMainMenu();
+                    break;
+                case 3:
+                    System.exit(3);
+                    break;
+            }
+        }
+    }
+    public static void showInformationCustomer() {
+        while (true) {
+            System.out.println(" Enter function Show Customer\n" +
+                    "1. Show information Customer\n" +
+                    "2. Back to Main Menu\n" +
+                    "3. Exit");
+            int choiceShowCustomer = Integer.parseInt(scanner.nextLine());
+            switch (choiceShowCustomer) {
+                case 1:
+                    customerManager.showCustomer();
+                    break;
+                case 2:
+                    disPlayMainMenu();
+                    break;
+                case 3:
+                    System.exit(3);
+                    break;
+            }
         }
     }
 }

@@ -40,7 +40,7 @@ public class ReadAndWriteVilla {
             String[] arr;
             while ((line = bufferedReader.readLine()) != null) {
                 arr = line.split(",");
-                Villa villa = new Villa(arr[0], arr[1], Float.parseFloat(arr[2]), Float.parseFloat(arr[3]), arr[4], arr[5], arr[6], arr[7], Float.parseFloat(arr[8]), arr[9]);
+                Villa villa = new Villa(arr[0], arr[1], Float.parseFloat(arr[2]), Float.parseFloat(arr[3]), Integer.parseInt(arr[4]), arr[5], arr[6], arr[7], Float.parseFloat(arr[8]), Integer.parseInt(arr[9]));
                 list.add(villa);
             }
         } catch (IOException e) {

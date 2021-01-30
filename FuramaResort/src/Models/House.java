@@ -3,13 +3,13 @@ package Models;
 public class House extends Services {
     private String roomStandard;
     private String otherService;
-    private String numberFloor;
+    private int numberFloor;
 
-    public House(String id, String nameService, float area, float price, String maxPeople, String typeRental) {
+    public House(String id, String nameService, float area, float price, int maxPeople, String typeRental) {
         super(id, nameService, area, price, maxPeople, typeRental);
     }
 
-    public House(String id, String nameService, float area, float price, String maxPeople, String typeRental, String roomStandard, String otherService, String numberFloor) {
+    public House(String id, String nameService, float area, float price, int maxPeople, String typeRental, String roomStandard, String otherService, int numberFloor) {
         super(id, nameService, area, price, maxPeople, typeRental);
         this.roomStandard = roomStandard;
         this.otherService = otherService;
@@ -32,17 +32,17 @@ public class House extends Services {
         this.otherService = otherService;
     }
 
-    public String getNumberFloor() {
+    public int getNumberFloor() {
         return numberFloor;
     }
 
-    public void setNumberFloor(String numberFloor) {
+    public void setNumberFloor(int numberFloor) {
         this.numberFloor = numberFloor;
     }
 
     @Override
-    void showInformation() {
-        System.out.println("Villa {" + "IdService: " + getId() + "\n"
+    public String showInformation() {
+        return "House {" + "IdService: " + getId() + "\n"
                 + "NameService: " + getNameService() + "\n"
                 + "Area: " + getArea() + "\n"
                 + "Price: " + getPrice() + "\n"
@@ -50,7 +50,7 @@ public class House extends Services {
                 + "RentalType: " + getTypeRental() + "\n"
                 + "RoomStandard: " + getRoomStandard() + "\n"
                 + "OtherService: " + getOtherService() + "\n"
-                + "NumberFloor: " + getNumberFloor() + "}");
+                + "NumberFloor: " + getNumberFloor() + "}";
     }
 
     @Override

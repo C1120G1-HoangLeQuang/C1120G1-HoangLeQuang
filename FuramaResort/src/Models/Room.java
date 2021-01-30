@@ -3,11 +3,11 @@ package Models;
 public class Room extends Services{
     private String freeService;
 
-    public Room(String id, String nameService, float area, float price, String maxPeople, String typeRental) {
+    public Room(String id, String nameService, float area, float price, int maxPeople, String typeRental) {
         super(id, nameService, area, price, maxPeople, typeRental);
     }
 
-    public Room(String id, String nameService, float area, float price, String maxPeople, String typeRental, String freeService) {
+    public Room(String id, String nameService, float area, float price, int maxPeople, String typeRental, String freeService) {
         super(id, nameService, area, price, maxPeople, typeRental);
         this.freeService = freeService;
     }
@@ -21,14 +21,14 @@ public class Room extends Services{
     }
 
     @Override
-    void showInformation() {
-        System.out.println("Villa {" + "IdService: " + getId() + "\n"
+    public String showInformation() {
+        return "Room {" + "IdService: " + getId() + "\n"
                 + "NameService: " + getNameService() + "\n"
                 + "Area: " + getArea() + "\n"
                 + "Price: " + getPrice() + "\n"
                 + "MaxPeople: " + getMaxPeople() + "\n"
                 + "RentalType: " + getTypeRental() + "\n"
-                + "FreeService: " + getFreeService() + "}");
+                + "FreeService: " + getFreeService() + "}";
     }
 
     @Override

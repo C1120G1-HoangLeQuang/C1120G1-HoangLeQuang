@@ -4,13 +4,13 @@ public class Villa extends Services {
     private String roomStandard;
     private String otherService;
     private float poolArea;
-    private String numberFloor;
+    private int numberFloor;
 
-    public Villa(String id, String nameService, float area, float price, String maxPeople, String typeRental) {
+    public Villa(String id, String nameService, float area, float price, int maxPeople, String typeRental) {
         super(id, nameService, area, price, maxPeople, typeRental);
     }
 
-    public Villa(String id, String nameService, float area, float price, String maxPeople, String typeRental, String roomStandard, String otherService, float poolArea, String numberFloor) {
+    public Villa(String id, String nameService, float area, float price, int maxPeople, String typeRental, String roomStandard, String otherService, float poolArea, int numberFloor) {
         super(id, nameService, area, price, maxPeople, typeRental);
         this.roomStandard = roomStandard;
         this.otherService = otherService;
@@ -42,17 +42,17 @@ public class Villa extends Services {
         this.poolArea = poolArea;
     }
 
-    public String getNumberFloor() {
+    public int getNumberFloor() {
         return numberFloor;
     }
 
-    public void setNumberFloor(String numberFloor) {
+    public void setNumberFloor(int numberFloor) {
         this.numberFloor = numberFloor;
     }
 
     @Override
-    public void showInformation() {
-        System.out.println("Villa {" + "IdService: " + getId() + "\n"
+    public String showInformation() {
+        return "Villa {" + "IdService: " + getId() + "\n"
             + "NameService: " + getNameService() + "\n"
             + "Area: " + getArea() + "\n"
             + "Price: " + getPrice() + "\n"
@@ -61,7 +61,7 @@ public class Villa extends Services {
             + "RoomStandard: " + getRoomStandard() + "\n"
             + "OtherService: " + getOtherService() + "\n"
             + "PoolArea: " + getPoolArea() + "\n"
-            + "NumberFloor: " + getNumberFloor() + "}");
+            + "NumberFloor: " + getNumberFloor() + "}";
     }
 
     @Override

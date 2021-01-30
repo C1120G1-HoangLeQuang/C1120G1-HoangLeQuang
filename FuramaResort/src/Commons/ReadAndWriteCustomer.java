@@ -1,36 +1,36 @@
 package Commons;
 
-import Models.House;
+import Models.Customer;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadAndWriteHouse {
-    static final String PATH_HOUSE = "src/Data/House.csv";
-    static File file = new File(PATH_HOUSE);
-    public static void writeHouse(List<House> list, boolean option) {
+public class ReadAndWriteCustomer {
+    static final String PATH_CUSTOMER = "src/Data/Customer.csv";
+    static File file = new File(PATH_CUSTOMER);
+    public static void writeCustomer(List<Customer> list, boolean option) {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
             fileWriter = new FileWriter(file);
             bufferedWriter = new BufferedWriter(fileWriter);
-            for (House house : list) {
-                bufferedWriter.write(house.toString());
+            for (Customer customer : list) {
+                bufferedWriter.write(customer.toString());
                 bufferedWriter.newLine();
             }
-        } catch (IOException e) {
+        }catch (IOException e) {
             e.printStackTrace();
-        } finally {
-           try {
-               bufferedWriter.close();
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
+        }finally {
+            try {
+                bufferedWriter.close();
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
-    public static List<House> readHouse() {
-        List<House> list = new ArrayList<>();
+    public static List<Customer> readCustomer() {
+        List<Customer> list = new ArrayList<>();
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
         try {
@@ -40,8 +40,8 @@ public class ReadAndWriteHouse {
             String[] arr;
             while ((line = bufferedReader.readLine()) != null) {
                 arr = line.split(",");
-                House house = new House(arr[0], arr[1], Float.parseFloat(arr[2]), Float.parseFloat(arr[3]), Integer.parseInt(arr[4]), arr[5], arr[6], arr[7], Integer.parseInt(arr[8]));
-                list.add(house);
+                Customer customer = new Customer(arr[0], arr[1], arr[2], Integer.parseInt(arr[3]), Integer.parseInt(arr[4]), arr[5], arr[6], arr[7]);
+                list.add(customer);
             }
         } catch (IOException e) {
             e.printStackTrace();

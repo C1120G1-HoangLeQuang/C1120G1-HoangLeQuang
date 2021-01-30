@@ -5,10 +5,10 @@ public abstract class Services {
     public String nameService;
     public float area;
     public float price;
-    public String maxPeople;
+    public int maxPeople;
     public String typeRental;
 
-    public Services(String id, String nameService, float area, float price, String maxPeople, String typeRental) {
+    public Services(String id, String nameService, float area, float price, int maxPeople, String typeRental) {
         this.id = id;
         this.nameService = nameService;
         this.area = area;
@@ -49,11 +49,11 @@ public abstract class Services {
         this.price = price;
     }
 
-    public String getMaxPeople() {
+    public int getMaxPeople() {
         return maxPeople;
     }
 
-    public void setMaxPeople(String maxPeople) {
+    public void setMaxPeople(int maxPeople) {
         this.maxPeople = maxPeople;
     }
 
@@ -65,5 +65,5 @@ public abstract class Services {
         this.typeRental = typeRental;
     }
 
-    abstract void showInformation();
+    abstract String showInformation();
 }
