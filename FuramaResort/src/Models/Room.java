@@ -22,12 +22,12 @@ public class Room extends Services{
 
     @Override
     public String showInformation() {
-        return "Room {" + "IdService: " + getId() + "\n"
-                + "NameService: " + getNameService() + "\n"
-                + "Area: " + getArea() + "\n"
-                + "Price: " + getPrice() + "\n"
-                + "MaxPeople: " + getMaxPeople() + "\n"
-                + "RentalType: " + getTypeRental() + "\n"
+        return "Room {" + "IdService: " + getId() + ", "
+                + "NameService: " + getNameService() + ", "
+                + "Area: " + getArea() + ", "
+                + "Price: " + getPrice() + ", "
+                + "MaxPeople: " + getMaxPeople() + ", "
+                + "RentalType: " + getTypeRental() + ", "
                 + "FreeService: " + getFreeService() + "}";
     }
 

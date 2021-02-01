@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.Objects;
+
 public class Villa extends Services {
     private String roomStandard;
     private String otherService;
@@ -52,15 +54,15 @@ public class Villa extends Services {
 
     @Override
     public String showInformation() {
-        return "Villa {" + "IdService: " + getId() + "\n"
-            + "NameService: " + getNameService() + "\n"
-            + "Area: " + getArea() + "\n"
-            + "Price: " + getPrice() + "\n"
-            + "MaxPeople: " + getMaxPeople() + "\n"
-            + "RentalType: " + getTypeRental() + "\n"
-            + "RoomStandard: " + getRoomStandard() + "\n"
-            + "OtherService: " + getOtherService() + "\n"
-            + "PoolArea: " + getPoolArea() + "\n"
+        return "Villa {" + "IdService: " + getId() + ", "
+            + "NameService: " + getNameService() + ", "
+            + "Area: " + getArea() + ", "
+            + "Price: " + getPrice() + ", "
+            + "MaxPeople: " + getMaxPeople() + ", "
+            + "RentalType: " + getTypeRental() + ", "
+            + "RoomStandard: " + getRoomStandard() + ", "
+            + "OtherService: " + getOtherService() + ", "
+            + "PoolArea: " + getPoolArea() + ", "
             + "NumberFloor: " + getNumberFloor() + "}";
     }
 
@@ -77,4 +79,21 @@ public class Villa extends Services {
                 poolArea + ',' +
                 numberFloor;
     }
+
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj) {
+//            return true;
+//        }
+//        if ((obj == null) ||(getClass() != obj.getClass())) {
+//            return false;
+//        }
+//        Villa villa = (Villa) obj;
+//        return nameService == villa.nameService;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(nameService);
+//    }
 }

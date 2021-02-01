@@ -13,7 +13,7 @@ public class ReadAndWriteHouse {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter(file);
+            fileWriter = new FileWriter(file, option);
             bufferedWriter = new BufferedWriter(fileWriter);
             for (House house : list) {
                 bufferedWriter.write(house.toString());

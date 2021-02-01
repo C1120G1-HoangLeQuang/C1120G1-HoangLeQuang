@@ -13,7 +13,7 @@ public class ReadAndWriteCustomer {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter(file);
+            fileWriter = new FileWriter(file,option);
             bufferedWriter = new BufferedWriter(fileWriter);
             for (Customer customer : list) {
                 bufferedWriter.write(customer.toString());

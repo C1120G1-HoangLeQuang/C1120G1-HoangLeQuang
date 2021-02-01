@@ -1,12 +1,12 @@
 package Libs;
 
 import Commons.ReadAndWriteRoom;
+import Commons.ReadAndWriteVilla;
 import Models.Room;
+import Models.Villa;
 import Regex.ServiceRegex.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class RoomManager {
     Scanner scanner = new Scanner(System.in);
@@ -59,5 +59,22 @@ public class RoomManager {
         for (int i = 0; i < listRoom.size(); i++) {
             System.out.println((i+1) + ". " + listRoom.get(i).showInformation());
         }
+    }
+    public void showRoomNotDuplicate() {
+        List<Room> listRoom = ReadAndWriteRoom.readRoom();
+        TreeSet<Room> treeSetRoom = new TreeSet<>(new Comparator<Room>() {
+            @Override
+            public int compare(Room o1, Room o2) {
+                if (o1.getNameService().compareTo(o2.getNameService()) > 0) {
+                    return 1;
+                } else if (o1.getNameService().compareTo(o2.getNameService()) < 0) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        });
+        treeSetRoom.addAll(listRoom);
+        System.out.println(treeSetRoom);
     }
 }

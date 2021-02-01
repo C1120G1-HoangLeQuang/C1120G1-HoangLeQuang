@@ -13,7 +13,7 @@ public class ReadAndWriteRoom {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter(file);
+            fileWriter = new FileWriter(file, option);
             bufferedWriter = new BufferedWriter(fileWriter);
             for (Room room : list) {
                 bufferedWriter.write(room.toString());

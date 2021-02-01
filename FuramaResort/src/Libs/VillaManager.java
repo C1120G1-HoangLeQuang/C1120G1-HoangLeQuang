@@ -1,12 +1,11 @@
 package Libs;
 
+import Commons.ReadAndWriteHouse;
 import Commons.ReadAndWriteVilla;
 import Models.Villa;
 import Regex.ServiceRegex.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class VillaManager {
@@ -67,5 +66,22 @@ public class VillaManager {
         for (int i = 0; i < listVilla.size(); i++) {
             System.out.println((i+1) + ". " + listVilla.get(i).showInformation());
         }
+    }
+    public void showVillaNotDuplicate() {
+        List<Villa> listVilla = ReadAndWriteVilla.readVilla();
+        TreeSet<Villa> treeSetVilla = new TreeSet<>(new Comparator<Villa>() {
+            @Override
+            public int compare(Villa o1, Villa o2) {
+                if (o1.getNameService().compareTo(o2.getNameService()) > 0) {
+                    return 1;
+                } else if (o1.getNameService().compareTo(o2.getNameService()) < 0) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        });
+        treeSetVilla.addAll(listVilla);
+        System.out.println(treeSetVilla);
     }
 }

@@ -1,12 +1,12 @@
 package Libs;
 
 import Commons.ReadAndWriteHouse;
+import Commons.ReadAndWriteVilla;
 import Models.House;
+import Models.Villa;
 import Regex.ServiceRegex.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class HouseManager {
     Scanner scanner = new Scanner(System.in);
@@ -22,7 +22,6 @@ public class HouseManager {
             System.out.print("Enter name service: ");
             nameService = scanner.nextLine();
         } while (!NameSvRegex.checkNameService(nameService));
-
         float area;
         do {
             System.out.print("Enter area: ");
@@ -61,5 +60,22 @@ public class HouseManager {
         for (int i = 0; i < listHouse.size(); i++) {
             System.out.println((i+1) + ". " + listHouse.get(i).showInformation());
         }
+    }
+    public void showHouseNotDuplicate() {
+        List<House> listHouse = ReadAndWriteHouse.readHouse();
+        TreeSet<House> treeSetHouse = new TreeSet<>(new Comparator<House>() {
+            @Override
+            public int compare(House o1, House o2) {
+                if (o1.getNameService().compareTo(o2.getNameService()) > 0) {
+                    return 1;
+                } else if (o1.getNameService().compareTo(o2.getNameService()) < 0) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        });
+        treeSetHouse.addAll(listHouse);
+        System.out.println(treeSetHouse);
     }
 }

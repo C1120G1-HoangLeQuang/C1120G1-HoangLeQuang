@@ -99,15 +99,15 @@ public class Customer {
     }
 
     public String showInformation() {
-        return "Customer {" + "Name: " + getNameCustomer() + "\n"
-                    + "Date of Birth: " + getDateOfBirth() + "\n"
-                    + "Gender: " + getGender() + "\n"
-                    + "Id Number: " + getIdCustomer() + "\n"
-                    + "Telephone Number: " + getTelephoneNumber() + "\n"
-                    + "Email: " + getEmail() + "\n"
-                    + "Type of Customer: " + getTypeCustomer() + "\n"
-                    + "Address: " + getAddress() + "\n"
-                    + "Service: " + getUsingService();
+        return "Customer {" + "Name: " + getNameCustomer() + ", "
+                    + "Date of Birth: " + getDateOfBirth() + ", "
+                    + "Gender: " + getGender() + ", "
+                    + "Id Number: " + getIdCustomer() + ", "
+                    + "Telephone Number: " + getTelephoneNumber() + ", "
+                    + "Email: " + getEmail() + ", "
+                    + "Type of Customer: " + getTypeCustomer() + ", "
+                    + "Address: " + getAddress() + ", "
+                    + "Service: " + getUsingService() + "}";
     }
 
     @Override

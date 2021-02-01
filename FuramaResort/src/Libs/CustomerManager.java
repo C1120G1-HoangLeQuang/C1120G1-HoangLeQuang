@@ -2,8 +2,10 @@ package Libs;
 
 import Commons.ReadAndWriteCustomer;
 import Models.Customer;
+import Regex.CustomerRegex.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,23 +14,33 @@ public class CustomerManager {
     public void addCustomer() {
         List<Customer> listCustomer = new ArrayList<>();
         String nameCustomer;
-        System.out.print("Enter name customer: ");
-        nameCustomer = scanner.nextLine();
+        do {
+            System.out.print("Enter name customer: ");
+            nameCustomer = scanner.nextLine();
+        } while (!NameCustomerRegex.checkNameCustomer(nameCustomer));
         String dateOfBirth;
-        System.out.print("Enter date of birth: ");
-        dateOfBirth = scanner.nextLine();
+        do {
+            System.out.print("Enter date of birth: ");
+            dateOfBirth = scanner.nextLine();
+        } while (!DOBRegex.checkDOB(dateOfBirth));
         String gender;
-        System.out.print("Enter gender: ");
-        gender = scanner.nextLine();
+        do {
+            System.out.print("Enter gender: ");
+            gender = scanner.nextLine();
+        } while (!GenderRegex.checkGender(gender));
         int idCustomer;
-        System.out.print("Enter id customer: ");
-        idCustomer = Integer.parseInt(scanner.nextLine());
+        do {
+            System.out.print("Enter id customer: ");
+            idCustomer = Integer.parseInt(scanner.nextLine());
+        } while (!IdCustomerRegex.checkIdCustomer(idCustomer));
         int phoneNumber;
         System.out.print("Enter phone number: ");
         phoneNumber = Integer.parseInt(scanner.nextLine());
-        String email;
-        System.out.print("Enter email: ");
-        email = scanner.nextLine();
+        String email = "";
+        do {
+            System.out.print("Enter email: ");
+            email = scanner.nextLine();
+        } while (!EmailRegex.checkEmail(email));
         System.out.print("Enter type of customer: ");
         String typeCustomer = scanner.nextLine();
         System.out.print("Enter address: ");
@@ -39,6 +51,8 @@ public class CustomerManager {
     }
     public void showCustomer() {
         List<Customer> listCustomer = ReadAndWriteCustomer.readCustomer();
+        NameComparatorUp nameComparatorUp = new NameComparatorUp();
+        Collections.sort(listCustomer, nameComparatorUp);
         for (int i = 0; i < listCustomer.size(); i++) {
             System.out.println((i+1) + ". " + listCustomer.get(i).showInformation());
         }

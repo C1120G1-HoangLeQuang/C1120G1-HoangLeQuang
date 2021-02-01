@@ -42,14 +42,14 @@ public class House extends Services {
 
     @Override
     public String showInformation() {
-        return "House {" + "IdService: " + getId() + "\n"
-                + "NameService: " + getNameService() + "\n"
-                + "Area: " + getArea() + "\n"
-                + "Price: " + getPrice() + "\n"
-                + "MaxPeople: " + getMaxPeople() + "\n"
-                + "RentalType: " + getTypeRental() + "\n"
-                + "RoomStandard: " + getRoomStandard() + "\n"
-                + "OtherService: " + getOtherService() + "\n"
+        return "House {" + "IdService: " + getId() + ", "
+                + "NameService: " + getNameService() + ", "
+                + "Area: " + getArea() + ", "
+                + "Price: " + getPrice() + ", "
+                + "MaxPeople: " + getMaxPeople() + ", "
+                + "RentalType: " + getTypeRental() + ", "
+                + "RoomStandard: " + getRoomStandard() + ", "
+                + "OtherService: " + getOtherService() + ", "
                 + "NumberFloor: " + getNumberFloor() + "}";
     }
 

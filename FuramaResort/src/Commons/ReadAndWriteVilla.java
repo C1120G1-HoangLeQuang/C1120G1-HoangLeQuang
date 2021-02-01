@@ -13,7 +13,7 @@ public class ReadAndWriteVilla {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter(file);
+            fileWriter = new FileWriter(file, option);
             bufferedWriter = new BufferedWriter(fileWriter);
             for (Villa villa : list) {
                 bufferedWriter.write(villa.toString());
