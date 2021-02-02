@@ -4,10 +4,7 @@ import Commons.ReadAndWriteCustomer;
 import Models.Customer;
 import Regex.CustomerRegex.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class CustomerManager {
     Scanner scanner = new Scanner(System.in);

@@ -1,8 +1,10 @@
 package Controllers;
 
+import Commons.ReadAndWriteCustomer;
 import Libs.*;
+import Models.Customer;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class MainController {
     static Scanner scanner = new Scanner(System.in);
@@ -12,6 +14,7 @@ public class MainController {
     static CustomerManager customerManager = new CustomerManager();
     static BookingManager bookingManager = new BookingManager();
     static EmployeeManager employeeManager = new EmployeeManager();
+    static Queue<String> cinemaQueue = new LinkedList<>();
     public static void disPlayMainMenu() {
         while (true) {
             System.out.println(" -------Welcome to Furama Resort------\n" +
@@ -22,7 +25,9 @@ public class MainController {
                     "5. Add New Booking\n" +
                     "6. Add Information of Employee\n" +
                     "7. Show Information of Employee\n" +
-                    "8. Exit");
+                    "8. Find Information of Employee\n" +
+                    "9. Show Cinema Service\n" +
+                    "10. Exit");
             int choiceMain = Integer.parseInt(scanner.nextLine());
             switch (choiceMain) {
                 case 1:
@@ -47,7 +52,13 @@ public class MainController {
                     showInformationEmployee();
                     break;
                 case 8:
-                    System.exit(8);
+                    findCabinetEmployee();
+                    break;
+                case 9:
+                    showCinemaService();
+                    break;
+                case 10:
+                    System.exit(10);
                     break;
             }
         }
@@ -165,5 +176,55 @@ public class MainController {
     }
     public static void showInformationEmployee() {
         employeeManager.showEmployee();
+    }
+    public static void showCinemaService() {
+        int numTicket = 3;
+        while (true) {
+            System.out.println(" ---Enter function Show Cinema Service---\n" +
+                    "1. Add Cinema Customer \n" +
+                    "2. Show Cinema Customer \n" +
+                    "3. Back to Main Menu\n" +
+                    "4. Exit");
+            int choiceCinemaCustomer = Integer.parseInt(scanner.nextLine());
+
+            switch (choiceCinemaCustomer) {
+                case 1:
+                    List<Customer> listCinema = ReadAndWriteCustomer.readCustomer();
+                    if (cinemaQueue.size() < numTicket) {
+                        for (int i = 0; i < listCinema.size(); i++) {
+                            System.out.println((i+1) + ". " + listCinema.get(i).showInformation());
+                        }
+                        System.out.println("Please choose customer to buy ticket!");
+                        int choiceCustomerBuy = Integer.parseInt(scanner.nextLine());
+                        cinemaQueue.offer(listCinema.get(choiceCustomerBuy -1).getNameCustomer());
+                    } else {
+                        System.out.println("Out of ticket");
+                    }
+                    break;
+                case 2:
+                    if (cinemaQueue.size() == numTicket) {
+                        while (!cinemaQueue.isEmpty()) {
+                            System.out.println(cinemaQueue.poll());
+                        }
+                    } else {
+                        System.out.println("The rest of ticket: " + (numTicket - cinemaQueue.size()));
+                    }
+                    break;
+                case 3:
+                    disPlayMainMenu();
+                    break;
+                case 4:
+                    System.exit(choiceCinemaCustomer);
+                    break;
+                default:
+                    System.out.println("Error");
+                    break;
+            }
+        }
+    }
+    public static void findCabinetEmployee() {
+        System.out.println("Enter id of employee: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        System.out.println(employeeManager.findEmployee(id));
     }
 }
