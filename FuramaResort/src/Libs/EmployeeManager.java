@@ -9,12 +9,22 @@ public class EmployeeManager {
     Scanner scanner = new Scanner(System.in);
     public void addEmployee() {
         List<Employee> listEmployee = new ArrayList<>();
-        System.out.print("Enter ID employee: ");
-        int idEmp = Integer.parseInt(scanner.nextLine());
+        int idEmp = 0;
+        try {
+            System.out.print("Enter ID employee: ");
+            idEmp = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Id have to be integer number");
+        }
         System.out.print("Enter name employee: ");
         String nameEmployee = scanner.nextLine();
-        System.out.print("Enter age employee: ");
-        int ageEmployee = Integer.parseInt(scanner.nextLine());
+        int ageEmployee = 0;
+        try {
+            System.out.print("Enter age employee: ");
+            ageEmployee = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Age have to be integer number");
+        }
         System.out.print("Enter address employee: ");
         String addressEmployee = scanner.nextLine();
         Employee employee = new Employee(idEmp,nameEmployee, ageEmployee, addressEmployee);

@@ -25,14 +25,22 @@ public class CustomerManager {
             System.out.print("Enter gender: ");
             gender = scanner.nextLine();
         } while (!GenderRegex.checkGender(gender));
-        int idCustomer;
+        int idCustomer = 0;
         do {
-            System.out.print("Enter id customer: ");
-            idCustomer = Integer.parseInt(scanner.nextLine());
+            try {
+                System.out.print("Enter id customer: ");
+                idCustomer = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Id have to be integer number");
+            }
         } while (!IdCustomerRegex.checkIdCustomer(idCustomer));
-        int phoneNumber;
-        System.out.print("Enter phone number: ");
-        phoneNumber = Integer.parseInt(scanner.nextLine());
+        int phoneNumber = 0;
+        try {
+            System.out.print("Enter phone number: ");
+            phoneNumber = Integer.parseInt(scanner.nextLine());
+        }catch (NumberFormatException e) {
+            System.out.println("Telephone number have to be integer number");
+        }
         String email = "";
         do {
             System.out.print("Enter email: ");
