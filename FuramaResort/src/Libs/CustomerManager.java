@@ -10,6 +10,7 @@ public class CustomerManager {
     Scanner scanner = new Scanner(System.in);
     public void addCustomer() {
         List<Customer> listCustomer = new ArrayList<>();
+        StandardData standardData = new StandardData();
         String nameCustomer;
         do {
             System.out.print("Enter name customer: ");
@@ -25,6 +26,7 @@ public class CustomerManager {
             System.out.print("Enter gender: ");
             gender = scanner.nextLine();
         } while (!GenderRegex.checkGender(gender));
+        gender = standardData.standardized(gender);
         int idCustomer = 0;
         do {
             try {
