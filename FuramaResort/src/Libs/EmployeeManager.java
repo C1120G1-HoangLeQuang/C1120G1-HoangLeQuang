@@ -42,12 +42,13 @@ public class EmployeeManager {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
-//    public void stackEmployee() {
+//    public Stack<Map.Entry<Integer, Employee>> stackEmployee() {
 //        Stack<Map.Entry<Integer, Employee>> employeeStack = new Stack<>();
 //        Map<Integer, Employee> mapEmployee = new HashMap<>();
 //        for (Map.Entry<Integer, Employee> entry : mapEmployee.entrySet()) {
 //            employeeStack.push(entry);
 //        }
+//        return employeeStack;
 //    }
     public Stack<Employee> saveStackEmployee() {
         Stack<Employee> employeeStack = new Stack<>();

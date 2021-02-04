@@ -1,12 +1,10 @@
 package Libs;
 
-import Commons.ReadAndWriteHouse;
 import Commons.ReadAndWriteVilla;
 import Models.Villa;
 import Regex.ServiceRegex.*;
 
 import java.util.*;
-import java.util.regex.Pattern;
 
 public class VillaManager {
     Scanner scanner = new Scanner(System.in);

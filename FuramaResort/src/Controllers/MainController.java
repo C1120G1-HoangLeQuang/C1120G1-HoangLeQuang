@@ -203,6 +203,7 @@ public class MainController {
                     break;
                 case 2:
                     if (cinemaQueue.size() == numTicket) {
+//                        System.out.println("The rest of ticket: " + (numTicket - cinemaQueue.size()));
                         while (!cinemaQueue.isEmpty()) {
                             System.out.println(cinemaQueue.poll());
                         }
