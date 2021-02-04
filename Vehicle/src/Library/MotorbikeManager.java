@@ -31,8 +31,13 @@ public class MotorbikeManager {
         String yearMFG = scanner.nextLine();
         System.out.print("Enter name of owner: ");
         String owner = scanner.nextLine();
-        System.out.print("Enter horsepower: ");
-        int horsePower = Integer.parseInt(scanner.nextLine());
+        int horsePower = 0;
+        try {
+            System.out.print("Enter horsepower: ");
+            horsePower = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Horsepower have to be integer number");
+        }
         Motorbike motorbike = new Motorbike(licensePlate, brand, yearMFG, owner, horsePower);
         listMotorbike.add(motorbike);
         ReadAndWriteMotorbike.writeMotorbike(listMotorbike, true);

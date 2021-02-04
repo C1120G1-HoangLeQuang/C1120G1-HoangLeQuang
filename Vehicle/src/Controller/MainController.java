@@ -26,81 +26,99 @@ public class MainController {
 
     public static void disPlayMainMenu() {
         while (true) {
-            System.out.println(" -------Welcome to Transportation Management System------\n" +
-                    "1. Add New Transportation\n" +
-                    "2. Show Transportation\n" +
-                    "3. Delete Transportation\n" +
-                    "4. Exit");
-            int choiceMain = Integer.parseInt(scanner.nextLine());
-            switch (choiceMain) {
-                case 1:
-                    addNewTransportation();
-                    break;
-                case 2:
-                    showTransportation();
-                    break;
-                case 3:
-                    deleteTransportation();
-                    break;
-                case 4:
-                    System.exit(4);
-                    break;
+            try {
+                while (true) {
+                    System.out.println(" -------Welcome to Transportation Management System------\n" +
+                            "1. Add New Transportation\n" +
+                            "2. Show Transportation\n" +
+                            "3. Delete Transportation\n" +
+                            "4. Exit");
+                    int choiceMain = Integer.parseInt(scanner.nextLine());
+                    switch (choiceMain) {
+                        case 1:
+                            addNewTransportation();
+                            break;
+                        case 2:
+                            showTransportation();
+                            break;
+                        case 3:
+                            deleteTransportation();
+                            break;
+                        case 4:
+                            System.exit(4);
+                            break;
+                    }
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("You have to enter integer number");
             }
         }
     }
 
     public static void addNewTransportation() {
         while (true) {
-            System.out.println(" ---Enter function Add Transportation---\n" +
-                    "1. Add New Car\n" +
-                    "2. Add New Truck\n" +
-                    "3. Add New Motorbike\n" +
-                    "4. Back to Main Menu\n" +
-                    "5. Exit");
-            int choiceAddTransport = Integer.parseInt(scanner.nextLine());
-            switch (choiceAddTransport) {
-                case 1:
-                    carManager.addCar();
-                    break;
-                case 2:
-                    truckManager.addTruck();
-                    break;
-                case 3:
-                    motorbikeManager.addMotorbike();
-                    break;
-                case 4:
-                    disPlayMainMenu();
-                    break;
-                case 5:
-                    break;
+            try {
+                while (true) {
+                    System.out.println(" ---Enter function Add Transportation---\n" +
+                            "1. Add New Car\n" +
+                            "2. Add New Truck\n" +
+                            "3. Add New Motorbike\n" +
+                            "4. Back to Main Menu\n" +
+                            "5. Exit");
+                    int choiceAddTransport = Integer.parseInt(scanner.nextLine());
+                    switch (choiceAddTransport) {
+                        case 1:
+                            carManager.addCar();
+                            break;
+                        case 2:
+                            truckManager.addTruck();
+                            break;
+                        case 3:
+                            motorbikeManager.addMotorbike();
+                            break;
+                        case 4:
+                            disPlayMainMenu();
+                            break;
+                        case 5:
+                            break;
+                    }
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("You have to enter integer number");
             }
         }
     }
 
     public static void showTransportation() {
         while (true) {
-            System.out.println(" ---Enter function Show Transportation---\n" +
-                    "1. Show all Car\n" +
-                    "2. Show all Truck\n" +
-                    "3. Show all Motorbike\n" +
-                    "4. Back to Main Menu\n" +
-                    "5. Exit");
-            int choiceShowTransport = Integer.parseInt(scanner.nextLine());
-            switch (choiceShowTransport) {
-                case 1:
-                    carManager.showCar();
-                    break;
-                case 2:
-                    truckManager.showTruck();
-                    break;
-                case 3:
-                    motorbikeManager.showMotorbike();
-                    break;
-                case 4:
-                    disPlayMainMenu();
-                    break;
-                case 5:
-                    break;
+            try {
+                while (true) {
+                    System.out.println(" ---Enter function Show Transportation---\n" +
+                            "1. Show all Car\n" +
+                            "2. Show all Truck\n" +
+                            "3. Show all Motorbike\n" +
+                            "4. Back to Main Menu\n" +
+                            "5. Exit");
+                    int choiceShowTransport = Integer.parseInt(scanner.nextLine());
+                    switch (choiceShowTransport) {
+                        case 1:
+                            carManager.showCar();
+                            break;
+                        case 2:
+                            truckManager.showTruck();
+                            break;
+                        case 3:
+                            motorbikeManager.showMotorbike();
+                            break;
+                        case 4:
+                            disPlayMainMenu();
+                            break;
+                        case 5:
+                            break;
+                    }
+                }
+            }catch (NumberFormatException e) {
+                System.out.println("You have to enter integer number");
             }
         }
     }
@@ -155,21 +173,28 @@ public class MainController {
         try {
             if (findLicense(deleteLicense) != null) {
                 while (true) {
-                    System.out.println(" Please confirm weather you want to delete vehicle?\n" +
-                            "1. Yes\n" +
-                            "2. No\n" +
-                            "3. Exit");
-                    int choiceDeleteTrans = Integer.parseInt(scanner.nextLine());
-                    switch (choiceDeleteTrans) {
-                        case 1:
-                            deleteIfFound(deleteLicense);
-                            System.out.println("Delete successfully!");
-                            break;
-                        case 2:
-                            disPlayMainMenu();
-                            break;
-                        case 3:
-                            break;
+                    try {
+                        while (true) {
+                            System.out.println(" Please confirm weather you want to delete vehicle?\n" +
+                                    "1. Yes\n" +
+                                    "2. No\n" +
+                                    "3. Exit");
+                            int choiceDeleteTrans = Integer.parseInt(scanner.nextLine());
+                            switch (choiceDeleteTrans) {
+                                case 1:
+                                    deleteIfFound(deleteLicense);
+                                    System.out.println("Delete successfully!");
+                                    disPlayMainMenu();
+                                    break;
+                                case 2:
+                                    disPlayMainMenu();
+                                    break;
+                                case 3:
+                                    break;
+                            }
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("You have to enter integer number");
                     }
                 }
             } else {

@@ -33,8 +33,13 @@ public class TruckManager {
         String yearMFG = scanner.nextLine();
         System.out.print("Enter name of owner: ");
         String owner = scanner.nextLine();
-        System.out.print("Enter arbitration: ");
-        int arbitration = Integer.parseInt(scanner.nextLine());
+        int arbitration = 0;
+        try {
+            System.out.print("Enter arbitration: ");
+            arbitration = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Arbitration have to be integer number");
+        }
         Truck truck = new Truck(licensePlate, brand, yearMFG, owner, arbitration);
         listTruck.add(truck);
         ReadAndWriteTruck.writeTruck(listTruck, true);

@@ -31,8 +31,13 @@ public class CarManager {
         String yearMFG = scanner.nextLine();
         System.out.print("Enter name of owner: ");
         String owner = scanner.nextLine();
-        System.out.print("Enter number seat: ");
-        int numSeat = Integer.parseInt(scanner.nextLine());
+        int numSeat = 0;
+        try {
+            System.out.print("Enter number seat: ");
+            numSeat = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Number of seat have to be integer number");
+        }
         String typeCar = "";
         if (licensePlate.contains("A")) {
             System.out.println("Type of car: " + (typeCar = "TouristCar"));
@@ -48,13 +53,5 @@ public class CarManager {
         for (int i = 0; i < listCar.size(); i++) {
             System.out.println((i+1) + ". " + listCar.get(i).showInformation());
         }
-    }
-    public void deleteCar() {
-        List<Car> listCar = ReadAndWriteCar.readCar();
-        showCar();
-        System.out.print("Enter license plate that need to delete: ");
-        String deleteLicense = scanner.nextLine();
-        listCar.remove(deleteLicense);
-        ReadAndWriteCar.writeCar(listCar, false);
     }
 }
