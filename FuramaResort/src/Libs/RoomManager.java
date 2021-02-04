@@ -24,20 +24,32 @@ public class RoomManager {
             nameService = scanner.nextLine();
         } while (!NameSvRegex.checkNameService(nameService));
 
-        float area;
+        float area = 0;
         do {
-            System.out.print("Enter area: ");
-            area = Float.parseFloat(scanner.nextLine());
+            try {
+                System.out.print("Enter area: ");
+                area = Float.parseFloat(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Area have to be a float number");
+            }
         } while (!AreaSvAndPoolRegex.checkAre(area));
-        float price;
+        float price = 0;
         do {
-            System.out.print("Enter price: ");
-            price = Float.parseFloat(scanner.nextLine());
+            try {
+                System.out.print("Enter price: ");
+                price = Float.parseFloat(scanner.nextLine());
+            }catch (NumberFormatException e) {
+                System.out.println("Price have to be a float number");
+            }
         }while (!PriceRegex.checkPrice(price));
-        int maxPeople;
+        int maxPeople = 0;
         do {
-            System.out.print("Enter max people: ");
-            maxPeople = Integer.parseInt(scanner.nextLine());
+            try {
+                System.out.print("Enter max people: ");
+                maxPeople = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e) {
+                System.out.println("Num of people have to be a integer number");
+            }
         }while (!MaxPeopleRegex.checkMaxPeople(maxPeople));
         String typeRental;
         do {
