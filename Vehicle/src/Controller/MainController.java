@@ -32,7 +32,9 @@ public class MainController {
                             "1. Add New Transportation\n" +
                             "2. Show Transportation\n" +
                             "3. Delete Transportation\n" +
-                            "4. Exit");
+                            "4. Edit Transportation\n" +
+                            "5. Search Transportation\n" +
+                            "6. Exit");
                     int choiceMain = Integer.parseInt(scanner.nextLine());
                     switch (choiceMain) {
                         case 1:
@@ -45,7 +47,13 @@ public class MainController {
                             deleteTransportation();
                             break;
                         case 4:
-                            System.exit(4);
+                            editTransportation();
+                            break;
+                        case 5:
+                            searchTransportation();
+                            break;
+                        case 6:
+                            System.exit(6);
                             break;
                     }
                 }
@@ -139,7 +147,6 @@ public class MainController {
                 return licensePlate;
             }
         }
-
         return null;
     }
 
@@ -202,6 +209,72 @@ public class MainController {
             }
         } catch (NotFoundVehicleException e) {
             System.out.println(e.getMessage());
+        }
+    }
+    public static void editTransportation() {
+        while (true) {
+            try {
+                while (true) {
+                    System.out.println(" ---Enter function Edit Transportation---\n" +
+                            "1. Edit Car\n" +
+                            "2. Edit Truck\n" +
+                            "3. Edit Motorbike\n" +
+                            "4. Back to Main Menu\n" +
+                            "5. Exit");
+                    int choiceEditTransport = Integer.parseInt(scanner.nextLine());
+                    switch (choiceEditTransport) {
+                        case 1:
+                            carManager.editCar();
+                            break;
+                        case 2:
+                            truckManager.editTruck();
+                            break;
+                        case 3:
+                            motorbikeManager.editMotorbike();
+                            break;
+                        case 4:
+                            disPlayMainMenu();
+                            break;
+                        case 5:
+                            break;
+                    }
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("You have to enter integer number");
+            }
+        }
+    }
+    public static void searchTransportation() {
+        while (true) {
+            try {
+                while (true) {
+                    System.out.println(" ---Enter function Search Transportation---\n" +
+                            "1. Search Car\n" +
+                            "2. Search Truck\n" +
+                            "3. Search Motorbike\n" +
+                            "4. Back to Main Menu\n" +
+                            "5. Exit");
+                    int choiceSearchTransport = Integer.parseInt(scanner.nextLine());
+                    switch (choiceSearchTransport) {
+                        case 1:
+                            carManager.searchCar();
+                            break;
+                        case 2:
+                            truckManager.searchTruck();
+                            break;
+                        case 3:
+                            motorbikeManager.searchMotorbike();
+                            break;
+                        case 4:
+                            disPlayMainMenu();
+                            break;
+                        case 5:
+                            break;
+                    }
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("You have to enter integer number");
+            }
         }
     }
 }
