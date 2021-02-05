@@ -128,8 +128,11 @@ public class MotorbikeManager {
     }
     public void searchMotorbike() {
         List<Motorbike> motorbikeList = ReadAndWriteMotorbike.readMotorbike();
-        System.out.print("Enter license plate that you want to find: ");
-        String licenseSearch = scanner.nextLine();
+        String licenseSearch;
+        do {
+            System.out.print("Enter license plate that you want to find: ");
+            licenseSearch = scanner.nextLine();
+        } while (!LicensePlateRegex.CarLicenseRegex(licenseSearch));
         for (Motorbike motorbike : motorbikeList) {
             if (motorbike.getLicensePlate().contains(licenseSearch)) {
                 System.out.println(motorbike);
