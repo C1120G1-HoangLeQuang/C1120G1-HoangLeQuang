@@ -146,10 +146,8 @@ public class CarManager {
     public void searchCar() {
         List<Car> carList = ReadAndWriteCar.readCar();
         String licenseSearch;
-        do {
-            System.out.print("Enter license plate that you want to find: ");
-            licenseSearch = scanner.nextLine();
-        } while (!LicensePlateRegex.CarLicenseRegex(licenseSearch));
+        System.out.print("Enter license plate that you want to find: ");
+        licenseSearch = scanner.nextLine();
         for (Car car : carList) {
             if (car.getLicensePlate().contains(licenseSearch)) {
                 System.out.println(car);

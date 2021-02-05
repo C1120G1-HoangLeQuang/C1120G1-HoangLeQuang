@@ -131,10 +131,8 @@ public class TruckManager {
     public void searchTruck() {
         List<Truck> truckList = ReadAndWriteTruck.readTruck();
         String licenseSearch;
-        do {
-            System.out.print("Enter license plate that you want to find: ");
-            licenseSearch = scanner.nextLine();
-        } while (!LicensePlateRegex.CarLicenseRegex(licenseSearch));
+        System.out.print("Enter license plate that you want to find: ");
+        licenseSearch = scanner.nextLine();
         for (Truck truck : truckList) {
             if (truck.getLicensePlate().contains(licenseSearch)) {
                 System.out.println(truck);
