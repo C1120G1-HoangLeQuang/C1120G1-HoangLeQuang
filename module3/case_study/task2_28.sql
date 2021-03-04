@@ -156,7 +156,8 @@ having
 	count(hop_dong_chi_tiet.id_dichvudikem) = (
 		select max(soluong_dichvudikem) 
 		from (select count(id_dichvudikem) as soluong_dichvudikem from hop_dong_chi_tiet
-		group by id_dichvudikem) as solan_sudung); 
+		group by id_dichvudikem) as solan_sudung
+        ); 
 
 
 /* Task 14 Case study */
@@ -250,9 +251,9 @@ where id_dichvudikem in
 /* Hiển thị thông tin của tất cả các Nhân viên và Khách hàng có trong hệ thống, 
 thông tin hiển thị bao gồm ID (IDNhanVien, IDKhachHang), HoTen, Email, SoDienThoai, NgaySinh, DiaChi */
 
-select id_nhanvien as id, ho_ten, email, sdt, ngay_sinh, dia_chi from nhan_vien
+select id_nhanvien as id, ho_ten, email, sdt, ngay_sinh, dia_chi, 'Nhan vien' as vi_tri from nhan_vien
 union all
-select id_khachhang as id, ho_ten, email, sdt, ngay_sinh, dia_chi from khach_hang;
+select id_khachhang as id, ho_ten, email, sdt, ngay_sinh, dia_chi,  'Khach hang' as vi_tri from khach_hang;
 
 /* Task 21 Case study */
 /* Tạo khung nhìn có tên là V_NHANVIEN để lấy được thông tin của tất cả các nhân viên có địa chỉ 
