@@ -273,15 +273,50 @@ where table_schema = 'Casestudy';*/
 được truyền vào như là 1 tham số của Sp_1 */
 
 delimiter //
-create procedure deleteInforCustomerById(in idDelete int)
+create procedure Sp_1(in idDelete int)
 begin 
 delete from khach_hang
 where khach_hang.id_khachhang = idDelete;
 end //
 delimiter ;
 
-call deleteInforCustomerById(5);
+call Sp_1(5);
 
+/* Task 24 Case study */
+/* Tạo Store procedure Sp_2 Dùng để thêm mới vào bảng HopDong với yêu cầu Sp_2 
+phải thực hiện kiểm tra tính hợp lệ của dữ liệu bổ sung, với nguyên tắc không được trùng khóa chính và 
+đảm bảo toàn vẹn tham chiếu đến các bảng liên quan */
+
+delimiter //
+create procedure Sp_4(
+	in new_idNhanvien int,
+	in new_idKhachhang int,
+	in new_idDichvu int,
+	in new_ngaylamhopdong date,
+	in new_ngayketthuc date,
+	in new_tiendatcoc int,
+	in new_tongtien int
+)
+begin 
+	if 
+		new_idNhanvien in(select id_nhanvien from nhan_vien) and
+        new_idKhachhang  in(select id_khachhang from khach_hang) and
+        new_idDichvu  in(select id_dichvu from dich_vu) 
+    then    
+		insert into hop_dong(id_nhanvien, id_khachhang, id_dichvu, ngaylam_hopdong, ngay_ketthuc, tien_datcoc, tong_tien)
+	values (
+		new_idNhanvien,
+		new_idKhachhang,
+		new_idDichvu,
+		new_ngaylamhopdong,
+		new_ngayketthuc,
+		new_tiendatcoc,
+		new_tongtien);
+    end if;
+end //
+delimiter ;
+
+call Sp_4(3, 4, 2, "2019-11-26", "2019-12-28", 700, 0);
 
 
 
