@@ -4,7 +4,10 @@ và có tối đa 15 ký tự. */
 
 use Casestudy;
 select ho_ten, ngay_sinh, so_cmnd, luong, sdt, email, dia_chi from nhan_vien
-where (ho_ten like "H%" or ho_ten like "T%" or ho_ten like "K%") and length(ho_ten) <= 30; 
+where 
+		(substring_index(ho_ten, ' ', -1) LIKE 'H%' or
+		 substring_index(ho_ten, ' ', -1) LIKE 'T%' or
+		 substring_index(ho_ten, ' ', -1) LIKE 'K%') and length(ho_ten) <= 30; 
 
 /* Task 3 Case study */
 /* Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”. */
