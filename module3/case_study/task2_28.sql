@@ -139,11 +139,25 @@ group by hop_dong_chi_tiet.id_hopdongchitiet;
 /* Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. 
 (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau) */
  
-select dich_vu_di_kem.id_dichvudikem, ten_dichvudikem, gia, don_vi,
-trangthai_khadung, count(hop_dong_chi_tiet.so_luong) as soluong_dichvudikem from dich_vu_di_kem
-inner join hop_dong_chi_tiet on hop_dong_chi_tiet.id_dichvudikem = dich_vu_di_kem.id_dichvudikem
-group by hop_dong_chi_tiet.id_dichvudikem
-having max(hop_dong_chi_tiet.so_luong);
+select 
+	dich_vu_di_kem.id_dichvudikem, 
+    dich_vu_di_kem.ten_dichvudikem, 
+    dich_vu_di_kem.gia, 
+    dich_vu_di_kem.don_vi,
+	dich_vu_di_kem.trangthai_khadung, 
+    count(hop_dong_chi_tiet.id_dichvudikem) as soluong_dichvudikem 
+from 
+	dich_vu_di_kem
+inner join 
+	hop_dong_chi_tiet on hop_dong_chi_tiet.id_dichvudikem = dich_vu_di_kem.id_dichvudikem
+group by 
+	hop_dong_chi_tiet.id_dichvudikem
+having 
+	count(hop_dong_chi_tiet.id_dichvudikem) = (
+		select max(soluong_dichvudikem) 
+		from (select count(id_dichvudikem) as soluong_dichvudikem from hop_dong_chi_tiet
+		group by id_dichvudikem) as solan_sudung); 
+
 
 /* Task 14 Case study */
 /* Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
