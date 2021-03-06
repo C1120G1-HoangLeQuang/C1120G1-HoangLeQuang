@@ -1,0 +1,22 @@
+body{
+    background-color: lightblue;
+}
+#heading{
+    color: red;
+    text-transform: uppercase;
+    text-align: center;
+}
+p{
+    text-align: justify;
+    letter-spacing: 2px;
+}
+a{
+    text-decoration: none;
+    color: #008CBA;
+}
+.doimau{
+    color: blue;
+}
+.doimau:hover{
+    color: blueviolet;
+}
