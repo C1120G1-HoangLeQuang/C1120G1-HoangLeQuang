@@ -1,0 +1,102 @@
+.rwd > div{
+    /*background: cadetblue;*/
+    /*border: 1px solid #fff;*/
+    padding: 20px;
+    font-size: 30px;
+    /*text-align: center;*/
+    font-family: Arial;
+}
+.rwd{
+    display: grid;
+    grid-template-areas:
+            'menu menu menu menu menu menu'
+            'left content content content content right'
+            'footer footer footer footer footer footer';
+}
+@media only screen and (max-width: 700px) {
+    .rwd{
+        display: grid;
+        grid-template-areas:
+                'menu menu menu menu menu menu'
+                'left content content content content right'
+                'footer footer footer footer footer footer';
+    }
+}
+.item1 {
+    grid-area: menu;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: #292929;
+    border: 1px solid #CDCDCD;
+}
+.item1 ul, .item1 li{
+    padding:0;
+    margin: 0;
+}
+.item1 li{
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+.item1 li a{
+    width: 100px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    color: lightgray;
+}
+.item1 li a:hover{
+    background-color: black;
+    color: white;
+}
+.item2 {
+    grid-area: left;
+    background-color: lightgray;
+    line-height: 10px;
+}
+.item2 li{
+    list-style: none;
+}
+.item2 li a{
+    width: 100px;
+    display: block;
+    text-decoration: none;
+    color: blue;
+    height: 50px;
+}
+.item2 li a:hover{
+    color: white;
+}
+.item3 {
+    grid-area: content;
+    text-align: left;
+    background-color: white;
+}
+
+.item4 {
+    grid-area: right;
+    background-color: lightgray;
+}
+#ads1{
+    border: 1px solid beige;
+    text-align: center;
+    padding: 40px 70px;
+}
+#ads2{
+    border: 1px solid beige;
+    text-align: center;
+    padding: 40px 70px;
+}
+.item5 {
+    grid-area: footer;
+    background-color: gray;
+    text-align: center;
+    color: white;
+}
+
+
