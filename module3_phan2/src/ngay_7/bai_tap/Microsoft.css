@@ -1,0 +1,12 @@
+/*header{*/
+/*    position: relative;*/
+/*}*/
+.Save-up{
+    margin-top: 150px;
+    font-size: 20px;
+    margin-left: 120px;
+}
+.Save-up > h6{
+    color: blue;
+    font-weight: bold;
+}
