@@ -1,6 +1,3 @@
-/*header{*/
-/*    position: relative;*/
-/*}*/
 .Save-up{
     margin-top: 150px;
     font-size: 20px;
@@ -9,4 +6,17 @@
 .Save-up > h6{
     color: blue;
     font-weight: bold;
+}
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
+div.vertical-line{
+    width: 2px; /* Line width */
+    background-color: black; /* Line color */
+     /* Override in-line if you want specific height. */
+    /* Causes the line to float to left of content.
+        You can instead use position:absolute or display:inline-block
+        if this fits better with your design */
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
 }
