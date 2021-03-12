@@ -26,7 +26,7 @@ public class DiscountServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("discount_product.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/web_ngay_8/discount_product.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {

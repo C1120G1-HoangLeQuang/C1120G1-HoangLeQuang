@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("thuc_hanh_2.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/web_ngay_8/thuc_hanh_2.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {

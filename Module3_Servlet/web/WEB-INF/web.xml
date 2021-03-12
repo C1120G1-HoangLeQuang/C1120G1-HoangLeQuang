@@ -7,4 +7,8 @@
         <servlet-name>ServerTimeServlet</servlet-name>
         <servlet-class>ngay_8.thuc_hanh.ServerTimeServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/assert/*</url-pattern>
+    </servlet-mapping>
 </web-app>

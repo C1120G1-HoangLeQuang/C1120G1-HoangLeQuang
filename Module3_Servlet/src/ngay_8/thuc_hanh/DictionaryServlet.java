@@ -37,7 +37,7 @@ public class DictionaryServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("dictionary.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/web_ngay_8/dictionary.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {

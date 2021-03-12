@@ -24,7 +24,7 @@ public class ExchangeServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("money_transfer.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/web_ngay_8/money_transfer.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {
