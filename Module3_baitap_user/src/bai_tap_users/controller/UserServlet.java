@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "UserServlet", urlPatterns = {"","/users"})
@@ -51,6 +52,14 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
             case "delete":
                 showDeleteForm(request, response);
                 break;
+            case "view":
+                viewUser(request, response);
+                break;
+            case "search":
+                searchUserByCountry(request, response);
+                break;
+            case "sort":
+                sortByName(request, response);
             default:
                 showUserList(request, response);
                 break;
@@ -145,6 +154,64 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void viewUser(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        User user = this.userService.findById(id);
+        RequestDispatcher requestDispatcher;
+        if (user == null) {
+            requestDispatcher = request.getRequestDispatcher("/user/error_404.jsp");
+        } else {
+            request.setAttribute("user", user);
+            requestDispatcher = request.getRequestDispatcher("/user/view.jsp");
+        }
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void searchUserByCountry(HttpServletRequest request, HttpServletResponse response) {
+        String country = request.getParameter("country");
+        List<User> listUser = this.userService.getUserByCountry(country);
+        RequestDispatcher dispatcher;
+        if (listUser == null) {
+            dispatcher = request.getRequestDispatcher("/user/error_404.jsp");
+        } else {
+            request.setAttribute("listUser", listUser);
+            dispatcher = request.getRequestDispatcher("/user/serach.jsp");
+        }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sortByName(HttpServletRequest request, HttpServletResponse response) {
+        String sortBy = request.getParameter("sortBy");
+        List<User> listUser = this.userService.findAll();
+        List<User> listUserSort = this.userService.sortByName(listUser, sortBy);
+        RequestDispatcher dispatcher;
+        if (listUserSort == null) {
+            dispatcher = request.getRequestDispatcher("/user/error_404.jsp");
+        } else {
+            request.setAttribute("listUser", listUserSort);
+            dispatcher = request.getRequestDispatcher("/user/list.jsp");
+        }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

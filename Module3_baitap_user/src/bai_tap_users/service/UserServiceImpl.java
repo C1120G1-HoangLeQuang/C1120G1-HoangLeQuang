@@ -33,4 +33,14 @@ public class UserServiceImpl implements UserService {
     public boolean remove(int id) {
         return userRepository.remove(id);
     }
+
+    @Override
+    public List<User> getUserByCountry(String country_user) {
+        return userRepository.getUserByCountry(country_user);
+    }
+
+    @Override
+    public List<User> sortByName(List<User> userList, String sortBy) {
+        return userRepository.sortByName(userList, sortBy);
+    }
 }

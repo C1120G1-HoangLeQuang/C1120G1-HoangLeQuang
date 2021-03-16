@@ -14,4 +14,8 @@ public interface UserRepository {
     boolean update(User user);
 
     boolean remove(int id);
+
+    List<User> getUserByCountry(String country_user);
+
+    List<User> sortByName(List<User> userList, String sortBy);
 }

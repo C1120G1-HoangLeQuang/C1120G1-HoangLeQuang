@@ -2,21 +2,20 @@ package bai_tap_users.repository;
 
 import bai_tap_users.model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepositoryImpl implements UserRepository {
 
-    public static final String SELECT_FROM_USERS = "select * from users";
-    public static final String INSERT_USER_VALUE = "INSERT INTO users(name, email, country) value(?, ?, ?)";
-    private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
+    public static final String SELECT_FROM_USERS = "select * from users;";
+    public static final String INSERT_USER_VALUE = "INSERT INTO users(name, email, country) value(?, ?, ?);";
+    private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?;";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
-
+    private static final String SEARCH_USERS_BY_CT = "select * from users where country = ?;";
+    private static final String SORT_USERS_BY_ASC = "select * from users order by `name`;";
+    private static final String SORT_USERS_BY_DESC = "select * from users order by `name` desc;";
 
     @Override
     public List<User> findAll() {
@@ -164,5 +163,77 @@ public class UserRepositoryImpl implements UserRepository {
             }
         }
         return rowDelete;
+    }
+
+    public List<User> getUserByCountry(String country_user) {
+        Connection open = DBConnection.getOpen();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List<User> userList = new ArrayList<>();
+        User user = null;
+        if (open != null) {
+            try {
+                statement = open.prepareStatement(SEARCH_USERS_BY_CT);
+                statement.setString(1, country_user);
+                System.out.println(statement);
+                resultSet = statement.executeQuery();
+                while (resultSet.next()) {
+                    int id  = resultSet.getInt("id");
+                    String name = resultSet.getString("name");
+                    String email = resultSet.getString("email");
+                    String country = resultSet.getString("country");
+                    user = new User(id, name, email, country);
+                    userList.add(user);
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            } finally {
+                try {
+                    statement.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+                DBConnection.close();
+            }
+        }
+        return userList;
+    }
+
+    @Override
+    public List<User> sortByName(List<User> userListIn, String sortBy) {
+        Connection open = DBConnection.getOpen();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        userListIn = new ArrayList<>();
+        User user = null;
+        if (open != null) {
+            try {
+                if (sortBy.equals("DESC")) {
+                    statement = open.prepareStatement(SORT_USERS_BY_DESC);
+                }
+                if (sortBy.equals("ASC")) {
+                    statement = open.prepareStatement(SORT_USERS_BY_ASC);
+                }
+                resultSet = statement.executeQuery();
+                while (resultSet.next()) {
+                    int id  = resultSet.getInt("id");
+                    String name = resultSet.getString("name");
+                    String email = resultSet.getString("email");
+                    String country = resultSet.getString("country");
+                    user = new User(id, name, email, country);
+                    userListIn.add(user);
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            } finally {
+                try {
+                    statement.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+                DBConnection.close();
+            }
+        }
+        return userListIn;
     }
 }
