@@ -1,0 +1,17 @@
+package bai_tap_users.service;
+
+import bai_tap_users.model.User;
+
+import java.util.List;
+
+public interface UserService {
+    List<User> findAll();
+
+    void save(User user);
+
+    User findById(int id);
+
+    boolean update(User user);
+
+    boolean remove(int id);
+}
