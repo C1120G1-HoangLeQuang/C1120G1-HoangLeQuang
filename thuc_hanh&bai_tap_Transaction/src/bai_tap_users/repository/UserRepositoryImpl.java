@@ -13,7 +13,7 @@ public class UserRepositoryImpl implements UserRepository {
     private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?;";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
-    private static final String SEARCH_USERS_BY_CT = "select * from users where country like ?;";
+    private static final String SEARCH_USERS_BY_CT = "select * from users where country = ?;";
     private static final String SORT_USERS_BY_ASC = "select * from users order by `name`;";
     private static final String SORT_USERS_BY_DESC = "select * from users order by `name` desc;";
 
@@ -174,7 +174,7 @@ public class UserRepositoryImpl implements UserRepository {
         if (open != null) {
             try {
                 statement = open.prepareStatement(SEARCH_USERS_BY_CT);
-                statement.setString(1, "%" +country_user + "%");
+                statement.setString(1, country_user);
                 System.out.println(statement);
                 resultSet = statement.executeQuery();
                 while (resultSet.next()) {

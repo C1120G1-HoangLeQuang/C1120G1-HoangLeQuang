@@ -18,7 +18,6 @@
         <a href="/users?action=create">Create new User</a>
     </h2>
     <form method="get" action="/users">
-<%--        <a href="/users?action=search&country=${user.getCountry}"></a>--%>
         <input name="action" value="search" hidden>
         <input type="text" placeholder="Enter user's country" name="country">
         <input type="submit" value="Search">
