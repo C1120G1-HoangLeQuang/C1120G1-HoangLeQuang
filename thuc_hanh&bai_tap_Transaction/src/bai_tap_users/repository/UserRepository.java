@@ -18,4 +18,10 @@ public interface UserRepository {
     List<User> getUserByCountry(String country_user);
 
     List<User> sortByName(List<User> userList, String sortBy);
+
+    public User getUserById(int id);
+
+    public void insertUserStore(User user);
+
+    public void addUserTransaction(User user, int[] permision);
 }

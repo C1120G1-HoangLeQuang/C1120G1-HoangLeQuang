@@ -10,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "UserServlet", urlPatterns = {"","/users"})
@@ -60,6 +59,9 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
                 break;
             case "sort":
                 sortByName(request, response);
+            case "permision" :
+                addUserPermision(request, response);
+                break;
             default:
                 showUserList(request, response);
                 break;
@@ -96,12 +98,12 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
         String country = request.getParameter("country");
 
         User user = new User(name, email, country);
-        userService.save(user);
+        userService.insertUserStore(user);
     }
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        User user = this.userService.findById(id);
+        User user = this.userService.getUserById(id);
         RequestDispatcher requestDispatcher;
         try {
             request.setAttribute("user", user);
@@ -117,7 +119,7 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String country = request.getParameter("country");
-        User user = this.userService.findById(id);  // kiem tra user co id duoc truyen vao co null hay khong tuc la co user voi id do hay khong
+        User user = this.userService.getUserById(id);  // kiem tra user co id duoc truyen vao co null hay khong tuc la co user voi id do hay khong
         User userUpdate = new User(id, name, email, country);
         this.userService.update(userUpdate);
         request.setAttribute("user", userUpdate);
@@ -131,7 +133,7 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
 
     private void showDeleteForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        User user = this.userService.findById(id);
+        User user = this.userService.getUserById(id);
         RequestDispatcher requestDispatcher;
         request.setAttribute("user", user);
         requestDispatcher = request.getRequestDispatcher("/user/delete.jsp");
@@ -160,7 +162,7 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
 
     private void viewUser(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        User user = this.userService.findById(id);
+        User user = this.userService.getUserById(id);
         RequestDispatcher requestDispatcher;
         if (user == null) {
             requestDispatcher = request.getRequestDispatcher("/user/error_404.jsp");
@@ -214,5 +216,15 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void addUserPermision(HttpServletRequest request, HttpServletResponse response) {
+
+        User user = new User("kien", "kienhoang@gmail.com", "Vietnam");
+
+        int[] permision = {1, 2, 4};
+
+        userService.addUserTransaction(user, permision);
+
     }
 }

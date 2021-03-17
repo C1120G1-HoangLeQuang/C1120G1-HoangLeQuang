@@ -43,4 +43,19 @@ public class UserServiceImpl implements UserService {
     public List<User> sortByName(List<User> userList, String sortBy) {
         return userRepository.sortByName(userList, sortBy);
     }
+
+    @Override
+    public User getUserById(int id) {
+        return userRepository.getUserById(id);
+    }
+
+    @Override
+    public void insertUserStore(User user) {
+        userRepository.insertUserStore(user);
+    }
+
+    @Override
+    public void addUserTransaction(User user, int[] permision) {
+        userRepository.addUserTransaction(user, permision);
+    }
 }
