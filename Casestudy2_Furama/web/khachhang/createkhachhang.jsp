@@ -51,9 +51,11 @@ pageEncoding="UTF-8" %>
                 <th>Ngay sinh:</th>
                 <td>
                     <input type="text" name="ngay_sinh" id="ngay_sinh" size="45"/>
+                    <p>
                     <c:if test='${message_ngaysinh != ""}'>
                         <span style="color: red">${message_ngaysinh}</span>
                     </c:if>
+                    </p>
                 </td>
             </tr>
             <tr>
@@ -70,9 +72,11 @@ pageEncoding="UTF-8" %>
                 <th>So cmnd:</th>
                 <td>
                     <input type="text" name="so_cmnd" id="so_cmnd" size="45"/>
+                    <p>
                     <c:if test='${message_cmnd != ""}'>
                         <span style="color: red">${message_cmnd}</span>
                     </c:if>
+                    </p>
                 </td>
             </tr>
             <tr>
@@ -85,9 +89,11 @@ pageEncoding="UTF-8" %>
                 <th>Email:</th>
                 <td>
                     <input type="text" name="email" id="email" size="45"/>
+                    <p>
                     <c:if test='${message_email != ""}'>
                         <span style="color: red">${message_email}</span>
                     </c:if>
+                    </p>
                 </td>
             </tr>
             <tr>

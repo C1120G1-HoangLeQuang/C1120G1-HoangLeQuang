@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Validate {
     private static Pattern pattern;
     private static Matcher matcher;
-    private static final String REGEX_MA_NHANVIEN = "$KH-[0-9]{4}$";
+    private static final String REGEX_MA_NHANVIEN = "^(KH-)\\d{4}$";
     private static final String REGEX_CMND = "^[\\d]{9}$";
     private static final String REGEX_NGAYSINH = "^((0[1-9]|[12]\\d|3[01])/(0[1-9]|1[0-2])/(190[1-9]|19[1-9]\\d|2\\d{3}))$";
     private static final String REGEX_EMAIL = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
