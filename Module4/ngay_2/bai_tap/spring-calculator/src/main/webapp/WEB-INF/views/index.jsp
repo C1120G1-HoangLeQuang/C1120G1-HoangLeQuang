@@ -46,5 +46,6 @@
     </fieldset>
   </form>
   <p>Result: ${result}</p>
+  <p>Error: ${message}</p>
   </body>
 </html>

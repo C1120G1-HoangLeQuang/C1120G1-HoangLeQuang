@@ -27,12 +27,16 @@ public class CalculatorController {
                               @RequestParam(name = "second-operand") float secondOperand,
                               @RequestParam(name = "operator") char operator,
                               Model model) {
-
-        model.addAttribute("first-operand", firstOperand);
-        model.addAttribute("second-operand", secondOperand);
-        model.addAttribute("operator", operator);
-        float result = calculatorService.calculate(firstOperand, secondOperand, operator);
-        model.addAttribute("result", result);
+        String message = "Can't divide by zero";
+        if (operator == '/' && secondOperand == 0) {
+            model.addAttribute("message", message);
+        } else {
+            model.addAttribute("first-operand", firstOperand);
+            model.addAttribute("second-operand", secondOperand);
+            model.addAttribute("operator", operator);
+            float result = calculatorService.calculate(firstOperand, secondOperand, operator);
+            model.addAttribute("result", result);
+        }
         return "index";
     }
 }
