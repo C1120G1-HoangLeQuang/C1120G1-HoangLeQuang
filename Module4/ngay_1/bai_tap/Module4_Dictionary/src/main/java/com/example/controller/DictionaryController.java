@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-public class Dictionary {
+public class DictionaryController {
 
     @GetMapping("/")
     public String input() {
