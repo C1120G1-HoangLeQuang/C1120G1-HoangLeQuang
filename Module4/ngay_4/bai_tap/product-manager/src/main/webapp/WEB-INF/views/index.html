@@ -21,13 +21,53 @@
     <tbody>
     <tr th:each="product, rowStat : ${productMap}">
         <td th:text="${product.getId()}"></td>
-        <td><a th:href="@{product/{id}/view(id=${product.getId()})}" th:text="${product.getName()}"></a></td>
+        <td><a th:href="@{product/{id}/view(id=${product.id})}" th:text="${product.name}"></a></td>
         <td th:text="${product.getPrice()}"></td>
         <td th:text="${product.getNationality()}"></td>
         <td><a th:href="@{product/{id}/edit(id=${product.getId()})}">Edit</a></td>
-        <td><a th:href="@{product/{id}/delete(id=${product.getId()})}">Delete</a></td>
+        <td>
+            <a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete"
+                    th:onclick="|setIdToDeleteForm('${product.id}')|">Delete</button>
+            </a>
+        </td>
     </tr>
     </tbody>
 </table>
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Are you sure to delete this product?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="submitForm()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<form th:action="@{/product/delete}" method="post" id="idForm">
+    <input type="hidden" name="id" id="idProduct">
+</form>
+<!--<div th:replace="/layout :: delete"></div>-->
 <footer th:replace="/layout :: footer"></footer>
+<script>
+    function setIdToDeleteForm(id) {
+        //id này chính là id của phần tử input trong form delete
+        document.getElementById("idProduct").value = id;
+    }
+    function submitForm() {
+        document.getElementById("idForm").submit();
+    }
+</script>
+
 </body>
+</html>

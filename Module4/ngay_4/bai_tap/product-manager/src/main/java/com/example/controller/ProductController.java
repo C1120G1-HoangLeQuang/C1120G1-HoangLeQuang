@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -47,16 +48,18 @@ public class ProductController {
         return "redirect:/";
     }
 
-    @GetMapping("/product/{id}/delete")
-    public ModelAndView showDeleteForm(@PathVariable int id) {
-        return new ModelAndView("/delete", "productMap", this.productService.findById(id));
-    }
-
     @PostMapping("/product/delete")
-    public String deleteForm(Product product) {
-        this.productService.remove(product.getId());
+    public String deleteForm(@RequestParam int id, RedirectAttributes redirect) {
+        redirect.addFlashAttribute("message", "Delete product successfully");
+        productService.remove(id);
         return "redirect:/";
     }
+
+//    @PostMapping("/product/delete")
+//    public String deleteForm(Product product) {
+//        this.productService.remove(product.getId());
+//        return "redirect:/";
+//    }
 
     @GetMapping("/product/{id}/view")
     public ModelAndView viewProduct(@PathVariable int id) {

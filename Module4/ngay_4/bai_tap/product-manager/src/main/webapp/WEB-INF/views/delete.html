@@ -3,27 +3,54 @@
 <head th:replace="/layout :: head">
 </head>
 <body>
-<h3>Remove Product</h3>
-<p><a th:href="@{/}">Back to Product List</a></p>
-<h1>Are you sure?</h1>
-<div id="form">
-    <form th:action="@{/product/delete}" th:object="${productMap}"
-          method="POST" novalidate="novalidate">
-        <input type="hidden" th:field="*{id}"/>
-        <div>
-            <label>Name </label>
-            <input type="text" th:field="*{name}">
+<!--<h3>Remove Product</h3>-->
+<!--<p><a th:href="@{/}">Back to Product List</a></p>-->
+<!--<h1>Are you sure?</h1>-->
+<!--<div id="form">-->
+<!--    <form th:action="@{/product/delete}" th:object="${productMap}"-->
+<!--          method="POST" novalidate="novalidate">-->
+<!--        <input type="hidden" th:field="*{id}"/>-->
+<!--        <div>-->
+<!--            <label>Name </label>-->
+<!--            <input type="text" th:field="*{name}">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label>Price </label>-->
+<!--            <input type="text" th:field="*{price}">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label>Nationality </label>-->
+<!--            <input type="text" th:field="*{nationality}">-->
+<!--        </div>-->
+<!--        <input type="submit" value="Delete">-->
+<!--    </form>-->
+<!--</div>-->
+
+<div class="modal" id="myModal">
+    <form th:action="@{/product/delete}" th:object="${productMap}" method="post">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Are you sure? Bro?</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                If you delete this product, you wil not restored it again!
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger" data-dismiss="modal">Delete</button>
+            </div>
+
         </div>
-        <div>
-            <label>Price </label>
-            <input type="text" th:field="*{price}">
-        </div>
-        <div>
-            <label>Nationality </label>
-            <input type="text" th:field="*{nationality}">
-        </div>
-        <input type="submit" value="Delete">
+    </div>
     </form>
 </div>
+
 </body>
 </html>
