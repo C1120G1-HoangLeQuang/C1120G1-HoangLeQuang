@@ -20,11 +20,11 @@
     </thead>
     <tbody>
     <tr th:each="product, rowStat : ${products}">
-        <td th:text="${product.getId()}"></td>
+        <td th:text="${product.id}"></td>
         <td><a th:href="@{product/{id}/view(id=${product.id})}" th:text="${product.name}"></a></td>
-        <td th:text="${product.getPrice()}"></td>
-        <td th:text="${product.getNationality()}"></td>
-        <td><a th:href="@{product/{id}/edit(id=${product.getId()})}">Edit</a></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.nationality}"></td>
+        <td><a th:href="@{product/{id}/edit(id=${product.id})}">Edit</a></td>
         <td>
             <a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete"
@@ -57,7 +57,7 @@
 <form th:action="@{/product/delete}" method="post" id="idForm">
     <input type="hidden" name="id" id="idProduct">
 </form>
-<!--<div th:replace="/layout :: delete"></div>-->
+
 <footer th:replace="/layout :: footer"></footer>
 <script>
     function setIdToDeleteForm(id) {
