@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="hibernate.conf.xml/Hibernate" uuid="19d7d3ff-8bf3-4a60-883d-2e485d5a1b92">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/Users/mac/Desktop/HLQ_C1120G1/C1120G1-HoangLeQuang/Module4/ngay_5/thuc_hanh/orm-product-manager-xml/src/main/resources/hibernate.conf.xml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/demoORM?useSSL=false</jdbc-url>
+    </data-source>
+  </component>
+</project>
