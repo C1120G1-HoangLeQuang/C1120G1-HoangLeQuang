@@ -1,6 +1,6 @@
-package com.example.Service;
+package com.example.service;
 
-import com.example.Repository.MailBoxRepository;
+import com.example.repository.MailBoxRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

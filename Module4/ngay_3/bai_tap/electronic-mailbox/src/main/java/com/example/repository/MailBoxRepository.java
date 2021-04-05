@@ -1,9 +1,9 @@
-package com.example.Service;
+package com.example.repository;
 
 import java.util.List;
 
-public interface MailBoxService {
-
+public interface MailBoxRepository {
     List<String> getListLanguage();
     List<Integer> getListPageSize();
+
 }

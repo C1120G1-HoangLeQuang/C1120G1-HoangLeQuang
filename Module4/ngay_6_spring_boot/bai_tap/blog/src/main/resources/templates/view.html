@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<h3>Blog detail</h3>
+<p><a th:href="@{/}">Back to Blog list</a></p>
+<form>
+    <fieldset>
+        <legend>Blog detail</legend>
+        <th style="font-weight: bold">Id:</th>
+        <label th:text="${blogs.id}"></label><br><br>
+        <th style="font-weight: bold">FirstName:</th>
+        <label th:text="${blogs.nameBlog}"></label><br><br>
+        <th style="font-weight: bold">LastName:</th>
+        <label th:text="${blogs.dateRelease}"></label><br><br>
+        <th style="font-weight: bold">LastName:</th>
+        <label th:text="${blogs.content}"></label><br><br>
+        <th style="font-weight: bold">LastName:</th>
+        <label th:text="${blogs.writer}"></label><br><br>
+    </fieldset>
+</form>
+</body>
+</html>

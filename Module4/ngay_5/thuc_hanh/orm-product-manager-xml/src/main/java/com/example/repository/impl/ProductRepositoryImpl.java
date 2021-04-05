@@ -43,7 +43,10 @@ public class ProductRepositoryImpl implements ProductRepository {
     public void remove(Integer id) {
         Product product = findById(id);
         if (product != null) {
+            EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
+            entityTransaction.begin();
             BaseRepository.entityManager.remove(product);
+            entityTransaction.commit();
         }
     }
 
