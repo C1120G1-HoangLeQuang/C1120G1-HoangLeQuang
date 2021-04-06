@@ -14,7 +14,8 @@
         </div>
         <div>
             <label>Date Release </label>
-            <input type="date" th:field="*{dateRelease}"/>
+            <span th:text="${blogs.dateRelease}"/>
+            <input type="hidden" th:field="*{dateRelease}">
         </div>
         <div>
             <label>Content </label>

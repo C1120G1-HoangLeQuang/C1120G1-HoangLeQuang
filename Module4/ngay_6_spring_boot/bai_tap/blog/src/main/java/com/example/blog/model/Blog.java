@@ -11,14 +11,15 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nameBlog;
-    private Date dateRelease;
+    @Column(columnDefinition = "date")
+    private String dateRelease;
     private String content;
     private String writer;
 
     public Blog() {
     }
 
-    public Blog(String nameBlog, Date dateRelease, String content, String writer) {
+    public Blog(String nameBlog, String dateRelease, String content, String writer) {
         this.nameBlog = nameBlog;
         this.dateRelease = dateRelease;
         this.content = content;
@@ -41,11 +42,11 @@ public class Blog {
         this.nameBlog = nameBlog;
     }
 
-    public Date getDateRelease() {
+    public String getDateRelease() {
         return dateRelease;
     }
 
-    public void setDateRelease(Date dateRelease) {
+    public void setDateRelease(String dateRelease) {
         this.dateRelease = dateRelease;
     }
 

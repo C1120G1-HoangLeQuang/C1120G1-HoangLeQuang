@@ -3,6 +3,7 @@ package com.example.blog.service.impl;
 import com.example.blog.model.Blog;
 import com.example.blog.repository.BlogRepository;
 import com.example.blog.service.BlogService;
+import com.example.blog.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,9 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public void save(Blog blog) {
+        if (blog.getId() == null) {
+            blog.setDateRelease(DateUtil.getCurrentDate());
+        }
         blogRepository.save(blog);
     }
 }
