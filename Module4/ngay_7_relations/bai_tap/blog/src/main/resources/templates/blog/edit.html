@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/layout :: head">
+<head th:replace="~{blog/layout :: head}">
 </head>
 <body>
 <h3>Edit Product</h3>
-<p><a th:href="@{/}">Back to Blog list</a></p>
+<p><a th:href="@{/blog}">Back to Blog list</a></p>
 <div>
     <form th:action="@{/blog/update}" th:object="${blogs}" method="post" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
@@ -24,6 +24,12 @@
         <div>
             <label>Writer </label>
             <input type="text" th:field="*{writer}">
+        </div>
+        <div>
+            <label>Category </label>
+            <select th:field="${categoryList}">
+                <option th:each="cate : ${categoryList}" th:value="${cate.id}" th:text="${cate.name}"></option>
+            </select>
         </div>
         <input type="submit" value="Update">
     </form>
