@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{user/layout :: head}">
+</head>
+<body>
+<h3>User List</h3>
+<p>
+    <a th:href="@{user/create}">Add new user</a>
+</p>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>User ID</td>
+        <td>FirstName</td>
+        <td>LastName</td>
+        <td>Age</td>
+        <td>PhoneNumber</td>
+        <td>Email</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user, rowStat : ${userList}">
+        <td th:text="${user.id}"></td>
+        <td  th:text="${user.firstName}">></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.phoneNumber}"></td>
+        <td th:text="${user.email}"></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="~{user/layout :: footer}"></footer>
+</body>
+</html>
