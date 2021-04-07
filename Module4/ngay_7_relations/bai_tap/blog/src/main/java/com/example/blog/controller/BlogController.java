@@ -30,10 +30,10 @@ public class BlogController {
 
     @GetMapping("/blog")
     public ModelAndView getListBlog(@RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
-                                    @RequestParam(name = "size", required = false, defaultValue = "2") Integer size,
+                                    @RequestParam(name = "size", required = false, defaultValue = "10") Integer size,
                                     @RequestParam(name = "sort", required = false, defaultValue = "ASC") String sort,
                                     @RequestParam("nameBlog") Optional<String> nameBlog) {
-        Page<Blog> blogs;
+        Page<Blog> blogPage;
         Sort sortable = null;
         if (sort.equals("ASC")) {
             sortable = Sort.by("dateRelease").ascending();
@@ -42,22 +42,26 @@ public class BlogController {
             sortable = Sort.by("dateRelease").descending();
         }
         Pageable pageable = PageRequest.of(page, size, sortable);
+        ModelAndView modelAndView = new ModelAndView("blog/list");
+
+        modelAndView.addObject("reverseSort", sort.equals("ASC") ? "DESC" : "ASC");
 
         if (nameBlog.isPresent()) {
-            blogs = this.blogService.findAllByNameBlogContaining(nameBlog.get(), pageable);
+            blogPage = this.blogService.findAllByNameBlogContaining(nameBlog.get(), pageable);
         } else {
-            blogs = this.blogService.findAll(pageable);
+            blogPage = this.blogService.findAll(pageable);
         }
-        return new ModelAndView("blog/list", "blogs", blogs);
+        modelAndView.addObject("blogs", blogPage);
+        return modelAndView;
     }
 
     @GetMapping("/blog/view-category")
-    public ModelAndView viewCategory(Pageable pageable, Model model){
-        List<Category> category = categoryService.findAll();
-        Page<Blog> blogs = blogService.findAllByCategoryContaining(category, pageable);
+    public ModelAndView viewCategory(Pageable pageable, @RequestParam Integer categoryId){
+        Page<Blog> blogPage;
+//        Category category = this.categoryService.findById(categoryId);
+        blogPage = blogService.findAllByCategory_Id(categoryId, pageable);
         ModelAndView modelAndView = new ModelAndView("/blog/viewCategory");
-        modelAndView.addObject("categoryList", category);
-        modelAndView.addObject("blogs", blogs);
+        modelAndView.addObject("blogs", blogPage);
         return modelAndView;
     }
 

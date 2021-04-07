@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -52,7 +53,9 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Page<Blog> findAllByCategoryContaining(List<Category> category, Pageable pageable) {
-        return blogRepository.findAllByCategoryContaining(category, pageable);
+    public Page<Blog> findAllByCategory_Id(Integer categoryName, Pageable pageable) {
+        return blogRepository.findAllByCategory_Id(categoryName, pageable);
     }
+
+
 }

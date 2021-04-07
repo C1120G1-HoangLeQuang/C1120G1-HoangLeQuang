@@ -7,19 +7,12 @@
 <p>
     <a th:href="@{blog/create}">Add new blog</a>
 </p>
-<form>
+<p>
     Search By NameBlog:
     <input name="nameBlog" type="text">
     <input type="submit" value="Search">
-</form><br>
-<!--/*@thymesVar id="categoryList" type=""*/-->
-<form th:action="@{blog/view-category}" th:object="${categoryList}" method="get">
-    <label>Category </label>
-    <select th:field="${categoryList}">
-        <option th:each="category : ${categoryList}" th:value="${category.id}" th:text="${category.name}">
-        </option>
-    </select>
-</form>
+</p>
+<br>
 
 <table class="table table-hover">
     <thead>
@@ -27,10 +20,10 @@
         <td>Blog ID</td>
         <td>Name Blog</td>
         <td>Date Release
-            <button th:value="${'DESC'}">DESC</button>
-            <button th:value="${'ASC'}">ASC</button>
-<!--            <button type="button" class="btn btn-danger" name="sort" value="ASC">ASC</button>-->
-<!--            <button type="button" class="btn btn-danger" name="sort" value="DESC">DESC</button>-->
+            <a th:href="@{/blog(sort=${reverseSort})}"><button>Sort</button></a>
+
+<!--            <button th:value="${'DESC'}">DESC</button>-->
+<!--            <button th:value="${'ASC'}">ASC</button>-->
         </td>
         <td>Content</td>
         <td>Writer</td>
@@ -46,7 +39,7 @@
         </td>
         <td th:text="${blog.content}"></td>
         <td th:text="${blog.writer}"></td>
-        <td th:text="${blog.category.name}"></td>
+        <td><a th:href="@{/blog/view-category(categoryId=${blog.category.id})}" th:text="${blog.category.name}"></a></td>
         <td>
             <a th:href="@{blog/edit(id=${blog.id})}">
                 <button type="button" class="btn btn-danger">Edit</button>

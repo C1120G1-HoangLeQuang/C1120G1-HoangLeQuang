@@ -8,11 +8,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface BlogRepository extends JpaRepository<Blog, Integer> {
     Page<Blog> findAll(Pageable pageable);
     Page<Blog> findAllByOrderByDateReleaseAsc(Pageable pageable);
     Page<Blog> findAllByNameBlogContaining (String nameBlog, Pageable pageable);
-    Page<Blog> findAllByCategoryContaining(List<Category> category, Pageable pageable);
+    Page<Blog> findAllByCategory_Id(Integer categoryId, Pageable pageable);
 }

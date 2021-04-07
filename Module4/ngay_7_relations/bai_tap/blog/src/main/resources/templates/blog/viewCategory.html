@@ -4,6 +4,7 @@
 </head>
 <body>
 <h3>Customer List</h3>
+<p><a th:href="@{/blog}">Back to Blog List</a></p>
 <p>
     <a th:href="@{blog/create}">Add new blog</a>
 </p>
@@ -17,12 +18,7 @@
     <tr>
         <td>Blog ID</td>
         <td>Name Blog</td>
-        <td>Date Release
-            <button th:value="${'DESC'}">DESC</button>
-            <button th:value="${'ASC'}">ASC</button>
-            <!--            <button type="button" class="btn btn-danger" name="sort" value="ASC">ASC</button>-->
-            <!--            <button type="button" class="btn btn-danger" name="sort" value="DESC">DESC</button>-->
-        </td>
+        <td>Date Release</td>
         <td>Content</td>
         <td>Writer</td>
         <td>Category</td>
@@ -37,7 +33,7 @@
         </td>
         <td th:text="${blog.content}"></td>
         <td th:text="${blog.writer}"></td>
-<!--        <td th:text="${blog.category.name}"></td>-->
+        <td th:text="${blog.category.name}"></td>
         <td>
             <a th:href="@{blog/edit(id=${blog.id})}">
                 <button type="button" class="btn btn-danger">Edit</button>

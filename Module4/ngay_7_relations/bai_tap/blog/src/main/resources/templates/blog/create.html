@@ -22,7 +22,7 @@
         </div>
         <div>
             <label>Category </label>
-            <select th:field="${categoryList}">
+            <select th:field="*{category}">
                 <option th:each="cate : ${categoryList}" th:value="${cate.id}" th:text="${cate.name}"></option>
             </select>
         </div>
