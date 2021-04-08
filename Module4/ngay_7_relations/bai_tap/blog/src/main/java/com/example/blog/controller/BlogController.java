@@ -35,17 +35,17 @@ public class BlogController {
                                     @RequestParam("nameBlog") Optional<String> nameBlog) {
         Page<Blog> blogPage;
         Sort sortable = null;
+        Pageable pageable = null;
         if (sort.equals("ASC")) {
             sortable = Sort.by("dateRelease").ascending();
         }
         if (sort.equals("DESC")) {
             sortable = Sort.by("dateRelease").descending();
         }
-        Pageable pageable = PageRequest.of(page, size, sortable);
+        pageable = PageRequest.of(page, size, sortable);
         ModelAndView modelAndView = new ModelAndView("blog/list");
 
         modelAndView.addObject("reverseSort", sort.equals("ASC") ? "DESC" : "ASC");
-
         if (nameBlog.isPresent()) {
             blogPage = this.blogService.findAllByNameBlogContaining(nameBlog.get(), pageable);
         } else {

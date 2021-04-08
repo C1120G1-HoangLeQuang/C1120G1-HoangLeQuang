@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd27c20b-07ba-4e6c-9c09-d00e6a8c59eb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../Casestudy2_Furama/out/artifacts/Casestudy2_Furama_war_exploded/WEB-INF/classes/Controller/EmployeeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Casestudy2_Furama/out/artifacts/Casestudy2_Furama_war_exploded/WEB-INF/classes/Controller/EmployeeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Casestudy2_Furama/out/artifacts/Casestudy2_Furama_war_exploded/WEB-INF/classes/Repository/nhan_vien/NhanvienRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Casestudy2_Furama/out/artifacts/Casestudy2_Furama_war_exploded/WEB-INF/classes/Repository/nhan_vien/NhanvienRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Casestudy2_Furama/out/artifacts/Casestudy2_Furama_war_exploded/page/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Casestudy2_Furama/out/artifacts/Casestudy2_Furama_war_exploded/page/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Casestudy2_Furama/out/production/Casestudy2_Furama/Controller/EmployeeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Casestudy2_Furama/out/production/Casestudy2_Furama/Controller/EmployeeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Casestudy2_Furama/out/production/Casestudy2_Furama/Repository/nhan_vien/NhanvienRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Casestudy2_Furama/out/production/Casestudy2_Furama/Repository/nhan_vien/NhanvienRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Casestudy2_Furama/src/Controller/EmployeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Casestudy2_Furama/src/Controller/EmployeeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Casestudy2_Furama/src/Repository/nhan_vien/NhanvienRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Casestudy2_Furama/src/Repository/nhan_vien/NhanvienRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Casestudy2_Furama/web/page/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Casestudy2_Furama/web/page/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/out/production/FuramaResort/Data/Customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/out/production/FuramaResort/Data/Customer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module3_MVC_Product/Module3_MVC_Product.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module3_MVC_Product/Module3_MVC_Product.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module3_Servlet/out/artifacts/Module3_Servlet_war_exploded/WEB-INF/classes/ngay_10/bai_tap/controller/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module3_Servlet/out/artifacts/Module3_Servlet_war_exploded/WEB-INF/classes/ngay_10/bai_tap/controller/ProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module3_Servlet/out/production/Module3_Servlet/ngay_10/bai_tap/controller/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module3_Servlet/out/production/Module3_Servlet/ngay_10/bai_tap/controller/ProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module3_Servlet/src/ngay_10/bai_tap/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module3_Servlet/src/ngay_10/bai_tap/controller/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Vehicle/out/production/Vehicle/Library/CarManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Vehicle/out/production/Vehicle/Library/CarManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Vehicle/out/production/Vehicle/Library/MotorbikeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Vehicle/out/production/Vehicle/Library/MotorbikeManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Vehicle/out/production/Vehicle/Library/TruckManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Vehicle/out/production/Vehicle/Library/TruckManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module2/out/production/module2/Demo_Quang_Product/data/Product.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/out/production/module2/Demo_Quang_Product/data/Product.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module2/out/production/module2/Demo_Quang_Product/service/ProductManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/out/production/module2/Demo_Quang_Product/service/ProductManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module2/out/production/module2/ngay_10_stack_queue/baif_tap/CountElementInMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/out/production/module2/ngay_10_stack_queue/baif_tap/CountElementInMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module2/src/Demo_Quang_Product/data/Product.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/src/Demo_Quang_Product/data/Product.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module2/src/Demo_Quang_Product/service/ProductManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module2/src/Demo_Quang_Product/service/ProductManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module3/case_study/task2_28.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/case_study/task2_28.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module3_phan2/src/ngay_5/bai_tap/bai_3.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3_phan2/src/ngay_5/bai_tap/bai_3.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module3_phan2/src/ngay_7/bai_tap/Microsorft.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3_phan2/src/ngay_7/bai_tap/Microsorft.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../untitled/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../untitled/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../untitled/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../untitled/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1qjdTYOiyv5eyhg00rxXQ2EFHfu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.codegym.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd27c20b-07ba-4e6c-9c09-d00e6a8c59eb" name="Default Changelist" comment="" />
+      <created>1617596941609</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617596941609</updated>
+      <workItem from="1617596950111" duration="12198000" />
+      <workItem from="1617646568413" duration="38000" />
+      <workItem from="1617691316932" duration="22566000" />
+      <workItem from="1617765419627" duration="578000" />
+      <workItem from="1617854511823" duration="2855000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="533" y="150" key="#com.intellij.ide.util.MemberChooser" timestamp="1617717641391">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="533" y="150" key="#com.intellij.ide.util.MemberChooser/0.23.1440.813@0.23.1440.813" timestamp="1617717641391" />
+    <state x="533" y="150" key="#com.intellij.ide.util.MemberChooser/0.23.1440.815@0.23.1440.815" timestamp="1617694236874" />
+    <state x="533" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1617598256492" />
+    <state x="533" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.825@0.23.1440.825" timestamp="1617605132246" />
+    <state width="1398" height="100" key="GridCell.Tab.0.bottom" timestamp="1617857439160">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state width="1398" height="252" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1617718182299" />
+    <state width="1398" height="259" key="GridCell.Tab.0.bottom/0.23.1440.815@0.23.1440.815" timestamp="1617742550666" />
+    <state width="1398" height="100" key="GridCell.Tab.0.bottom/0.23.1440.817@0.23.1440.817" timestamp="1617857439160" />
+    <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1617696653912" />
+    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.824@0.23.1440.824" timestamp="1617628983787" />
+    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1617611308694" />
+    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1617610621685" />
+    <state width="1398" height="100" key="GridCell.Tab.0.center" timestamp="1617857439160">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state width="1398" height="252" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1617718182298" />
+    <state width="1398" height="259" key="GridCell.Tab.0.center/0.23.1440.815@0.23.1440.815" timestamp="1617742550665" />
+    <state width="1398" height="100" key="GridCell.Tab.0.center/0.23.1440.817@0.23.1440.817" timestamp="1617857439160" />
+    <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1617696653910" />
+    <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.824@0.23.1440.824" timestamp="1617628983787" />
+    <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1617611308693" />
+    <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1617610621684" />
+    <state width="1398" height="100" key="GridCell.Tab.0.left" timestamp="1617857439159">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state width="1398" height="252" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1617718182297" />
+    <state width="1398" height="259" key="GridCell.Tab.0.left/0.23.1440.815@0.23.1440.815" timestamp="1617742550665" />
+    <state width="1398" height="100" key="GridCell.Tab.0.left/0.23.1440.817@0.23.1440.817" timestamp="1617857439159" />
+    <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1617696653910" />
+    <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.824@0.23.1440.824" timestamp="1617628983786" />
+    <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1617611308692" />
+    <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1617610621684" />
+    <state width="1398" height="100" key="GridCell.Tab.0.right" timestamp="1617857439160">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state width="1398" height="252" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1617718182298" />
+    <state width="1398" height="259" key="GridCell.Tab.0.right/0.23.1440.815@0.23.1440.815" timestamp="1617742550666" />
+    <state width="1398" height="100" key="GridCell.Tab.0.right/0.23.1440.817@0.23.1440.817" timestamp="1617857439160" />
+    <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1617696653911" />
+    <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.824@0.23.1440.824" timestamp="1617628983787" />
+    <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1617611308694" />
+    <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1617610621685" />
+    <state width="1398" height="100" key="GridCell.Tab.1.bottom" timestamp="1617857439161">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state width="1398" height="252" key="GridCell.Tab.1.bottom/0.23.1440.813@0.23.1440.813" timestamp="1617718182301" />
+    <state width="1398" height="259" key="GridCell.Tab.1.bottom/0.23.1440.815@0.23.1440.815" timestamp="1617742550667" />
+    <state width="1398" height="100" key="GridCell.Tab.1.bottom/0.23.1440.817@0.23.1440.817" timestamp="1617857439161" />
+    <state width="1398" height="208" key="GridCell.Tab.1.bottom/0.23.1440.821@0.23.1440.821" timestamp="1617696653914" />
+    <state width="1398" height="209" key="GridCell.Tab.1.bottom/0.23.1440.824@0.23.1440.824" timestamp="1617628983789" />
+    <state width="1398" height="209" key="GridCell.Tab.1.bottom/0.23.1440.825@0.23.1440.825" timestamp="1617611308696" />
+    <state width="1398" height="209" key="GridCell.Tab.1.bottom/0.23.1440.827@0.23.1440.827" timestamp="1617610621723" />
+    <state width="1398" height="100" key="GridCell.Tab.1.center" timestamp="1617857439161">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state width="1398" height="252" key="GridCell.Tab.1.center/0.23.1440.813@0.23.1440.813" timestamp="1617718182300" />
+    <state width="1398" height="259" key="GridCell.Tab.1.center/0.23.1440.815@0.23.1440.815" timestamp="1617742550667" />
+    <state width="1398" height="100" key="GridCell.Tab.1.center/0.23.1440.817@0.23.1440.817" timestamp="1617857439161" />
+    <state width="1398" height="208" key="GridCell.Tab.1.center/0.23.1440.821@0.23.1440.821" timestamp="1617696653913" />
+    <state width="1398" height="209" key="GridCell.Tab.1.center/0.23.1440.824@0.23.1440.824" timestamp="1617628983788" />
+    <state width="1398" height="209" key="GridCell.Tab.1.center/0.23.1440.825@0.23.1440.825" timestamp="1617611308695" />
+    <state width="1398" height="209" key="GridCell.Tab.1.center/0.23.1440.827@0.23.1440.827" timestamp="1617610621700" />
+    <state width="1398" height="100" key="GridCell.Tab.1.left" timestamp="1617857439161">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state width="1398" height="252" key="GridCell.Tab.1.left/0.23.1440.813@0.23.1440.813" timestamp="1617718182299" />
+    <state width="1398" height="259" key="GridCell.Tab.1.left/0.23.1440.815@0.23.1440.815" timestamp="1617742550666" />
+    <state width="1398" height="100" key="GridCell.Tab.1.left/0.23.1440.817@0.23.1440.817" timestamp="1617857439161" />
+    <state width="1398" height="208" key="GridCell.Tab.1.left/0.23.1440.821@0.23.1440.821" timestamp="1617696653912" />
+    <state width="1398" height="209" key="GridCell.Tab.1.left/0.23.1440.824@0.23.1440.824" timestamp="1617628983788" />
+    <state width="1398" height="209" key="GridCell.Tab.1.left/0.23.1440.825@0.23.1440.825" timestamp="1617611308695" />
+    <state width="1398" height="209" key="GridCell.Tab.1.left/0.23.1440.827@0.23.1440.827" timestamp="1617610621686" />
+    <state width="1398" height="100" key="GridCell.Tab.1.right" timestamp="1617857439161">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state width="1398" height="252" key="GridCell.Tab.1.right/0.23.1440.813@0.23.1440.813" timestamp="1617718182300" />
+    <state width="1398" height="259" key="GridCell.Tab.1.right/0.23.1440.815@0.23.1440.815" timestamp="1617742550667" />
+    <state width="1398" height="100" key="GridCell.Tab.1.right/0.23.1440.817@0.23.1440.817" timestamp="1617857439161" />
+    <state width="1398" height="208" key="GridCell.Tab.1.right/0.23.1440.821@0.23.1440.821" timestamp="1617696653913" />
+    <state width="1398" height="209" key="GridCell.Tab.1.right/0.23.1440.824@0.23.1440.824" timestamp="1617628983789" />
+    <state width="1398" height="209" key="GridCell.Tab.1.right/0.23.1440.825@0.23.1440.825" timestamp="1617611308696" />
+    <state width="1398" height="209" key="GridCell.Tab.1.right/0.23.1440.827@0.23.1440.827" timestamp="1617610621722" />
+    <state width="1398" height="259" key="GridCell.Tab.2.bottom" timestamp="1617742550669">
+      <screen x="0" y="23" width="1440" height="815" />
+    </state>
+    <state width="1398" height="259" key="GridCell.Tab.2.bottom/0.23.1440.815@0.23.1440.815" timestamp="1617742550669" />
+    <state width="1398" height="259" key="GridCell.Tab.2.bottom/0.23.1440.817@0.23.1440.817" timestamp="1617700237121" />
+    <state width="1398" height="259" key="GridCell.Tab.2.center" timestamp="1617742550668">
+      <screen x="0" y="23" width="1440" height="815" />
+    </state>
+    <state width="1398" height="259" key="GridCell.Tab.2.center/0.23.1440.815@0.23.1440.815" timestamp="1617742550668" />
+    <state width="1398" height="259" key="GridCell.Tab.2.center/0.23.1440.817@0.23.1440.817" timestamp="1617700237120" />
+    <state width="1398" height="259" key="GridCell.Tab.2.left" timestamp="1617742550668">
+      <screen x="0" y="23" width="1440" height="815" />
+    </state>
+    <state width="1398" height="259" key="GridCell.Tab.2.left/0.23.1440.815@0.23.1440.815" timestamp="1617742550668" />
+    <state width="1398" height="259" key="GridCell.Tab.2.left/0.23.1440.817@0.23.1440.817" timestamp="1617700237119" />
+    <state width="1398" height="259" key="GridCell.Tab.2.right" timestamp="1617742550668">
+      <screen x="0" y="23" width="1440" height="815" />
+    </state>
+    <state width="1398" height="259" key="GridCell.Tab.2.right/0.23.1440.815@0.23.1440.815" timestamp="1617742550668" />
+    <state width="1398" height="259" key="GridCell.Tab.2.right/0.23.1440.817@0.23.1440.817" timestamp="1617700237120" />
+    <state x="114" y="92" key="new project wizard" timestamp="1617612076926">
+      <screen x="0" y="23" width="1440" height="824" />
+    </state>
+    <state x="114" y="92" key="new project wizard/0.23.1440.824@0.23.1440.824" timestamp="1617612076926" />
+  </component>
+</project>

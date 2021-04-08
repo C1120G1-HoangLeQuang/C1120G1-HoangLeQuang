@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{book/layout :: head}">
+</head>
+<body>
+<h3>User List</h3>
+<p>
+    <a th:href="@{book/create}">Add new user</a>
+</p>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>Book ID</td>
+        <td>Book Code</td>
+        <td>Book Name</td>
+        <td>Quantity</td>
+        <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book, rowStat : ${bookList}">
+        <td th:text="${book.id}"></td>
+        <td  th:text="${book.bookCode}">></td>
+        <td th:text="${book.bookName}"></td>
+        <td th:text="${book.bookQuantity}"></td>
+        <td>
+            <a th:href="@{book/borrow(id=${book.id})}">
+                <button type="button" class="btn btn-danger">Borrow</button>
+            </a>
+            <a th:href="@{book/return(id=${book.id})}">
+                <button type="button" class="btn btn-danger">Return</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="~{book/layout :: footer}"></footer>
+</body>
+</html>
