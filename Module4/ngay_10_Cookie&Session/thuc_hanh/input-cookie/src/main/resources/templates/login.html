@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Login Succesfull!</h1>
+<form th:action="@{dologin}" method="post" th:object="${user}">
+    <fieldset>
+        <legend>Login</legend>
+        <table>
+            <tr>
+                <td>Account: </td>
+                <td><input  th:field="*{email}" th:value="${cookieValue}"></td>
+            </tr>
+            <tr>
+                <td>Password: </td>
+                <td><input  type="password" th:field="*{password}"></td>
+            </tr>
+            <tr>
+                <input type="submit" value="Login">
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<br>
+<span th:text="${message}"></span>
+<span th:text="${user.email}"></span>
+</body>
+</html>
