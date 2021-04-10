@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{product/layout :: head}">
+</head>
+<body>
+<h3>Product Cart</h3>
+<p>
+    <a th:href="@{product}">View Product to buy</a>
+</p>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>Product Name</td>
+        <td>Price</td>
+        <td>Amount</td>
+        <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product, rowStat : ${cartList}">
+        <td th:text="${product.key.nameProduct}"></td>
+<!--        or <product.key.nameProduct>-->
+        <td th:text="${product.key.priceProduct}"></td>
+        <td th:text="${cart.getAmount(product)}"></td>
+        <td>
+            <a th:href="@{product/delete(id=${product.key.idProduct})}">
+                <button type="button" class="btn btn-danger">Delete</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="~{product/layout :: footer}"></footer>
+</body>
+</html>
