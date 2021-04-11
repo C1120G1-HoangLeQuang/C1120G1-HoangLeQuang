@@ -4,13 +4,16 @@
 </head>
 <body>
 <h3>Product Cart</h3>
+<p><a th:href="@{product}">View Product to buy</a></p>
 <p>
-    <a th:href="@{product}">View Product to buy</a>
+    <a th:href="@{cart/clear}">
+        <button type="button" class="btn btn-danger">Clear Cart</button>
+    </a>
 </p>
-
 <table class="table table-hover">
     <thead>
     <tr>
+        <td>Product ID</td>
         <td>Product Name</td>
         <td>Price</td>
         <td>Amount</td>
@@ -18,13 +21,14 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="product, rowStat : ${cartList}">
-        <td th:text="${product.key.nameProduct}"></td>
+    <tr th:each="product, rowStat : ${cartList.keySet()}">
+        <td th:text="${product.idProduct}"></td>
 <!--        or <product.key.nameProduct>-->
-        <td th:text="${product.key.priceProduct}"></td>
+        <td th:text="${product.nameProduct}"></td>
+        <td th:text="${product.priceProduct}"></td>
         <td th:text="${cart.getAmount(product)}"></td>
         <td>
-            <a th:href="@{product/delete(id=${product.key.idProduct})}">
+            <a th:href="@{cart/delete(id=${product.idProduct})}">
                 <button type="button" class="btn btn-danger">Delete</button>
             </a>
         </td>

@@ -1,6 +1,7 @@
 package com.example.exercise.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity(name = "products")
 @Table
@@ -55,4 +56,21 @@ public class Product {
 //        }
 //        return false;
 //    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        Product product = (Product) object;
+        return Objects.equals(idProduct, product.idProduct);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idProduct);
+    }
 }

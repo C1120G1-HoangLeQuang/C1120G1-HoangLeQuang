@@ -23,8 +23,8 @@ public class ProductController {
     CartService cartService;
 
     @GetMapping("/cart")
-    public ModelAndView getCartList() {
-        return new ModelAndView("product/listCart");
+    public ModelAndView getCartList(HttpSession session) {
+        return new ModelAndView("product/listCart", "cartList", cartService.getCartManager(session));
     }
 
     @GetMapping("/product")
@@ -49,17 +49,16 @@ public class ProductController {
     }
 
     @PostMapping("/cart/add")
-    public String addToCart(HttpSession session, @RequestParam(value = "id", required = false) Integer id,
+    public String addToCart(HttpSession session, Integer id,
                             @RequestParam(value = "quantity", required = false, defaultValue = "1") Integer quantity) {
         Product product = this.productService.findById(id);
-
         CartManager cartManager = this.cartService.getCartManager(session);
         cartManager.addProductToCart(product, quantity);
         return "product/listCart";
     }
 
     @PostMapping("/cart/remove")
-    public String remove(HttpSession session, @RequestParam("id") Integer id) {
+    public String remove(HttpSession session, Integer id) {
         Product product = this.productService.findById(id);
         CartManager cartManager = this.cartService.getCartManager(session);
         cartManager.deleteProduct(product);
@@ -74,7 +73,7 @@ public class ProductController {
     }
 
     @PostMapping("/cart/editCart")
-    public String update(HttpSession session, @RequestParam("id") Integer id, @RequestParam("quantity") Integer quantity) {
+    public String update(HttpSession session, Integer id, @RequestParam("quantity") Integer quantity) {
         Product product = this.productService.findById(id);
         CartManager cartManager = this.cartService.getCartManager(session);
         cartManager.updateProduct(product, quantity);

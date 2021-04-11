@@ -19,7 +19,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="cart, rowStat : ${session.cartSession.getAllProductInCart()}">
+    <tr th:each="cart, rowStat : ${cartList.allProductInCart}">
         <td th:text="${cart.product.idProduct}"></td>
         <td th:text="${cart.product.nameProduct}"></td>
         <td th:text="${cart.product.priceProduct}"></td>
@@ -31,7 +31,7 @@
             </form>
         </td>
         <td>
-            <form th:action="@{/cart/remove}" method="post">
+            <form th:action="@{/cart/remove(id=${cart.product.idProduct})}" method="post">
                 <input type="hidden" th:value="${cart.product.idProduct}">
                 <input type="number" th:value="${cart.amount}">
                 <button type="submit" class="btn btn-danger">Delete</button>

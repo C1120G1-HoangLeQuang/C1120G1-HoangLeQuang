@@ -2,20 +2,13 @@ package com.example.exercise.model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class Cart {
     Map<Product, Integer> cart;
 
     public Cart() {
         cart = new HashMap<>();
-    }
-
-    public Map<Product, Integer> getCart() {
-        return cart;
-    }
-
-    public void setCart(Map<Product, Integer> cart) {
-        this.cart = cart;
     }
 
     public void addToCart(Product product) {
@@ -26,12 +19,25 @@ public class Cart {
         }
     }
 
+    public int getAmount(Product product) {
+        return cart.get(product);
+    }
+
     public void removeProduct(Product product) {
         cart.remove(product);
     }
 
-    public int getAmount(Product product) {
-        return cart.get(product);
+    public void clearAllProduct() {
+        cart.clear();
     }
+
+    public Map<Product, Integer> getCart() {
+        return cart;
+    }
+
+    public void setCart(Map<Product, Integer> cart) {
+        this.cart = cart;
+    }
+
 
 }

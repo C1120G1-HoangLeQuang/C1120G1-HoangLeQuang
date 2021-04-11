@@ -5,7 +5,7 @@
 <body>
 <p><a th:href="@{/product}">Back to Product List</a></p>
 <div id="form">
-    <form th:action="@{/cart/add}" th:object="${products}"
+    <form th:action="@{/cart/add(id=${products.idProduct})}" th:object="${products}"
           method="POST" novalidate="novalidate">
         <div>
             <label>Id Product: </label>

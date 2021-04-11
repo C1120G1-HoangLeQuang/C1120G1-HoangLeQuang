@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Optional;
+
 @Controller
 @SessionAttributes("cart")
 public class ProductController {
@@ -46,13 +48,25 @@ public class ProductController {
         return new ModelAndView("product/viewProduct", "products", this.productService.findById(id));
     }
 
-    @PostMapping("/product/view")
-    public ModelAndView addToCart(Product product, @ModelAttribute("cart") Cart cart) {
-//        Product product = this.productService.findById(id);
+    @PostMapping("/cart/add")
+    public ModelAndView addToCart(Integer id, @ModelAttribute("cart") Cart cart) {
+        Product product = this.productService.findById(id);
         ModelAndView modelAndView = new ModelAndView("product/viewProduct");
         modelAndView.addObject("products", product);
         cart.addToCart(product);
         return modelAndView;
+    }
+
+    @GetMapping("/cart/delete")
+    public ModelAndView deleteProductInCart(Integer id,  @ModelAttribute("cart") Cart cart) {
+        cart.removeProduct(this.productService.findById(id));
+        return new ModelAndView("redirect:/cart");
+    }
+
+    @GetMapping("/cart/clear")
+    public ModelAndView clearAllItem(@ModelAttribute("cart") Cart cart) {
+        cart.clearAllProduct();
+        return new ModelAndView("redirect:/cart");
     }
 
 }

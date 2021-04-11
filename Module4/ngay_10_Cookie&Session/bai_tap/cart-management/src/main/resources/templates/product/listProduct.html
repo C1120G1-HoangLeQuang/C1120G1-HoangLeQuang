@@ -27,8 +27,8 @@
         <td><a th:href="@{/product/view/{id}(id=${product.idProduct})}" th:text="${product.nameProduct}"></a></td>
         <td th:text="${product.priceProduct}"></td>
         <td>
-            <form th:action="@{/cart/add}" method="post">
-                <input type="hidden" th:value="${product.idProduct}" name="id"/>
+            <form th:action="@{/cart/add(id=${product.idProduct})}" method="post">
+<!--                <input type="hidden" th:value="${product.idProduct}" name="id"/>-->
                 <button type="submit" class="btn btn-danger">Add Cart</button>
             </form>
         </td>

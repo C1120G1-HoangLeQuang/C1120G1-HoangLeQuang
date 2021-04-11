@@ -64,4 +64,11 @@ public class CartManager {
         cartList.clear();
     }
 
+    public List<Cart> getCartList() {
+        return cartList;
+    }
+
+    public void setCartList(List<Cart> cartList) {
+        this.cartList = cartList;
+    }
 }
