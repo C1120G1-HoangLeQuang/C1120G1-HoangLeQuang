@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{category/layout :: head}">
+</head>
+<body>
+<h3>Customer List</h3>
+<p>
+    <a th:href="@{category/create}">Add new category</a>
+</p>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>Category ID</td>
+        <td>Category Name</td>
+        <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="category, rowStat : ${categoryList}">
+        <td th:text="${category.id}"></td>
+        <td th:text="${category.name}"></td>
+        <td>
+            <a th:href="@{category/edit(id=${category.id})}">
+                <button type="button" class="btn btn-danger">Edit</button>
+            </a>
+            <a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete"
+                        th:onclick="|setIdToDeleteForm('${category.id}')|">Delete</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Are you sure to delete this customer?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="submitForm()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<form th:action="@{/category/delete}" method="post" id="idForm">
+    <input type="hidden" name="id" id="idCategory">
+</form>
+
+<footer th:replace="~{category/layout :: footer}"></footer>
+<script>
+    function setIdToDeleteForm(id) {
+        //id này chính là id của phần tử input trong form delete
+        document.getElementById("idCategory").value = id;
+    }
+    function submitForm() {
+        document.getElementById("idForm").submit();
+    }
+</script>
+</body>
+</html>

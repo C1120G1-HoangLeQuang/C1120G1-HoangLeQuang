@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{category/layout :: head}">
+</head>
+<body>
+<p><a th:href="@{/category}">Back to Category List</a></p>
+<div id="form">
+    <form th:action="@{/category/save}" th:object="${categoryList}"
+          method="POST" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Name Category </label>
+            <input type="text" th:field="*{name}">
+        </div>
+        <input type="submit" value="Save">
+    </form>
+</div>
+<footer th:replace="~{category/layout :: footer}"></footer>
+</body>
+</html>

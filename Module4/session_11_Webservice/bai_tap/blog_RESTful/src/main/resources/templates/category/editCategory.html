@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{category/layout :: head}">
+</head>
+<body>
+<h3>Edit Product</h3>
+<p><a th:href="@{/category}">Back to Category list</a></p>
+<div>
+    <form th:action="@{/category/update}" th:object="${categoryList}" method="post" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Name Blog </label>
+            <input type="text" th:field="*{name}">
+        </div>
+        <input type="submit" value="Update">
+    </form>
+</div>
+<!--<script>-->
+<!--    function setCurrentDate(today) {-->
+<!--        today = Date.now();-->
+<!--        document.getElementById('date').innerHTML = today.toString();-->
+<!--    }-->
+<!--</script>-->
+</body>
+</html>
