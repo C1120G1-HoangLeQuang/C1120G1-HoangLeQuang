@@ -1,7 +1,9 @@
 package com.example.exercise.controller;
 
 import com.example.exercise.model.Book;
+import com.example.exercise.model.MyCounter;
 import com.example.exercise.service.BookService;
+import com.example.exercise.service.MyCounterService;
 import com.example.exercise.service.QuantityException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class BookController {
     @Autowired
     BookService bookService;
+    @Autowired
+    MyCounterService myCounterService;
 
     @GetMapping("/book")
     public ModelAndView getBookList() {
@@ -23,6 +27,13 @@ public class BookController {
         modelAndView.addObject("bookList", this.bookService.findAll());
         return modelAndView;
     }
+
+//    @GetMapping("/book/count")
+//    public ModelAndView countVisitTurn(Integer id) {
+//        ModelAndView modelAndView = new ModelAndView("book/list");
+//        this.myCounterService.getVisitTurn(id);
+//        return modelAndView;
+//    }
 
     @GetMapping("/book/create")
     public ModelAndView showCreateForm() {

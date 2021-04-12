@@ -10,4 +10,5 @@ public interface BookService {
     Book findById(Integer id);
     void saveBorrow(Book book) throws QuantityException;
     void saveReturn(Book book);
+//    int increment(Book book);
 }

@@ -14,6 +14,7 @@ public class Book {
     private String bookCode;
     private String bookName;
     private Integer bookQuantity;
+    private Integer countVisitTurn;
 
     public Book() {
     }
@@ -55,4 +56,16 @@ public class Book {
     public void setBookQuantity(Integer bookQuantity) {
         this.bookQuantity = bookQuantity;
     }
+
+    public Integer getCountVisitTurn() {
+        return countVisitTurn;
+    }
+
+    public void setCountVisitTurn(Integer countVisitTurn) {
+        this.countVisitTurn = countVisitTurn;
+    }
+
+//    public int increment() {
+//        return countVisitTurn++;
+//    }
 }

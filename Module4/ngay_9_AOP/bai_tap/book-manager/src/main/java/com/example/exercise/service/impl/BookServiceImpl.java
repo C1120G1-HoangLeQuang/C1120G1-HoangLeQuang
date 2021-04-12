@@ -41,6 +41,11 @@ public class BookServiceImpl implements BookService {
         book.setBookQuantity(book.getBookQuantity() + 1);
         bookRepository.save(book);
     }
+//
+//    @Override
+//    public int increment(Book book) {
+//        return book.increment();
+//    }
 
     @Override
     public Book findById(Integer id) {
