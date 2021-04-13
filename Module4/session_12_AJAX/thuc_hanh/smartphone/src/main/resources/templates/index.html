@@ -29,8 +29,8 @@
         <td th:text="${phone.model}"></td>
         <td th:text="${phone.price}"></td>
         <td>
-            <button id="btnModalEdit" type="button" class="btn btn-danger" th:value="${phone.id}">Edit</button>
-            <button id="btnModalDelete" type="button" class="btn btn-danger" th:value="${phone.id}">Delete</button>
+            <button type="button" class="btnModalEdit btn btn-danger" th:value="${phone.id}">Edit</button>
+            <button  type="button" class="btnModalDelete btn btn-danger" th:value="${phone.id}">Delete</button>
         </td>
     </tr>
     </tbody>
@@ -64,7 +64,7 @@
                 }
             });
         });
-        $("#btnModalEdit").click(function () {
+        $(".btnModalEdit").click(function () {
             $.ajax({
                 type: "GET",
                 url: "/smartphone/edit/" + $(this).val(),
@@ -75,7 +75,7 @@
                 }
             });
         });
-        $("#btnModalDelete").click(function () {
+        $(".btnModalDelete").click(function () {
             $.ajax({
                 type: "GET",
                 url: "/smartphone/delete/" + $(this).val(),
