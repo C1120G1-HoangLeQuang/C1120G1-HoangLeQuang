@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}">
+</head>
+<body>
+<h3>Customer List</h3>
+<button type="button" class="btn btn-primary btn-lg" id="btnModalCreate">Create</button>
+<p>
+    Search By NameBlog:
+    <input name="nameBlog" type="text">
+    <input type="submit" value="Search">
+</p>
+<br>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>Phone ID</td>
+        <td>Producer</td>
+        <td>Model</td>
+        <td>Price</td>
+        <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="phone, rowStat : ${smartphoneList}">
+        <td th:text="${phone.id}"></td>
+        <td th:text="${phone.producer}"></td>
+        <td th:text="${phone.model}"></td>
+        <td th:text="${phone.price}"></td>
+        <td>
+            <button id="btnModalEdit" type="button" class="btn btn-danger" th:value="${phone.id}">Edit</button>
+            <button id="btnModalDelete" type="button" class="btn btn-danger" th:value="${phone.id}">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="~{layout :: footer}"></footer>
+<script>
+    $(document).ready(function () {
+        $("#btnModalCreate").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/smartphone/create",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        $("#btnModalEdit").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/smartphone/edit/" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        $("#btnModalDelete").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/smartphone/delete/" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

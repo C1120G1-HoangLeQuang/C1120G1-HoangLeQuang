@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}">
+</head>
+<body>
+<h3>Delete Smartphone</h3>
+<div>
+    <form th:action="@{/smartphone/delete(id=${phone.id})}" th:object="${phone}" method="post" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Producer </label>
+            <label type="text" th:text="*{producer}">
+        </div>
+        <div>
+            <label>Model </label>
+            <label type="text" th:text="*{model}">
+        </div>
+        <div>
+            <label>Price </label>
+            <label type="text" th:text="*{price}">
+        </div>
+        <div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
