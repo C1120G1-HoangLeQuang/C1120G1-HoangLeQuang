@@ -2,9 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{layout :: head}">
 </head>
-<body class="blogSearch">
+<body class="loadPage blogSearch">
 <h3>Customer List</h3>
 <button type="button" class="btn btn-primary btn-lg" id="btnModalCreate">Create</button>
+
+<button type="button" class="btn btn-primary btn-lg" id="btnLoadMore">Load</button>
+
 <form th:action="@{/blog/search}" class="input-group col-4 float-right">
     <input type="text" name="nameBlog" id="search"
            class="form-control" placeholder="Search ..." th:value="${nameBlog}">
@@ -112,6 +115,16 @@
                 }
             });
         });
+        $("#btnLoadMore").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/blog" + $(this).append('<body class="loadPage"></body>'),
+                dataType: "HTML",
+                success: function (load_data) {
+                    $(".loadPage").html(load_data);
+                }
+            })
+        })
     });
 </script>
 </body>
