@@ -55,10 +55,33 @@ public class BlogController {
 //        return modelAndView;
 //    }
 
+//    @GetMapping("/blog")
+//    public ModelAndView getListBlog(Pageable pageable) {
+//        Pageable pageableSortByDateRelease = PageRequest.of(pageable.getPageNumber(), 3, Sort.by("dateRelease").descending());
+//        Page<Blog> blogList = this.blogService.findAll(pageableSortByDateRelease);
+//        ModelAndView modelAndView = new ModelAndView("blog/list");
+//        modelAndView.addObject("reverseSort", "ASC");
+//        modelAndView.addObject("blogList", blogList);
+//        return modelAndView;
+//    }
+
+//    @GetMapping("/blog/search")
+//    public String searchByNameBlog(Model model, @RequestParam("nameBlog") Optional<String> nameBlog, @PageableDefault(value = 3) Pageable pageable) {
+//        Page<Blog> blogList;
+//        Pageable pageableSortByDateRelease = PageRequest.of(pageable.getPageNumber(), 3, Sort.by("dateRelease").descending());
+//        if (nameBlog.isPresent()) {
+//            blogList = this.blogService.findAllByNameBlogContaining(nameBlog.get(), pageableSortByDateRelease);
+//            model.addAttribute("nameBlog", nameBlog.get());
+//        } else {
+//            blogList = this.blogService.findAll(pageableSortByDateRelease);
+//        }
+//        model.addAttribute("blogList", blogList);
+//        return "blog/list";
+//    }
+
     @GetMapping("/blog")
-    public ModelAndView getListBlog(Pageable pageable) {
-        Pageable pageableSortByDateRelease = PageRequest.of(pageable.getPageNumber(), 3, Sort.by("dateRelease").descending());
-        Page<Blog> blogList = this.blogService.findAll(pageableSortByDateRelease);
+    public ModelAndView getListBlog() {
+        List<Blog> blogList = this.blogService.findAll();
         ModelAndView modelAndView = new ModelAndView("blog/list");
         modelAndView.addObject("reverseSort", "ASC");
         modelAndView.addObject("blogList", blogList);
@@ -66,35 +89,43 @@ public class BlogController {
     }
 
     @GetMapping("/blog/search")
-    public String searchByNameBlog(Model model, @RequestParam("nameBlog") Optional<String> nameBlog, @PageableDefault(value = 3) Pageable pageable) {
-        Page<Blog> blogList;
-        Pageable pageableSortByDateRelease = PageRequest.of(pageable.getPageNumber(), 3, Sort.by("dateRelease").descending());
+    public String searchByNameBlog(Model model, @RequestParam("nameBlog") Optional<String> nameBlog) {
+        List<Blog> blogList;
         if (nameBlog.isPresent()) {
-            blogList = this.blogService.findAllByNameBlogContaining(nameBlog.get(), pageableSortByDateRelease);
+            blogList = this.blogService.findAllByNameBlogContaining(nameBlog.get());
             model.addAttribute("nameBlog", nameBlog.get());
         } else {
-            blogList = this.blogService.findAll(pageableSortByDateRelease);
+            blogList = this.blogService.findAll();
         }
         model.addAttribute("blogList", blogList);
         return "blog/list";
     }
 
-    @GetMapping("/blog/sort")
-    public ModelAndView sortByDayRelease(@RequestParam String sort, Pageable pageable) {
-        Page<Blog> blogList;
-        Pageable pageableSortByDateRelease = null;
-        if (sort.equals("ASC")) {
-            pageableSortByDateRelease = PageRequest.of(pageable.getPageNumber(), 3, Sort.by("dateRelease").ascending());
-        }
-        if (sort.equals("DESC")) {
-            pageableSortByDateRelease = PageRequest.of(pageable.getPageNumber(), 3, Sort.by("dateRelease").descending());
-        }
-        blogList = this.blogService.findAll(pageableSortByDateRelease);
-        ModelAndView modelAndView = new ModelAndView("blog/list");
-        modelAndView.addObject("reverseSort", sort.equals("DESC") ? "ASC" : "DESC");
-        modelAndView.addObject("blogList", blogList);
-        return modelAndView;
-    }
+//    @GetMapping("blog/search")
+//    public String searchByName(@RequestParam("name") String name, Model model){
+//        List<Blog> blogList = blogService.findAllByNameBlogContaining(name);
+//        model.addAttribute("blogList", blogList);
+//        return "blog/list";
+//    }
+
+
+
+//    @GetMapping("/blog/sort")
+//    public ModelAndView sortByDayRelease(@RequestParam String sort, Pageable pageable) {
+//        Page<Blog> blogList;
+//        Pageable pageableSortByDateRelease = null;
+//        if (sort.equals("ASC")) {
+//            pageableSortByDateRelease = PageRequest.of(pageable.getPageNumber(), 3, Sort.by("dateRelease").ascending());
+//        }
+//        if (sort.equals("DESC")) {
+//            pageableSortByDateRelease = PageRequest.of(pageable.getPageNumber(), 3, Sort.by("dateRelease").descending());
+//        }
+//        blogList = this.blogService.findAll(pageableSortByDateRelease);
+//        ModelAndView modelAndView = new ModelAndView("blog/list");
+//        modelAndView.addObject("reverseSort", sort.equals("DESC") ? "ASC" : "DESC");
+//        modelAndView.addObject("blogList", blogList);
+//        return modelAndView;
+//    }
 
     @GetMapping("/blog/view-category")
     public ModelAndView viewCategory(Pageable pageable, @RequestParam Integer categoryId){

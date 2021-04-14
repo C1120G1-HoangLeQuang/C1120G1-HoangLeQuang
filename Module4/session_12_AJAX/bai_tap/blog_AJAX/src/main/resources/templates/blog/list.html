@@ -2,21 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{layout :: head}">
 </head>
-<body class="loadPage blogSearch">
+<body class="loadPage"  id="blogSearch">
 <h3>Customer List</h3>
 <button type="button" class="btn btn-primary btn-lg" id="btnModalCreate">Create</button>
 
 <button type="button" class="btn btn-primary btn-lg" id="btnLoadMore">Load</button>
 
-<form th:action="@{/blog/search}" class="input-group col-4 float-right">
-    <input type="text" name="nameBlog" id="search"
-           class="form-control" placeholder="Search ..." th:value="${nameBlog}">
-    <div class="input-group-append" style="padding-left: 5px">
-        <button type="submit" title="Search" class="btn btn-outline-success" id="btnSearch">Search
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
-</form>
+<!--<form th:action="@{/blog/search}" class="input-group col-4 float-right">-->
+<!--    <input type="text" id="search" name="nameBlog"-->
+<!--           class="form-control" placeholder="Search ..." th:value="${nameBlog}">-->
+<!--    <div class="input-group-append" style="padding-left: 5px">-->
+<!--        <button  type="button" title="Search" class="btn btn-outline-success" id="btnSearch">Search-->
+<!--            <i class="fas fa-search"></i>-->
+<!--        </button>-->
+<!--    </div>-->
+<!--</form>-->
+<input id="search" class="form-control me-2" name="nameBlog" type="search" placeholder="Search"
+       aria-label="Search">
+<button class="btn btn-outline-success" type="button" id="btnSearch" >Search</button>
 <br>
 <div>
 <table class="table table-hover">
@@ -48,11 +51,11 @@
     </tbody>
 </table>
 </div>
-<div>
-    <a th:href="@{'/blog'(page=${blogList.number - 1})}" th:if="${blogList.hasPrevious()}">Previous</a>
-    <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>
-    <a th:href="@{'/blog'(page=${blogList.number + 1})}" th:if="${blogList.hasNext()}">Next</a>
-</div>
+<!--<div>-->
+<!--    <a th:href="@{'/blog'(page=${blogList.number - 1})}" th:if="${blogList.hasPrevious()}">Previous</a>-->
+<!--    <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>-->
+<!--    <a th:href="@{'/blog'(page=${blogList.number + 1})}" th:if="${blogList.hasNext()}">Next</a>-->
+<!--</div>-->
 <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -105,13 +108,16 @@
             });
         });
         $("#btnSearch").click(function () {
+            // var inputSearch = document.getElementById("search").value;
             $.ajax({
                 type: "GET",
                 url: "/blog/search?nameBlog=" + $("#search").val(),
                 dataType: "HTML",
                 // data: {key:$("#search").val()},
                 success: function (load_data) {
-                    $(".blogSearch").html(load_data);
+                    console.log(load_data)
+                    $("#blogSearch").html(load_data);
+                    // document.getElementById("blogSearch").innerHTML=load_data;
                 }
             });
         });

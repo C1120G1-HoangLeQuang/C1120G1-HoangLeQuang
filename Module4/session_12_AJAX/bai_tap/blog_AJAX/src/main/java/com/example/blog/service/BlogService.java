@@ -10,6 +10,7 @@ import java.util.Optional;
 
 public interface BlogService {
 
+    List<Blog> findAll();
     Page<Blog> findAll(Pageable pageable);
     Blog findById(Integer id);
     void deleteById(Integer id);
@@ -17,4 +18,5 @@ public interface BlogService {
     Page<Blog> findAllByOrderByDateReleaseAsc(Pageable pageable);
     Page<Blog> findAllByNameBlogContaining (String nameBlog, Pageable pageable);
     Page<Blog> findAllByCategory_Id(Integer categoryName, Pageable pageable);
+    List<Blog> findAllByNameBlogContaining (String nameBlog);
 }
