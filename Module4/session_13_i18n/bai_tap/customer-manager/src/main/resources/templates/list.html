@@ -5,8 +5,8 @@
 <body>
 <h3 th:text="#{customer.heading}"></h3>
 Language: <a href="?lang=en">English</a> | <a href="?lang=vn">Vietnamese</a>
-<p>
-    <a th:href="@{customer/create}">Add new customer</a>
+<p >
+    <a th:href="@{customer/create}" th:text="#{customer.add}"></a>
 </p>
 <table class="table table-hover">
     <thead>
@@ -24,11 +24,11 @@ Language: <a href="?lang=en">English</a> | <a href="?lang=vn">Vietnamese</a>
         <td th:text="${customer.lastName}"></td>
         <td>
             <a th:href="@{customer/{id}/edit(id=${customer.id})}">
-                <button type="button" class="btn btn-danger">Edit</button>
+                <button type="button" class="btn btn-danger" th:text="#{customer.edit}">Edit</button>
             </a>
             <a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete"
-                        th:onclick="|setIdToDeleteForm('${customer.id}')|">Delete</button>
+                        th:onclick="|setIdToDeleteForm('${customer.id}')|"  th:text="#{customer.delete}">Delete</button>
             </a>
         </td>
     </tr>
