@@ -18,7 +18,7 @@ public class Blog {
     private String content;
     private String writer;
 
-    @JsonIgnore
+//    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "category_id", nullable = false, referencedColumnName = "id")
 

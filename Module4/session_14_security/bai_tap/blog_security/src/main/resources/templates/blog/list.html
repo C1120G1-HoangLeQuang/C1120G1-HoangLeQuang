@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}">
+</head>
+<body class="loadBody"  id="blogSearch">
+<span th:utext="${#request.userPrincipal.name}"></span></h3>
+<h3>Customer List</h3>
+<button type="button" class="btn btn-primary btn-lg" id="btnModalCreate">Create</button>
+
+<button type="button" class="btn btn-primary btn-lg" id="btnMore">Load</button>
+
+<!--<form th:action="@{/blog/search}" class="input-group col-4 float-right">-->
+    <input type="text" id="search" name="nameBlog"
+           class="form-control" placeholder="Search ..." th:value="${nameBlog}">
+    <div class="input-group-append" style="padding-left: 5px">
+        <button  type="button" title="Search" class="btn btn-outline-success" id="btnSearch">Search
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+<!--</form>-->
+<br>
+<div>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>Blog ID</td>
+        <td>Name Blog</td>
+        <td>Date Release<a th:href="@{/blog/sort(sort=${reverseSort})}"><button>Sort</button></a></td>
+        <td>Content</td>
+        <td>Writer</td>
+        <td>Category</td>
+        <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="blog, rowStat : ${blogList}">
+        <td th:text="${blog.id}"></td>
+        <td><a th:href="@{blog/view(id=${blog.id})}" th:text="${blog.nameBlog}"></a></td>
+        <td th:text="${blog.dateRelease}">
+        </td>
+        <td th:text="${blog.content}"></td>
+        <td th:text="${blog.writer}"></td>
+        <td><a th:href="@{/blog/view-category(categoryId=${blog.category.id})}" th:text="${blog.category.name}"></a></td>
+        <td>
+            <button type="button" class="btnModalEdit btn btn-danger" th:value="${blog.id}">Edit</button>
+            <button  type="button" class="btnModalDelete btn btn-danger" th:value="${blog.id}">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<div>
+    <a th:href="@{'/blog'(page=${blogList.number - 1})}" th:if="${blogList.hasPrevious()}">Previous</a>
+    <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>
+    <a th:href="@{'/blog'(page=${blogList.number + 1})}" th:if="${blogList.hasNext()}">Next</a>
+</div>
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="~{layout :: footer}"></footer>
+<script>
+    $(document).ready(function () {
+        $("#btnModalCreate").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "blog/create",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        $(".btnModalEdit").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/blog/edit?id=" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        $(".btnModalDelete").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/blog/delete?id=" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        $("#btnSearch").click(function () {
+            // var inputSearch = document.getElementById("search").value;
+            $.ajax({
+                type: "GET",
+                url: "/blog/search?nameBlog=" + $("#search").val(),
+                dataType: "HTML",
+                // data: {key:$("#search").val()},
+                success: function (load_data) {
+                    console.log(load_data)
+                    $("#blogSearch").html(load_data);
+                    // document.getElementById("blogSearch").innerHTML=load_data;
+                }
+            });
+        });
+        $("#btnMore").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/blog" + $(this).append('<body class="loadBody"></body>'),
+                dataType: "HTML",
+                success: function (load_data) {
+                    $(".loadPage").html(load_data);
+                }
+            })
+        })
+        // $("#btnMore").click(function() {
+        //     let oldHtml = $(".loadBody").html();
+        //
+        //     // call webservice
+        //     oldHtml += "<br>Info";
+        //     $(".loadBody").html(oldHtml);
+        // });
+    });
+</script>
+</body>
+</html>
