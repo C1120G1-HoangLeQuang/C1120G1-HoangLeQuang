@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<div class="container">
+    <h1 style="color: teal" class="text-center">Add New Employee</h1>
+    <form th:action="@{/employee/save}" method="post" th:object="${employees}">
+        <table class="table table-hover">
+            <thead></thead>
+            <tbody>
+            <input type="hidden" class="form-control" th:field="*{emId}" required>
+            <tr>
+                <th>Name</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{emName}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td>
+                    <select th:field="*{position}" class="form-control">
+                        <option th:each="positions : ${positionList}" th:value="${positions.positionId}"
+                                th:text="${positions.positionName}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Degree</th>
+                <td>
+                    <select th:field="*{educationDegree}" class="form-control">
+                        <option th:each="degrees : ${educationDegreeList}" th:value="${degrees.eduDegreeId}"
+                                th:text="${degrees.eduDegreeName}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Division</th>
+                <td>
+                    <select th:field="*{division}" class="form-control">
+                        <option th:each="divisions : ${divisionList}" th:value="${divisions.divisionId}"
+                                th:text="${divisions.divisionName}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>
+                    <select th:field="*{user}" class="form-control">
+                        <option th:each="users : ${userList}" th:value="${users.username}"
+                                th:text="${users.username}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td>
+                    <input type="date" class="form-control" th:field="*{emBirthday}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Id Card</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{emIdCard}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{emSalary}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{emPhone}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{emEmail}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{emAddress}" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                </td>
+                <td>
+                    <button class="btn btn-success" type="submit">Create</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

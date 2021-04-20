@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<div class="container">
+    <h1 style="color: teal" class="text-center">Add New Employee</h1>
+    <form th:action="@{/employee/delete(id=${employees.emId})}" method="post" th:object="${employees}">
+        <table class="table table-hover">
+            <thead></thead>
+            <tbody>
+            <tr>
+                <th>ID</th>
+                <td th:text="${employees.emId}"></td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td th:text="${employees.emName}"></td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td th:text="${employees.position.positionName}"></td>
+            </tr>
+            <tr>
+                <th>Degree</th>
+                <td th:text="${employees.educationDegree.eduDegreeName}"</td>
+            </tr>
+            <tr>
+                <th>Division</th>
+                <td th:text="${employees.division.divisionName}"></td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td th:text="${employees.user.username}"></td>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td th:text="${employees.emBirthday}"></td>
+            </tr>
+            <tr>
+                <th>Id Card</th>
+                <td th:text="${employees.emIdCard}"></td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td th:text="${employees.emSalary}"></td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td th:text="${employees.emPhone}"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td th:text="${employees.emEmail}"></td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td th:text="${employees.emAddress}"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                </td>
+                <td>
+                    <button class="btn btn-success" type="submit">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

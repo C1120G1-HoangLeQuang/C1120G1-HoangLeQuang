@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<div class="container">
+    <h1 style="color: teal" class="text-center">Edit Customer</h1>
+    <form th:action="@{/customer/edit}" method="post" th:object="${customers}">
+        <table class="table table-hover">
+            <thead></thead>
+            <tbody>
+            <input type="hidden" class="form-control" th:field="*{cusId}">
+            <tr>
+                <th>Customer Type</th>
+                <td>
+                    <select th:field="*{customerType}" class="form-control">
+                        <option th:each="cusType : ${cusTypeList}" th:value="${cusType.cusTypeId}"
+                                th:text="${cusType.cusTypeName}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{cusName}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td>
+                    <input type="date" class="form-control" th:field="*{cusBirthday}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>
+                    <select th:field="*{cusGender}">
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Id Card</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{cusIdCard}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{cusPhone}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{cusEmail}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{cusAddress}" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                </td>
+                <td>
+                    <button class="btn btn-success" type="submit">Save</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+</body>
+</html>
