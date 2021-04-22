@@ -1,6 +1,9 @@
 package com.example.casestudy.model.customer;
 
+import com.example.casestudy.model.contract.Contract;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "customer")
 @Table
@@ -28,10 +31,13 @@ public class Customer {
     @JoinColumn(name = "customer_type_id", nullable = false, referencedColumnName = "customer_type_id")
     private CustomerType customerType;
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Contract> contracts;
+
     public Customer() {
     }
 
-    public Customer(String cusId, String cusName, String cusBirthday, Integer cusGender, String cusIdCard, String cusPhone, String cusEmail, String cusAddress, CustomerType customerType) {
+    public Customer(String cusId, String cusName, String cusBirthday, Integer cusGender, String cusIdCard, String cusPhone, String cusEmail, String cusAddress, CustomerType customerType, List<Contract> contracts) {
         this.cusId = cusId;
         this.cusName = cusName;
         this.cusBirthday = cusBirthday;
@@ -41,6 +47,7 @@ public class Customer {
         this.cusEmail = cusEmail;
         this.cusAddress = cusAddress;
         this.customerType = customerType;
+        this.contracts = contracts;
     }
 
     public String getCusId() {
@@ -113,5 +120,13 @@ public class Customer {
 
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
+    }
+
+    public List<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
     }
 }

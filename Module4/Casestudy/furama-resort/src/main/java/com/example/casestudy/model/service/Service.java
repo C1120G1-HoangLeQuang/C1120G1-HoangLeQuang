@@ -1,6 +1,9 @@
 package com.example.casestudy.model.service;
 
+import com.example.casestudy.model.contract.Contract;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "service")
 @Table
@@ -34,10 +37,13 @@ public class Service {
     @JoinColumn(name = "rent_type_id", nullable = false, referencedColumnName = "rent_type_id")
     private RentType rentType;
 
+    @OneToMany(mappedBy = "service", cascade = CascadeType.ALL)
+    private List<Contract> contracts;
+
     public Service() {
     }
 
-    public Service(String serId, String serName, Integer serArea, Integer serMaxPeople, Integer serCost, String standardRoom, String otherService, Double poolArea, Integer numFloor, ServiceType serviceType, RentType rentType) {
+    public Service(String serId, String serName, Integer serArea, Integer serMaxPeople, Integer serCost, String standardRoom, String otherService, Double poolArea, Integer numFloor, ServiceType serviceType, RentType rentType, List<Contract> contracts) {
         this.serId = serId;
         this.serName = serName;
         this.serArea = serArea;
@@ -49,6 +55,7 @@ public class Service {
         this.numFloor = numFloor;
         this.serviceType = serviceType;
         this.rentType = rentType;
+        this.contracts = contracts;
     }
 
     public String getSerId() {
@@ -137,5 +144,13 @@ public class Service {
 
     public void setRentType(RentType rentType) {
         this.rentType = rentType;
+    }
+
+    public List<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
     }
 }

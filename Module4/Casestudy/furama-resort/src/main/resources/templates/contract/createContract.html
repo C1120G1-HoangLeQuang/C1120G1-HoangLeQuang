@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<div class="container">
+    <h1 style="color: teal" class="text-center">Add New Contract</h1>
+    <form th:action="@{/contract/save}" method="post" th:object="${contracts}">
+        <table class="table table-hover">
+            <thead></thead>
+            <tbody>
+            <input type="hidden" class="form-control" th:field="*{conId}" required>
+            <tr>
+                <th>Employee</th>
+                <td>
+                    <select th:field="*{employee}" class="form-control">
+                        <option th:each="employees : ${employeeList}" th:value="${employees.emId}"
+                                th:text="${employees.emName}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Customer</th>
+                <td>
+                    <select th:field="*{customer}" class="form-control">
+                        <option th:each="customers : ${customerList}" th:value="${customers.cusId}"
+                                th:text="${customers.cusName}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Service</th>
+                <td>
+                    <select th:field="*{service}" class="form-control">
+                        <option th:each="services : ${serviceList}" th:value="${services.serId}"
+                                th:text="${services.serName}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Start Date</th>
+                <td>
+                    <input type="date" class="form-control" th:field="*{conStartDate}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>End Date</th>
+                <td>
+                    <input type="date" class="form-control" th:field="*{conEndDate}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Deposit</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{conDeposit}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{conTotal}" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                </td>
+                <td>
+                    <button class="btn btn-success" type="submit">Create</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

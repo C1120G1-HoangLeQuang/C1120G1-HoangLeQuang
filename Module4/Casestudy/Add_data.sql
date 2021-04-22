@@ -99,7 +99,7 @@ values  ('DV-1111', "Villa 1",100,5,1000,1,1,'Luxury','Balcony', 40, 3),
 insert into contract(employee_id, customer_id, service_id, contract_start_date, contract_end_date, contract_deposit, contract_total)
 values 	(1,'KH-2222','DV-1111',"2018-12-12","2019-03-12",100,0),
 		(1,'KH-1111','DV-5555',"2019-01-12","2019-08-12",100,0),
-		(2,'KH-5555','DV-4444',"2020-01-12","2020-10-12",100,0),
+		(7,'KH-5555','DV-4444',"2020-01-12","2020-10-12",100,0),
 		(5,'KH-6666','DV-6666',"2021-01-12","2020-10-12",100,0),
 		(4,'KH-3333','DV-3333',"2019-05-01","2021-05-01",100,0),
         (6,'KH-2222','DV-2222',"2016-12-12","2019-03-12",100,0),
@@ -108,10 +108,10 @@ values 	(1,'KH-2222','DV-1111',"2018-12-12","2019-03-12",100,0),
         
 insert into contract_detail(contract_id, attach_service_id, quantity)
 values 	(1,1,3),
-		(2,3,3),
-		(2,4,5),
-        (6,3,2),
-		(7,4,4),
+		(2,3,3),  	-- mot hop dong co nhiu hdct
+		(2,4,5),	--  mot dvdk nhiu hdct
+        (6,3,2),	-- mot cusType nhiu cus
+		(7,4,4),	
         (6,3,1),
         (3,3,8),
 		(4,4,9),

@@ -1,6 +1,9 @@
 package com.example.casestudy.model.employee;
 
+import com.example.casestudy.model.contract.Contract;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "employee")
 @Table
@@ -41,10 +44,14 @@ public class Employee {
     @JoinColumn(name = "username", nullable = false, referencedColumnName = "username")
     private User user;
 
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    private List<Contract> contracts;
+
+
     public Employee() {
     }
 
-    public Employee(String emName, String emBirthday, String emIdCard, Double emSalary, String emPhone, String emEmail, String emAddress, Position position, EducationDegree educationDegree, Division division, User user) {
+    public Employee(String emName, String emBirthday, String emIdCard, Double emSalary, String emPhone, String emEmail, String emAddress, Position position, EducationDegree educationDegree, Division division, User user, List<Contract> contracts) {
         this.emName = emName;
         this.emBirthday = emBirthday;
         this.emIdCard = emIdCard;
@@ -56,6 +63,7 @@ public class Employee {
         this.educationDegree = educationDegree;
         this.division = division;
         this.user = user;
+        this.contracts = contracts;
     }
 
     public Integer getEmId() {
@@ -152,5 +160,13 @@ public class Employee {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
     }
 }

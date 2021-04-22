@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:insert="~{homePage :: main-navbar}"></div>
+<div class="container-fluid">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Manage <b>Service</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>
+                    </div>
+                </div>
+            </div>
+            <div th:if="${message}">
+                <div id="messageAlert" class="alert alert-success alert-dismissible fade show font-weight-bold">
+                    <button type="button" class="close float-right" data-dismiss="alert">&times;</button>
+                    <span th:text="${message}"></span>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Employee</th>
+                    <th>Customer</th>
+                    <th>Service</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Deposit</th>
+                    <th>Total</th>
+                    <th>New&View Contract Detail</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="contracts : ${contractList}">
+                    <td th:text="${contracts.conId}"></td>
+                    <td th:text="${contracts.employee.emName}"></td>
+                    <td th:text="${contracts.customer.cusName}"></td>
+                    <td th:text="${contracts.service.serName}"></td>
+                    <td th:text="${contracts.conStartDate}"></td>
+                    <td th:text="${contracts.conEndDate}"></td>
+                    <td th:text="${contracts.conDeposit}"></td>
+                    <td th:text="${contracts.conTotal}"></td>
+                    <td>
+                        <button type="button" class="btnModalCreateDetail btn btn-warning btn-sm" th:value="${contracts.conId}">
+                            <i class="fas fa-plus-circle"></i>
+                        </button>
+                        <button type="button" class="btnModalViewDetail btn btn-danger btn-sm" th:value="${contracts.conId}">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </td>
+<!--                    <td>-->
+<!--                        -->
+<!--                    </td>-->
+                </tr>
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing <b>3</b> out of <b>6</b> entries</div>
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <a th:href="@{'/contract'(page=${contractList.number - 1})}" th:if="${contractList.hasPrevious()}">Previous</a>
+                    </li>
+                    <li class="page-item">
+                        <span th:text="${contractList.number + 1}"></span>/<span th:text="${contractList.totalPages}"></span>
+                    </li>
+                    <!--                    <li class="page-item"><a href="#" class="page-link">1</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">2</a></li>-->
+                    <!--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">4</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">5</a></li>-->
+                    <li class="page-item">
+                        <a th:href="@{'/contract'(page=${contractList.number + 1})}" th:if="${contractList.hasNext()}" class="page-link">Next</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade " id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--                <h5 class="modal-title">Modal title</h5>-->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="modelId1" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--                <h5 class="modal-title">Modal title</h5>-->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body1">
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="~{layout :: footer}"></footer>
+<script>
+    $(document).ready(function () {
+        $("#messageAlert").fadeTo(3000, 500).slideUp(500, function() {
+            $("#messageAlert").alert('close');
+        });
+        $("#btnModalCreate").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/contract/create",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        $(".btnModalCreateDetail").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/contract-detail/create?idContract=" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        $(".btnModalViewDetail").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/contract-detail/view?idContract=" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body1").html(data);
+                    $("#modelId1").modal('show');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
