@@ -8,18 +8,23 @@ import com.example.casestudy.service.contract.ContractService;
 import com.example.casestudy.service.customer.CustomerService;
 import com.example.casestudy.service.employee.EmployeeService;
 import com.example.casestudy.service.services.ServiceServices;
+import jdk.nashorn.internal.runtime.options.Option;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ContractController {
@@ -90,5 +95,44 @@ public class ContractController {
         this.contractDetailService.save(contractDetail);
         redirect.addFlashAttribute("message", "Contract detail in contract id: " + contract.getConId() + " is created");
         return "redirect:/contract";
+    }
+
+    @GetMapping("/contract/customerEXP")
+    public ModelAndView getCustomerListEXP(Pageable pageable) {
+        Pageable pageable1 = PageRequest.of(pageable.getPageNumber(), 3);
+        String inputDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        Page<Contract> contractList = this.contractService.getCustomerByEndDate(inputDate, pageable1);
+        ModelAndView modelAndView = new ModelAndView("contract/listCustomerEXP");
+        modelAndView.addObject("contractList", contractList);
+        return modelAndView;
+    }
+
+    @GetMapping("/contract/customerEXP/search")
+    public ModelAndView searchCustomerListEXP(@RequestParam("cusName") Optional<String> cusName, Pageable pageable) {
+        Page<Contract> contractList;
+        Pageable pageable1 = PageRequest.of(pageable.getPageNumber(), 2);
+        String inputDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        if (cusName.isPresent()) {
+            contractList = this.contractService.getListContractByName("%"+cusName.get()+"%", inputDate, pageable);
+        } else {
+            contractList = this.contractService.getCustomerByEndDate(inputDate, pageable1);
+        }
+        ModelAndView modelAndView = new ModelAndView("contract/listCustomerEXP");
+        modelAndView.addObject("contractList", contractList);
+        return modelAndView;
+    }
+
+    @GetMapping("/contract/customerEXP/delete")
+    public ModelAndView getDeleteForm(@RequestParam Integer idContract) {
+        ModelAndView modelAndView = new ModelAndView("contract/deleteContract");
+        modelAndView.addObject("contracts", this.contractService.findById(idContract));
+        return modelAndView;
+    }
+
+    @PostMapping("/contract/customerEXP/delete")
+    public String deleteContract(@RequestParam Integer idContract, Model model, RedirectAttributes redirect) {
+        this.contractService.deleteById(idContract);
+        redirect.addFlashAttribute("message", "Contract " + idContract + " was deleted");
+        return "redirect:/contract/customerEXP";
     }
 }

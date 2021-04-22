@@ -1,12 +1,14 @@
 package com.example.casestudy.controller;
 
 import com.example.casestudy.model.employee.Employee;
+import com.example.casestudy.model.employee.User;
 import com.example.casestudy.service.employee.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -58,13 +60,19 @@ public class EmployeeController {
         modelAndView.addObject("positionList", this.positionService.findAll());
         modelAndView.addObject("educationDegreeList", this.educationDegreeService.findAll());
         modelAndView.addObject("divisionList", this.divisionService.findAll());
-        modelAndView.addObject("userList", this.userService.findAll());
         modelAndView.addObject("employees", new Employee());
         return modelAndView;
     }
 
     @PostMapping("/employee/save")
-    public String createNewEmployee(Employee employee, RedirectAttributes redirect) {
+    public String createNewEmployee(Employee employee,
+                                    @RequestParam("username") String username,
+                                    @RequestParam("password") String password,
+                                    Model model,
+                                    RedirectAttributes redirect) {
+        User user = this.userService.createNewUser(username, password);
+        model.addAttribute("user",user);
+        employee.setUser(user);
         this.employeeService.save(employee);
         redirect.addFlashAttribute("message", "Employee " + employee.getEmId() + " was created");
         return "redirect:/employee";

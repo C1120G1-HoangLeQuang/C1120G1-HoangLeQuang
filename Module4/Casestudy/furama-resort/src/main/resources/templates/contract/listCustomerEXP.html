@@ -16,7 +16,10 @@
                     </div>
                     <div class="col-sm-6">
                         <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>
-                        <a th:href="@{/contract/customerEXP}" class="btn btn-warning"><i class="material-icons">&#xE147;</i> <span>Show Customer EXP</span></a>
+                        <form th:action="@{/contract/customerEXP/search}" class="form-inline mt-2 mt-md-0" >
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search..." name="cusName" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -30,37 +33,47 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Employee</th>
-                    <th>Customer</th>
-                    <th>Service</th>
+                    <th>Name Customer</th>
                     <th>Start date</th>
                     <th>End date</th>
-                    <th>Deposit</th>
-                    <th>Total</th>
-                    <th>New&View Contract Detail</th>
+                    <th>Attach Service</th>
+                    <th>Quantity</th>
+                    <th>Edit</th>
+                    <th>View</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="contracts : ${contractList}">
                     <td th:text="${contracts.conId}"></td>
-                    <td th:text="${contracts.employee.emName}"></td>
                     <td th:text="${contracts.customer.cusName}"></td>
-                    <td th:text="${contracts.service.serName}"></td>
                     <td th:text="${contracts.conStartDate}"></td>
                     <td th:text="${contracts.conEndDate}"></td>
-                    <td th:text="${contracts.conDeposit}"></td>
-                    <td th:text="${contracts.conTotal}"></td>
+                    <td>
+                        <th:block th:each="conDetails : ${contracts.contractDetails}">
+                            <p th:text="${conDetails.attachService.attachSerName}"></p>
+                        </th:block>
+                    </td>
+                    <td>
+                        <th:block th:each="conDetails : ${contracts.contractDetails}">
+                            <p th:text="${conDetails.quantity}"></p>
+                        </th:block>
+                    </td>
                     <td>
                         <button type="button" class="btnModalCreateDetail btn btn-warning btn-sm" th:value="${contracts.conId}">
                             <i class="fas fa-plus-circle"></i>
                         </button>
-                        <button type="button" class="btnModalViewDetail btn btn-danger btn-sm" th:value="${contracts.conId}">
+                    </td>
+                    <td>
+                        <button type="button" class="btnModalViewDetail btn btn-primary btn-sm" th:value="${contracts.conId}">
                             <i class="fas fa-search-plus"></i>
                         </button>
                     </td>
-<!--                    <td>-->
-<!--                        -->
-<!--                    </td>-->
+                    <td>
+                        <button type="button" class="btnModalDelete btn btn-danger btn-sm" th:value="${contracts.conId}">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -68,7 +81,7 @@
                 <div class="hint-text">Showing <b>3</b> out of <b>6</b> entries</div>
                 <ul class="pagination">
                     <li class="page-item disabled">
-                        <a th:href="@{'/contract'(page=${contractList.number - 1})}" th:if="${contractList.hasPrevious()}">Previous</a>
+                        <a th:href="@{'/contract/customerEXP'(page=${contractList.number - 1})}" th:if="${contractList.hasPrevious()}">Previous</a>
                     </li>
                     <li class="page-item">
                         <span th:text="${contractList.number + 1}"></span>/<span th:text="${contractList.totalPages}"></span>
@@ -79,7 +92,7 @@
                     <!--                    <li class="page-item"><a href="#" class="page-link">4</a></li>-->
                     <!--                    <li class="page-item"><a href="#" class="page-link">5</a></li>-->
                     <li class="page-item">
-                        <a th:href="@{'/contract'(page=${contractList.number + 1})}" th:if="${contractList.hasNext()}" class="page-link">Next</a>
+                        <a th:href="@{'/contract/customerEXP'(page=${contractList.number + 1})}" th:if="${contractList.hasNext()}" class="page-link">Next</a>
                     </li>
                 </ul>
             </div>
@@ -101,7 +114,7 @@
         </div>
     </div>
 </div>
-
+<!---------modal Detail---------->
 <div class="modal fade " id="modelId1" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -149,6 +162,17 @@
             $.ajax({
                 type: "GET",
                 url: "/contract-detail/view?idContract=" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body1").html(data);
+                    $("#modelId1").modal('show');
+                }
+            });
+        });
+        $(".btnModalDelete").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/contract/customerEXP/delete?idContract=" + $(this).val(),
                 dataType: "HTML",
                 success: function (data) {
                     $(".modal-body1").html(data);

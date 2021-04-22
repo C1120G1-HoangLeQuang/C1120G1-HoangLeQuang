@@ -45,14 +45,17 @@
                     </select>
                 </td>
             </tr>
+            <input type="hidden" class="form-control" th:field="*{user}">
             <tr>
                 <th>Username</th>
                 <td>
-                    <select th:field="*{user}" class="form-control">
-                        <option th:each="users : ${userList}" th:value="${users.username}"
-                                th:text="${users.username}">
-                        </option>
-                    </select>
+                    <input type="text" name="username" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>
+                    <input type="text" name="password" class="form-control">
                 </td>
             </tr>
             <tr>

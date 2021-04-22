@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<div class="container">
+    <h1 style="color: teal" class="text-center">Delete Customer</h1>
+    <form th:action="@{/contract/customerEXP/delete(idContract=${contracts.conId})}" method="post" th:object="${contracts}">
+        <!--        <input type="hidden" class="form-control" name="id" th:value="${customers.cusId}">-->
+        <table class="table table-hover">
+            <thead></thead>
+            <tbody>
+            <tr>
+                <th>ID</th>
+                <td th:text="${contracts.conId}"></td>
+            </tr>
+            <tr>
+                <th>Customer Name</th>
+                <td th:text="${contracts.customer.cusName}"></td>
+            </tr>
+            <tr>
+                <th>Start Date</th>
+                <td th:text="${contracts.conStartDate}"></td>
+            </tr>
+            <tr>
+                <th>End Date</th>
+                <td th:text="${contracts.conEndDate}"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                </td>
+                <td>
+                    <button class="btn btn-success" type="submit">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+</body>
+</html>

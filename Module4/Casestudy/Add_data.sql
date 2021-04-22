@@ -106,6 +106,14 @@ values 	(1,'KH-2222','DV-1111',"2018-12-12","2019-03-12",100,0),
         (3,'KH-4444','DV-3333',"2019-10-27","2019-11-12",300,0),
 		(6,'KH-3333','DV-2222',"2019-12-24","2019-12-28",200,0);
         
+insert into contract(employee_id, customer_id, service_id, contract_start_date, contract_end_date, contract_deposit, contract_total)
+values 	(1,'KH-2222','DV-1111',"2021-04-12","2021-04-29",100,0),
+		(1,'KH-1111','DV-5555',"2021-03-12","2021-04-30",100,0),
+		(7,'KH-5555','DV-4444',"2021-04-16","2021-04-28",100,0),
+		(5,'KH-6666','DV-6666',"2021-04-12","2021-04-25",100,0),
+		(4,'KH-3333','DV-3333',"2021-04-01","2021-04-21",100,0),
+        (6,'KH-2222','DV-2222',"2021-04-12","2021-04-22",100,0);
+        
 insert into contract_detail(contract_id, attach_service_id, quantity)
 values 	(1,1,3),
 		(2,3,3),  	-- mot hop dong co nhiu hdct
@@ -117,3 +125,11 @@ values 	(1,1,3),
 		(4,4,9),
         (5,2,1),
         (8,5,1);
+        
+insert into contract_detail(contract_id, attach_service_id, quantity)
+values 	(9,1,3),
+		(10,3,3),  	-- mot hop dong co nhiu hdct
+		(11,4,5),	--  mot dvdk nhiu hdct
+        (12,3,2),	-- mot cusType nhiu cus
+		(13,4,4),	
+        (14,3,1);

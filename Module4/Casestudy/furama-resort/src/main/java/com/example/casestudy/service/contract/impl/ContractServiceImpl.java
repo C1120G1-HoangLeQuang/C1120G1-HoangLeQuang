@@ -8,6 +8,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Service
 public class ContractServiceImpl implements ContractService {
 
@@ -27,5 +30,20 @@ public class ContractServiceImpl implements ContractService {
     @Override
     public Contract findById(Integer id) {
         return contractRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Page<Contract> getCustomerByEndDate(String inputDate, Pageable pageable) {
+        return contractRepository.getCustomerByEndDate(inputDate, pageable);
+    }
+
+    @Override
+    public Page<Contract> getListContractByName(String cusName, String inputDate, Pageable pageable) {
+        return contractRepository.getListContractByName(cusName,inputDate, pageable);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        contractRepository.deleteById(id);
     }
 }
