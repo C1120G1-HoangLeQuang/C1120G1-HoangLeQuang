@@ -9,7 +9,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -65,13 +68,21 @@ public class EmployeeController {
     }
 
     @PostMapping("/employee/save")
-    public String createNewEmployee(Employee employee,
+    public String createNewEmployee(@Validated @ModelAttribute(name = "employees") Employee employee,
                                     @RequestParam("username") String username,
                                     @RequestParam("password") String password,
                                     Model model,
+                                    BindingResult bindingResult,
                                     RedirectAttributes redirect) {
         User user = this.userService.createNewUser(username, password);
         model.addAttribute("user",user);
+        if (bindingResult.hasFieldErrors()) {
+            model.addAttribute("positionList", this.positionService.findAll());
+            model.addAttribute("educationDegreeList", this.educationDegreeService.findAll());
+            model.addAttribute("divisionList", this.divisionService.findAll());
+            model.addAttribute("user",user);
+            return "employee/createEmployee";
+        }
         employee.setUser(user);
         this.employeeService.save(employee);
         redirect.addFlashAttribute("message", "Employee " + employee.getEmId() + " was created");
@@ -84,16 +95,24 @@ public class EmployeeController {
         modelAndView.addObject("positionList", this.positionService.findAll());
         modelAndView.addObject("educationDegreeList", this.educationDegreeService.findAll());
         modelAndView.addObject("divisionList", this.divisionService.findAll());
-        modelAndView.addObject("userList", this.userService.findAll());
         modelAndView.addObject("employees", this.employeeService.findById(id));
         return modelAndView;
     }
 
     @PostMapping("/employee/update")
-    public String updateEmployee(Employee employee, RedirectAttributes redirect) {
+    public ModelAndView updateEmployee(@Validated @ModelAttribute(name = "employees")Employee employee,
+                                 BindingResult bindingResult,
+                                 RedirectAttributes redirect) {
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("employee/editEmployee");
+            modelAndView.addObject("positionList", this.positionService.findAll());
+            modelAndView.addObject("educationDegreeList", this.educationDegreeService.findAll());
+            modelAndView.addObject("divisionList", this.divisionService.findAll());
+        }
+        ModelAndView modelAndView = new ModelAndView("redirect:/employee");
         this.employeeService.save(employee);
         redirect.addFlashAttribute("message", "Employee " + employee.getEmId() + " was updated");
-        return "redirect:/employee";
+        return modelAndView;
     }
 
     @GetMapping("/employee/delete")

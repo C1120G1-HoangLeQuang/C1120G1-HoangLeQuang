@@ -15,7 +15,8 @@
                         <h2>Manage <b>Customer</b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Customer</span></a>
+<!--                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i><span>Add New Customer</span></a>-->
+                        <a th:href="@{/customer/create}" class="btn btn-success"><i class="material-icons">&#xE147;</i><span>Add New Customer</span></a>
                         <form th:action="@{/customer/search}" class="form-inline mt-2 mt-md-0" >
                             <input class="form-control mr-sm-2" type="text" placeholder="Search..." name="cusName" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -64,9 +65,14 @@
 <!--                            <a th:href="@{/customer/delete(id=${customers.cusId})}" class="btnModalDelete text-danger" data-toggle="modal">-->
 <!--                                <i class="fas fa-ban"></i>-->
 <!--                            </a>-->
-                            <button type="button" class="btnModalEdit btn btn-warning btn-sm" th:value="${customers.cusId}">
-                                <i class="fas fa-edit"></i>
-                            </button>
+<!--                            <button type="button" class="btnModalEdit btn btn-warning btn-sm" th:value="${customers.cusId}">-->
+<!--                                <i class="fas fa-edit"></i>-->
+<!--                            </button>-->
+                            <a th:href="@{/customer/edit(id=${customers.cusId})}">
+                                <button type="button" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </a>
                         </td>
                         <td>
                             <button type="button" class="btnModalDelete btn btn-danger btn-sm" th:value="${customers.cusId}">
@@ -119,28 +125,28 @@
         $("#messageAlert").fadeTo(5000, 500).slideUp(500, function() {
             $("#messageAlert").alert('close');
         });
-        $("#btnModalCreate").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/customer/create",
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
-        $(".btnModalEdit").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/customer/edit?id=" + $(this).val(),
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
+        // $("#btnModalCreate").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/customer/create",
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
+        // $(".btnModalEdit").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/customer/edit?id=" + $(this).val(),
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
         $(".btnModalDelete").click(function () {
             $.ajax({
                 type: "GET",

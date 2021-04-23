@@ -34,7 +34,7 @@
                 <td>
                     <select th:field="*{service}" class="form-control">
                         <option th:each="services : ${serviceList}" th:value="${services.serId}"
-                                th:text="${services.serName}">
+                                th:text="${services.serId}">
                         </option>
                     </select>
                 </td>
@@ -55,17 +55,23 @@
                 <th>Deposit</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{conDeposit}" required>
+                    <p th:if="${#fields.hasErrors('conDeposit')}" th:errors="*{conDeposit}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
                 <th>Total</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{conTotal}" required>
+                    <p th:if="${#fields.hasErrors('conTotal')}" th:errors="*{conTotal}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+<!--                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>-->
+                    <a th:href="@{/contract}">
+                        <button type="button" class="btn btn-info btn-sm">Close
+                        </button>
+                    </a>
                 </td>
                 <td>
                     <button class="btn btn-success" type="submit">Create</button>

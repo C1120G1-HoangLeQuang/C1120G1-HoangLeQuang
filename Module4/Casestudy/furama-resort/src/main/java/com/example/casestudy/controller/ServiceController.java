@@ -9,7 +9,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -60,10 +63,51 @@ public class ServiceController {
         return modelAndView;
     }
 
-    @PostMapping("/service/save")
-    private String createNewService(Service service, RedirectAttributes redirect) {
+    @PostMapping("/service/saveVilla")
+    private ModelAndView createNewVilla(@Validated @ModelAttribute(name = "services") Service service,
+                                    BindingResult bindingResult,
+                                    RedirectAttributes redirect) {
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("service/createVilla");
+            modelAndView.addObject("rentTypeList", this.rentTypeService.findAll());
+            modelAndView.addObject("serviceTypeList", this.serviceTypeService.findAll());
+            return modelAndView;
+        }
         this.serviceServices.save(service);
-        redirect.addFlashAttribute("message", "Service" + service.getSerId() + "was created");
-        return "redirect:/service";
+        ModelAndView modelAndView = new ModelAndView("redirect:/service");
+        redirect.addFlashAttribute("message", "Service " + service.getSerId() + " was created");
+        return modelAndView;
+    }
+
+    @PostMapping("/service/saveHouse")
+    private ModelAndView createNewHouse(@Validated @ModelAttribute(name = "services") Service service,
+                                          BindingResult bindingResult,
+                                          RedirectAttributes redirect) {
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("service/createHouse");
+            modelAndView.addObject("rentTypeList", this.rentTypeService.findAll());
+            modelAndView.addObject("serviceTypeList", this.serviceTypeService.findAll());
+            return modelAndView;
+        }
+        this.serviceServices.save(service);
+        ModelAndView modelAndView = new ModelAndView("redirect:/service");
+        redirect.addFlashAttribute("message", "Service " + service.getSerId() + " was created");
+        return modelAndView;
+    }
+
+    @PostMapping("/service/saveRoom")
+    private ModelAndView createNewRoom(@Validated @ModelAttribute(name = "services") Service service,
+                                          BindingResult bindingResult,
+                                          RedirectAttributes redirect) {
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("service/createRoom");
+            modelAndView.addObject("rentTypeList", this.rentTypeService.findAll());
+            modelAndView.addObject("serviceTypeList", this.serviceTypeService.findAll());
+            return modelAndView;
+        }
+        this.serviceServices.save(service);
+        ModelAndView modelAndView = new ModelAndView("redirect:/service");
+        redirect.addFlashAttribute("message", "Service " + service.getSerId() + " was created");
+        return modelAndView;
     }
 }

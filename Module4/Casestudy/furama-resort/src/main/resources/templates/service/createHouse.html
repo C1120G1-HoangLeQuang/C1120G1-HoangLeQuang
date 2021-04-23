@@ -4,7 +4,7 @@
 <body>
 <div class="container">
     <h1 style="color: teal" class="text-center">Add New House</h1>
-    <form th:action="@{/service/save}" method="post" th:object="${services}">
+    <form th:action="@{/service/saveHouse}" method="post" th:object="${services}" novalidate="novalidate">
         <table class="table table-hover">
             <thead></thead>
             <tbody>
@@ -12,6 +12,7 @@
                 <th>ID</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{serId}" required>
+                    <p th:if="${#fields.hasErrors('serId')}" th:errors="*{serId}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
@@ -56,6 +57,7 @@
                 <th>Cost</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{serCost}" required>
+                    <p th:if="${#fields.hasErrors('serCost')}" th:errors="*{serCost}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
@@ -78,7 +80,11 @@
             </tr>
             <tr>
                 <td>
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+<!--                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>-->
+                    <a th:href="@{/service}">
+                        <button type="button" class="btn btn-info btn-sm">Close
+                        </button>
+                    </a>
                 </td>
                 <td>
                     <button class="btn btn-success" type="submit">Create</button>

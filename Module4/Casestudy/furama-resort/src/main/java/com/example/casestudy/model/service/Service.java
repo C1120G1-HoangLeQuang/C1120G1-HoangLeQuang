@@ -3,6 +3,7 @@ package com.example.casestudy.model.service;
 import com.example.casestudy.model.contract.Contract;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity(name = "service")
@@ -11,6 +12,7 @@ public class Service {
 
     @Id
     @Column(name = "service_id", nullable = false)
+    @Pattern(regexp = "^DV-[0-9]{4}$", message = "Information is not correct by format (KH-xxxx)")
     private String serId;
     @Column(name = "service_name", nullable = false)
     private String serName;
@@ -19,6 +21,7 @@ public class Service {
     @Column(name = "service_max_people", nullable = false)
     private Integer serMaxPeople;
     @Column(name = "service_cost", nullable = false)
+    @Pattern(regexp = "^[0-9]{1,}.[0-9]{1,}$", message = "Cost have to be bigger than 0")
     private Integer serCost;
     @Column(name = "standard_room")
     private String standardRoom;
@@ -27,6 +30,7 @@ public class Service {
     @Column(name = "pool_area")
     private Double poolArea;
     @Column(name = "number_of_floors")
+    @Pattern(regexp = "^([1-9]{1,}|[1-9][0-9])$", message = "Floor have to be Interger number!")
     private Integer numFloor;
 
     @ManyToOne

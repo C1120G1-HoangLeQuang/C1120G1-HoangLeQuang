@@ -8,13 +8,13 @@ import com.example.casestudy.service.contract.ContractService;
 import com.example.casestudy.service.customer.CustomerService;
 import com.example.casestudy.service.employee.EmployeeService;
 import com.example.casestudy.service.services.ServiceServices;
-import jdk.nashorn.internal.runtime.options.Option;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -63,10 +63,20 @@ public class ContractController {
     }
 
     @PostMapping("/contract/save")
-    public String createNewContract(Contract contract, RedirectAttributes redirect) {
+    public ModelAndView createNewContract(Contract contract,
+                                    BindingResult bindingResult,
+                                    RedirectAttributes redirect) {
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("contract/createContract");
+            modelAndView.addObject("employeeList", this.employeeService.findAll());
+            modelAndView.addObject("customerList", this.customerService.findAll());
+            modelAndView.addObject("serviceList", this.serviceServices.findAll());
+            return modelAndView;
+        }
+        ModelAndView modelAndView = new ModelAndView("redirect:/contract");
         this.contractService.save(contract);
         redirect.addFlashAttribute("message", "Contract " + contract.getConId() + " is created");
-        return "redirect:/contract";
+        return modelAndView;
     }
 
     @GetMapping("/contract-detail/view")
@@ -89,12 +99,23 @@ public class ContractController {
     }
 
     @PostMapping("/contract-detail/save")
-    public String createNewConDetail(@RequestParam Integer idContract, ContractDetail contractDetail,RedirectAttributes redirect) {
+    public ModelAndView createNewConDetail(@RequestParam Integer idContract,
+                                     BindingResult bindingResult,
+                                     ContractDetail contractDetail,
+                                     RedirectAttributes redirect) {
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("contract/createContractDetail");
+            Contract contract = this.contractService.findById(idContract);
+            modelAndView.addObject(contract);
+            modelAndView.addObject("attachServiceList", this.attachServiceService.findAll());
+            return modelAndView;
+        }
         Contract contract = this.contractService.findById(idContract);
         contractDetail.setContract(contract);
         this.contractDetailService.save(contractDetail);
+        ModelAndView modelAndView = new ModelAndView("redirect:/contract");
         redirect.addFlashAttribute("message", "Contract detail in contract id: " + contract.getConId() + " is created");
-        return "redirect:/contract";
+        return modelAndView;
     }
 
     @GetMapping("/contract/customerEXP")

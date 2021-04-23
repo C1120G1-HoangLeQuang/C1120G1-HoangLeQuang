@@ -5,6 +5,7 @@ import com.example.casestudy.model.employee.Employee;
 import com.example.casestudy.model.service.Service;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 import java.util.Set;
 
@@ -21,8 +22,10 @@ public class Contract {
     @Column(name = "contract_end_date", nullable = false)
     private String conEndDate;
     @Column(name = "contract_deposit", nullable = false)
+    @Pattern(regexp = "^[0-9]{1,}.[0-9]{1,}$", message = "Deposit have to be bigger than 0")
     private Double conDeposit;
     @Column(name = "contract_total", nullable = false)
+    @Pattern(regexp = "^[0-9]{1,}.[0-9]{1,}$", message = "Total have to be bigger than 0")
     private Double conTotal;
 
     @OneToMany(mappedBy = "contract", cascade = CascadeType.ALL)

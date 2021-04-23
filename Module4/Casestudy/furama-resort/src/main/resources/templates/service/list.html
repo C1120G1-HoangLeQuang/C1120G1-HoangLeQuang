@@ -15,9 +15,12 @@
                         <h2>Manage <b>Service</b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a id="btnModalCreateVilla" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Villa</span></a>
-                        <a id="btnModalCreateHouse" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New House</span></a>
-                        <a id="btnModalCreateRoom" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Room</span></a>
+<!--                        <a id="btnModalCreateVilla" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Villa</span></a>-->
+<!--                        <a id="btnModalCreateHouse" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New House</span></a>-->
+<!--                        <a id="btnModalCreateRoom" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Room</span></a>-->
+                        <a th:href="@{/service/createVilla}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New Villa</span></a>
+                        <a th:href="@{/service/createHouse}" class="btn btn-danger"><i class="material-icons">&#xE147;</i> <span>Add New House</span></a>
+                        <a th:href="@{/service/createRoom}" class="btn btn-warning"><i class="material-icons">&#xE147;</i> <span>Add New Room</span></a>
                     </div>
                 </div>
             </div>
@@ -114,39 +117,39 @@
         $("#messageAlert").fadeTo(5000, 500).slideUp(500, function() {
             $("#messageAlert").alert('close');
         });
-        $("#btnModalCreateVilla").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/service/createVilla",
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
-        $("#btnModalCreateHouse").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/service/createHouse",
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
-        $("#btnModalCreateRoom").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/service/createRoom",
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
+        // $("#btnModalCreateVilla").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/service/createVilla",
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
+        // $("#btnModalCreateHouse").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/service/createHouse",
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
+        // $("#btnModalCreateRoom").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/service/createRoom",
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
     });
 </script>
 </body>

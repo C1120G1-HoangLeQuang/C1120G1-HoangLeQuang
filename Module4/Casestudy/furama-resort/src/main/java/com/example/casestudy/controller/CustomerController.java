@@ -8,7 +8,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -46,11 +49,19 @@ public class CustomerController {
         return modelAndView;
     }
 
-    @PostMapping("/customer/create")
-    public String createNewCustomer(Customer customer, RedirectAttributes redirect) {
+    @PostMapping("/customer/save")
+    public ModelAndView createNewCustomer(@Validated @ModelAttribute(name = "customers") Customer customer,
+                                    BindingResult bindingResult,
+                                    RedirectAttributes redirect) {
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("customer/create");
+            modelAndView.addObject("cusTypeList", this.customerTypeService.findAll());
+            return modelAndView;
+        }
         this.customerService.save(customer);
+        ModelAndView modelAndView = new ModelAndView("redirect:/customer");
         redirect.addFlashAttribute("message", "Customer " + customer.getCusId() + " was created");
-        return "redirect:/customer";
+        return modelAndView;
     }
 
     @GetMapping("/customer/edit")
@@ -61,11 +72,17 @@ public class CustomerController {
         return modelAndView;
     }
 
-    @PostMapping("/customer/edit")
-    public String updateCustomer(Customer customer, RedirectAttributes redirect) {
-        this.customerService.save(customer);
-        redirect.addFlashAttribute("message", "Customer " + customer.getCusId() + " was updated");
-        return "redirect:/customer";
+    @PostMapping("/customer/update")
+    public ModelAndView updateCustomer(@Validated Customer customers, BindingResult bindingResult,
+                                 RedirectAttributes redirect) {
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("customer/edit");
+            modelAndView.addObject("cusTypeList", this.customerTypeService.findAll());
+        }
+        this.customerService.save(customers);
+        ModelAndView modelAndView = new ModelAndView("redirect:/customer");
+        redirect.addFlashAttribute("message", "Customer " + customers.getCusId() + " was updated");
+        return modelAndView;
     }
 
     @GetMapping("/customer/delete")

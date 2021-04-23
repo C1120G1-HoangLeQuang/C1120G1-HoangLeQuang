@@ -3,6 +3,8 @@ package com.example.casestudy.model.employee;
 import com.example.casestudy.model.contract.Contract;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity(name = "employee")
@@ -18,12 +20,17 @@ public class Employee {
     @Column(name = "employee_birthday", nullable = false)
     private String emBirthday;
     @Column(name = "employee_id_card", nullable = false)
+    @Pattern(regexp = "^([\\d]{9})|(^[\\d]{12}$)$", message = "Information is not correct by format (xxxxxxxxx) | (xxxxxxxxxxxx)")
     private String emIdCard;
     @Column(name = "employee_salary", nullable = false)
+    @Pattern(regexp = "^[0-9]{1,}.[0-9]{1,}$", message = "Salary have to be bigger than 0")
     private Double emSalary;
     @Column(name = "employee_phone", nullable = false)
+    @Pattern(regexp = "^((090|091)([\\d]{7}))|((\\(\\+84\\))(90([\\d]{7})))|((\\(\\+84\\))(91([\\d]{7})))$",
+            message = "Information is not correct by format (090xxxxxxx) or (091xxxxxxx) or ((+84)90xxxxxxx) or ((+84)91xxxxxxx)")
     private String emPhone;
     @Column(name = "employee_email", nullable = false)
+    @Email(message = "Information is not correct by format(abc@abc.abc)")
     private String emEmail;
     @Column(name = "employee_address", nullable = false)
     private String emAddress;

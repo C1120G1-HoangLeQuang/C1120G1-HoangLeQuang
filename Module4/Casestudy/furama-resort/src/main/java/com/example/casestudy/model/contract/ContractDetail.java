@@ -1,6 +1,7 @@
 package com.example.casestudy.model.contract;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @Entity(name = "contract_detail")
 @Table
@@ -11,6 +12,7 @@ public class ContractDetail {
     @Column(name = "contract_detail_id", nullable = false)
     private Integer conDetailId;
     @Column(name = "quantity", nullable = false)
+    @Pattern(regexp = "^([1-9]{1,}|[1-9][0-9])$", message = "Quantity have to be Interger number!")
     private Integer quantity;
 
     @ManyToOne

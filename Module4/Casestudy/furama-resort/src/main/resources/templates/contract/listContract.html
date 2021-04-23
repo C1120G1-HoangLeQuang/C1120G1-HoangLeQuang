@@ -15,7 +15,8 @@
                         <h2>Manage <b>Service</b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>
+<!--                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>-->
+                        <a th:href="@{/contract/create}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>
                         <a th:href="@{/contract/customerEXP}" class="btn btn-warning"><i class="material-icons">&#xE147;</i> <span>Show Customer EXP</span></a>
                     </div>
                 </div>
@@ -51,9 +52,14 @@
                     <td th:text="${contracts.conDeposit}"></td>
                     <td th:text="${contracts.conTotal}"></td>
                     <td>
-                        <button type="button" class="btnModalCreateDetail btn btn-warning btn-sm" th:value="${contracts.conId}">
-                            <i class="fas fa-plus-circle"></i>
-                        </button>
+<!--                        <button type="button" class="btnModalCreateDetail btn btn-warning btn-sm" th:value="${contracts.conId}">-->
+<!--                            <i class="fas fa-plus-circle"></i>-->
+<!--                        </button>-->
+                        <a th:href="@{/contract-detail/create(idContract=${contracts.conId})}">
+                            <button type="button" class="btn btn-warning btn-sm">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+                        </a>
                         <button type="button" class="btnModalViewDetail btn btn-danger btn-sm" th:value="${contracts.conId}">
                             <i class="fas fa-search-plus"></i>
                         </button>
@@ -123,28 +129,28 @@
         $("#messageAlert").fadeTo(3000, 500).slideUp(500, function() {
             $("#messageAlert").alert('close');
         });
-        $("#btnModalCreate").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/contract/create",
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
-        $(".btnModalCreateDetail").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/contract-detail/create?idContract=" + $(this).val(),
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
+        // $("#btnModalCreate").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/contract/create",
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
+        // $(".btnModalCreateDetail").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/contract-detail/create?idContract=" + $(this).val(),
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
         $(".btnModalViewDetail").click(function () {
             $.ajax({
                 type: "GET",

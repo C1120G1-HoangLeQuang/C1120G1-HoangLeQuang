@@ -4,7 +4,7 @@
 <body>
 <div class="container">
     <h1 style="color: teal" class="text-center">Add New Customer</h1>
-    <form th:action="@{/customer/create}" method="post" th:object="${customers}">
+    <form th:action="@{/customer/save}" method="post" th:object="${customers}" novalidate="novalidate">
         <table class="table table-hover">
             <thead></thead>
             <tbody>
@@ -12,6 +12,7 @@
                 <th>ID</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{cusId}" required>
+                    <p th:if="${#fields.hasErrors('cusId')}" th:errors="*{cusId}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
@@ -39,7 +40,7 @@
             <tr>
                 <th>Gender</th>
                 <td>
-                    <select th:field="*{cusGender}">
+                    <select class="form-control" th:field="*{cusGender}">
                         <option value="1">Male</option>
                         <option value="0">Female</option>
                     </select>
@@ -49,18 +50,21 @@
                 <th>Id Card</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{cusIdCard}" required>
+                    <p th:if="${#fields.hasErrors('cusIdCard')}" th:errors="*{cusIdCard}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
                 <th>Phone</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{cusPhone}" required>
+                    <p th:if="${#fields.hasErrors('cusPhone')}" th:errors="*{cusPhone}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
                 <th>Email</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{cusEmail}" required>
+                    <p th:if="${#fields.hasErrors('cusEmail')}" th:errors="*{cusEmail}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
@@ -71,7 +75,11 @@
             </tr>
             <tr>
                 <td>
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+<!--                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>-->
+                    <a th:href="@{/customer}">
+                        <button type="button" class="btn btn-info btn-sm">Close
+                        </button>
+                    </a>
                 </td>
                 <td>
                     <button class="btn btn-success" type="submit">Create</button>

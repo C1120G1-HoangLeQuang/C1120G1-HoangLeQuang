@@ -68,24 +68,28 @@
                 <th>Id Card</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{emIdCard}" required>
+                    <p th:if="${#fields.hasErrors('emIdCard')}" th:errors="*{emIdCard}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
                 <th>Salary</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{emSalary}" required>
+                    <p th:if="${#fields.hasErrors('emSalary')}" th:errors="*{emSalary}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
                 <th>Phone</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{emPhone}" required>
+                    <p th:if="${#fields.hasErrors('emPhone')}" th:errors="*{emPhone}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
                 <th>Email</th>
                 <td>
                     <input type="text" class="form-control" th:field="*{emEmail}" required>
+                    <p th:if="${#fields.hasErrors('emEmail')}" th:errors="*{emEmail}" style="color: red"></p>
                 </td>
             </tr>
             <tr>
@@ -96,7 +100,11 @@
             </tr>
             <tr>
                 <td>
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+<!--                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>-->
+                    <a th:href="@{/employee}">
+                        <button type="button" class="btn btn-info btn-sm">Close
+                        </button>
+                    </a>
                 </td>
                 <td>
                     <button class="btn btn-success" type="submit">Create</button>

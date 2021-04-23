@@ -15,7 +15,8 @@
                         <h2>Manage <b>Employee</b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+<!--                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>-->
+                        <a th:href="@{/employee/create}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
                         <form th:action="@{/employee/search}" class="form-inline mt-2 mt-md-0" >
                             <input class="form-control mr-sm-2" type="text" placeholder="Search..." name="emName" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -69,9 +70,14 @@
                         <!--                            <a th:href="@{/customer/delete(id=${customers.cusId})}" class="btnModalDelete text-danger" data-toggle="modal">-->
                         <!--                                <i class="fas fa-ban"></i>-->
                         <!--                            </a>-->
-                        <button type="button" class="btnModalEdit btn btn-warning btn-sm" th:value="${employees.emId}">
-                            <i class="fas fa-edit"></i>
-                        </button>
+<!--                        <button type="button" class="btnModalEdit btn btn-warning btn-sm" th:value="${employees.emId}">-->
+<!--                            <i class="fas fa-edit"></i>-->
+<!--                        </button>-->
+                        <a th:href="@{/employee/edit(id=${employees.emId})}">
+                            <button type="button" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </a>
                     </td>
                     <td>
                         <button type="button" class="btnModalDelete btn btn-danger btn-sm" th:value="${employees.emId}">
@@ -124,28 +130,28 @@
         $("#messageAlert").fadeTo(3000, 500).slideUp(500, function() {
             $("#messageAlert").alert('close');
         });
-        $("#btnModalCreate").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/employee/create",
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
-        $(".btnModalEdit").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/employee/edit?id=" + $(this).val(),
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
+        // $("#btnModalCreate").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/employee/create",
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
+        // $(".btnModalEdit").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/employee/edit?id=" + $(this).val(),
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
         $(".btnModalDelete").click(function () {
             $.ajax({
                 type: "GET",
