@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -74,6 +75,7 @@ public class ContractController {
             return modelAndView;
         }
         ModelAndView modelAndView = new ModelAndView("redirect:/contract");
+        contract.setConTotal(this.contractService.calculateTotal(contract));
         this.contractService.save(contract);
         redirect.addFlashAttribute("message", "Contract " + contract.getConId() + " is created");
         return modelAndView;
@@ -100,9 +102,9 @@ public class ContractController {
 
     @PostMapping("/contract-detail/save")
     public ModelAndView createNewConDetail(@RequestParam Integer idContract,
-                                     BindingResult bindingResult,
-                                     ContractDetail contractDetail,
-                                     RedirectAttributes redirect) {
+                                           @ModelAttribute(name = "contractDetails") ContractDetail contractDetail,
+                                           BindingResult bindingResult,
+                                           RedirectAttributes redirect) {
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("contract/createContractDetail");
             Contract contract = this.contractService.findById(idContract);
@@ -113,7 +115,7 @@ public class ContractController {
         Contract contract = this.contractService.findById(idContract);
         contractDetail.setContract(contract);
         this.contractDetailService.save(contractDetail);
-        ModelAndView modelAndView = new ModelAndView("redirect:/contract");
+        ModelAndView modelAndView = new ModelAndView("redirect:/contract/customerEXP");
         redirect.addFlashAttribute("message", "Contract detail in contract id: " + contract.getConId() + " is created");
         return modelAndView;
     }

@@ -22,7 +22,7 @@ public class Service {
     private Integer serMaxPeople;
     @Column(name = "service_cost", nullable = false)
     @Pattern(regexp = "^[0-9]{1,}.[0-9]{1,}$", message = "Cost have to be bigger than 0")
-    private Integer serCost;
+    private String serCost;
     @Column(name = "standard_room")
     private String standardRoom;
     @Column(name = "description_other_convenience")
@@ -31,7 +31,7 @@ public class Service {
     private Double poolArea;
     @Column(name = "number_of_floors")
     @Pattern(regexp = "^([1-9]{1,}|[1-9][0-9])$", message = "Floor have to be Interger number!")
-    private Integer numFloor;
+    private String numFloor;
 
     @ManyToOne
     @JoinColumn(name = "service_type_id", nullable = false, referencedColumnName = "service_type_id")
@@ -47,7 +47,7 @@ public class Service {
     public Service() {
     }
 
-    public Service(String serId, String serName, Integer serArea, Integer serMaxPeople, Integer serCost, String standardRoom, String otherService, Double poolArea, Integer numFloor, ServiceType serviceType, RentType rentType, List<Contract> contracts) {
+    public Service(String serId, String serName, Integer serArea, Integer serMaxPeople, String serCost, String standardRoom, String otherService, Double poolArea, String numFloor, ServiceType serviceType, RentType rentType, List<Contract> contracts) {
         this.serId = serId;
         this.serName = serName;
         this.serArea = serArea;
@@ -94,11 +94,11 @@ public class Service {
         this.serMaxPeople = serMaxPeople;
     }
 
-    public Integer getSerCost() {
+    public String getSerCost() {
         return serCost;
     }
 
-    public void setSerCost(Integer serCost) {
+    public void setSerCost(String serCost) {
         this.serCost = serCost;
     }
 
@@ -126,11 +126,11 @@ public class Service {
         this.poolArea = poolArea;
     }
 
-    public Integer getNumFloor() {
+    public String getNumFloor() {
         return numFloor;
     }
 
-    public void setNumFloor(Integer numFloor) {
+    public void setNumFloor(String numFloor) {
         this.numFloor = numFloor;
     }
 

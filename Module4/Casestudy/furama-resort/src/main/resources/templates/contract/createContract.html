@@ -59,11 +59,7 @@
                 </td>
             </tr>
             <tr>
-                <th>Total</th>
-                <td>
-                    <input type="text" class="form-control" th:field="*{conTotal}" required>
-                    <p th:if="${#fields.hasErrors('conTotal')}" th:errors="*{conTotal}" style="color: red"></p>
-                </td>
+                <input type="hidden" class="form-control" th:field="*{conTotal}">
             </tr>
             <tr>
                 <td>

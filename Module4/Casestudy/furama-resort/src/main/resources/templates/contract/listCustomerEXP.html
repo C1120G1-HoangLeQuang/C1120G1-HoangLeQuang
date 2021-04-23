@@ -15,7 +15,8 @@
                         <h2>Manage <b>Service</b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>
+<!--                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>-->
+                        <a th:href="@{/contract/create}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>
                         <form th:action="@{/contract/customerEXP/search}" class="form-inline mt-2 mt-md-0" >
                             <input class="form-control mr-sm-2" type="text" placeholder="Search..." name="cusName" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -60,9 +61,14 @@
                         </th:block>
                     </td>
                     <td>
-                        <button type="button" class="btnModalCreateDetail btn btn-warning btn-sm" th:value="${contracts.conId}">
-                            <i class="fas fa-plus-circle"></i>
-                        </button>
+<!--                        <button type="button" class="btnModalCreateDetail btn btn-warning btn-sm" th:value="${contracts.conId}">-->
+<!--                            <i class="fas fa-plus-circle"></i>-->
+<!--                        </button>-->
+                        <a th:href="@{/contract-detail/create(idContract=${contracts.conId})}">
+                            <button type="button" class="btn btn-warning btn-sm">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+                        </a>
                     </td>
                     <td>
                         <button type="button" class="btnModalViewDetail btn btn-primary btn-sm" th:value="${contracts.conId}">
@@ -78,21 +84,22 @@
                 </tbody>
             </table>
             <div class="clearfix">
-                <div class="hint-text">Showing <b>3</b> out of <b>6</b> entries</div>
+                <div class="hint-text"
+                     th:utext="'Showing <b>' + ${contractList.numberOfElements} + '</b> out of <b>' + ${contractList.totalElements} + '</b> entries'">
+                </div>
                 <ul class="pagination">
-                    <li class="page-item disabled">
-                        <a th:href="@{'/contract/customerEXP'(page=${contractList.number - 1})}" th:if="${contractList.hasPrevious()}">Previous</a>
+                    <li class="page-item">
+                        <a th:href="@{'/contract/customerEXP'(page=${contractList.number - 1})}" th:if="${contractList.hasPrevious()}" class="page-link">
+                            <i class="fa fa-angle-double-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item" th:each=" i : ${#numbers.sequence(0, contractList.totalPages - 1)}">
+                        <a class="page-link" th:href="@{/contract/customerEXP(page= ${i})}" th:text="${i + 1}"></a>
                     </li>
                     <li class="page-item">
-                        <span th:text="${contractList.number + 1}"></span>/<span th:text="${contractList.totalPages}"></span>
-                    </li>
-                    <!--                    <li class="page-item"><a href="#" class="page-link">1</a></li>-->
-                    <!--                    <li class="page-item"><a href="#" class="page-link">2</a></li>-->
-                    <!--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>-->
-                    <!--                    <li class="page-item"><a href="#" class="page-link">4</a></li>-->
-                    <!--                    <li class="page-item"><a href="#" class="page-link">5</a></li>-->
-                    <li class="page-item">
-                        <a th:href="@{'/contract/customerEXP'(page=${contractList.number + 1})}" th:if="${contractList.hasNext()}" class="page-link">Next</a>
+                        <a th:href="@{'/contract/customerEXP'(page=${contractList.number + 1})}" th:if="${contractList.hasNext()}" class="page-link">
+                            <i class="fa fa-angle-double-right"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -136,28 +143,28 @@
         $("#messageAlert").fadeTo(3000, 500).slideUp(500, function() {
             $("#messageAlert").alert('close');
         });
-        $("#btnModalCreate").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/contract/create",
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
-        $(".btnModalCreateDetail").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "/contract-detail/create?idContract=" + $(this).val(),
-                dataType: "HTML",
-                success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
-                }
-            });
-        });
+        // $("#btnModalCreate").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/contract/create",
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
+        // $(".btnModalCreateDetail").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/contract-detail/create?idContract=" + $(this).val(),
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
         $(".btnModalViewDetail").click(function () {
             $.ajax({
                 type: "GET",

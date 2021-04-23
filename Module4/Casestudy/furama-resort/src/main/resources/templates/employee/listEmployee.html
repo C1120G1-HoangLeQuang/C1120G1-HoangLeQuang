@@ -88,21 +88,22 @@
                 </tbody>
             </table>
             <div class="clearfix">
-                <div class="hint-text">Showing <b>3</b> out of <b>6</b> entries</div>
+                <div class="hint-text"
+                     th:utext="'Showing <b>' + ${employeeList.numberOfElements} + '</b> out of <b>' + ${employeeList.totalElements} + '</b> entries'">
+                </div>
                 <ul class="pagination">
-                    <li class="page-item disabled">
-                        <a th:href="@{'/employee'(page=${employeeList.number - 1})}" th:if="${employeeList.hasPrevious()}">Previous</a>
+                    <li class="page-item">
+                        <a th:href="@{'/employee'(page=${employeeList.number - 1})}" th:if="${employeeList.hasPrevious()}" class="page-link">
+                            <i class="fa fa-angle-double-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item" th:each=" i : ${#numbers.sequence(0, employeeList.totalPages - 1)}">
+                        <a class="page-link" th:href="@{/employee(page = ${i})}" th:text="${i + 1}"></a>
                     </li>
                     <li class="page-item">
-                        <span th:text="${employeeList.number+ 1}"></span>/<span th:text="${employeeList.totalPages}"></span>
-                    </li>
-                    <!--                    <li class="page-item"><a href="#" class="page-link">1</a></li>-->
-                    <!--                    <li class="page-item"><a href="#" class="page-link">2</a></li>-->
-                    <!--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>-->
-                    <!--                    <li class="page-item"><a href="#" class="page-link">4</a></li>-->
-                    <!--                    <li class="page-item"><a href="#" class="page-link">5</a></li>-->
-                    <li class="page-item">
-                        <a th:href="@{'/employee'(page=${employeeList.number + 1})}" th:if="${employeeList.hasNext()}" class="page-link">Next</a>
+                        <a th:href="@{'/employee'(page=${employeeList.number + 1})}" th:if="${employeeList.hasNext()}" class="page-link">
+                            <i class="fa fa-angle-double-right"></i>
+                        </a>
                     </li>
                 </ul>
             </div>

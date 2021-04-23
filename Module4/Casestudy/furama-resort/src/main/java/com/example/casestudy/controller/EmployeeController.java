@@ -69,20 +69,19 @@ public class EmployeeController {
 
     @PostMapping("/employee/save")
     public String createNewEmployee(@Validated @ModelAttribute(name = "employees") Employee employee,
+                                    BindingResult bindingResult,
                                     @RequestParam("username") String username,
                                     @RequestParam("password") String password,
                                     Model model,
-                                    BindingResult bindingResult,
                                     RedirectAttributes redirect) {
-        User user = this.userService.createNewUser(username, password);
-        model.addAttribute("user",user);
         if (bindingResult.hasFieldErrors()) {
             model.addAttribute("positionList", this.positionService.findAll());
             model.addAttribute("educationDegreeList", this.educationDegreeService.findAll());
             model.addAttribute("divisionList", this.divisionService.findAll());
-            model.addAttribute("user",user);
             return "employee/createEmployee";
         }
+        User user = this.userService.createNewUser(username, password);
+        model.addAttribute("user",user);
         employee.setUser(user);
         this.employeeService.save(employee);
         redirect.addFlashAttribute("message", "Employee " + employee.getEmId() + " was created");
@@ -105,9 +104,11 @@ public class EmployeeController {
                                  RedirectAttributes redirect) {
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("employee/editEmployee");
+            modelAndView.addObject("employees", employee);
             modelAndView.addObject("positionList", this.positionService.findAll());
             modelAndView.addObject("educationDegreeList", this.educationDegreeService.findAll());
             modelAndView.addObject("divisionList", this.divisionService.findAll());
+            return modelAndView;
         }
         ModelAndView modelAndView = new ModelAndView("redirect:/employee");
         this.employeeService.save(employee);

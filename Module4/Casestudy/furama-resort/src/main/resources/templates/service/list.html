@@ -71,25 +71,24 @@
 <!--                                <i class="fas fa-trash-alt"></i>-->
 <!--                            </button>-->
 <!--                        </td>-->
-                    </tr>
-                    </tbody>
+                    </tr></tbody>
                 </table>
             <div class="clearfix">
-                <div class="hint-text">Showing <b>3</b> out of <b>6</b> entries</div>
+                <div class="hint-text" th:utext=" 'Showing <b>' + ${serviceList.numberOfElements} + '</b> out of <b>' + ${serviceList.totalElements} + '</b> entries'">
+                </div>
                 <ul class="pagination">
-                    <li class="page-item disabled">
-                        <a th:href="@{'/service'(page=${serviceList.number - 1})}" th:if="${serviceList.hasPrevious()}">Previous</a>
+                    <li class="page-item">
+                        <a th:href="@{'/service'(page=${serviceList.number - 1})}" th:if="${serviceList.hasPrevious()}" class="page-link">
+                            <i class="fa fa-angle-double-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item" th:each=" i : ${#numbers.sequence(0, serviceList.totalPages - 1)}">
+                       <a class="page-link" th:href="@{/service(page= ${i})}" th:text="${i + 1}"></a>
                     </li>
                     <li class="page-item">
-                        <span th:text="${serviceList.number + 1}"></span>/<span th:text="${serviceList.totalPages}"></span>
-                    </li>
-                    <!--                    <li class="page-item"><a href="#" class="page-link">1</a></li>-->
-                    <!--                    <li class="page-item"><a href="#" class="page-link">2</a></li>-->
-                    <!--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>-->
-                    <!--                    <li class="page-item"><a href="#" class="page-link">4</a></li>-->
-                    <!--                    <li class="page-item"><a href="#" class="page-link">5</a></li>-->
-                    <li class="page-item">
-                        <a th:href="@{'/service'(page=${serviceList.number + 1})}" th:if="${serviceList.hasNext()}" class="page-link">Next</a>
+                        <a th:href="@{'/service'(page=${serviceList.number + 1})}" th:if="${serviceList.hasNext()}" class="page-link">
+                            <i class="fa fa-angle-double-right"></i>
+                        </a>
                     </li>
                 </ul>
             </div>

@@ -15,22 +15,29 @@ public class Customer {
     @Column(name = "customer_id", nullable = false)
     @Pattern(regexp = "^KH-[0-9]{4}$", message = "Information is not correct by format (KH-xxxx)")
     private String cusId;
+
     @Column(name = "customer_name", nullable = false)
     private String cusName;
+
     @Column(name = "customer_birthday", nullable = false)
     private String cusBirthday;
+
     @Column(name = "customer_gender", nullable = false)
     private Integer cusGender;
+
     @Column(name = "customer_id_card", nullable = false)
     @Pattern(regexp = "^([\\d]{9})|(^[\\d]{12}$)$", message = "Information is not correct by format (xxxxxxxxx) | (xxxxxxxxxxxx)")
     private String cusIdCard;
+
     @Column(name = "customer_phone", nullable = false)
     @Pattern(regexp = "^((090|091)([\\d]{7}))|((\\(\\+84\\))(90([\\d]{7})))|((\\(\\+84\\))(91([\\d]{7})))$",
             message = "Information is not correct by format (090xxxxxxx) | (091xxxxxxx) | ((+84)90xxxxxxx) | ((+84)91xxxxxxx)")
     private String cusPhone;
+
     @Column(name = "customer_email", nullable = false)
     @Email(message = "Information is not correct by format(abc@abc.abc)")
     private String cusEmail;
+
     @Column(name = "customer_address", nullable = false)
     private String cusAddress;
 
@@ -38,7 +45,7 @@ public class Customer {
     @JoinColumn(name = "customer_type_id", nullable = false, referencedColumnName = "customer_type_id")
     private CustomerType customerType;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer")
     private List<Contract> contracts;
 
     public Customer() {

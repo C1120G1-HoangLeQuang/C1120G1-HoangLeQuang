@@ -23,10 +23,9 @@ public class Contract {
     private String conEndDate;
     @Column(name = "contract_deposit", nullable = false)
     @Pattern(regexp = "^[0-9]{1,}.[0-9]{1,}$", message = "Deposit have to be bigger than 0")
-    private Double conDeposit;
+    private String conDeposit;
     @Column(name = "contract_total", nullable = false)
-    @Pattern(regexp = "^[0-9]{1,}.[0-9]{1,}$", message = "Total have to be bigger than 0")
-    private Double conTotal;
+    private String conTotal;
 
     @OneToMany(mappedBy = "contract", cascade = CascadeType.ALL)
     Set<ContractDetail> contractDetails;
@@ -46,7 +45,7 @@ public class Contract {
     public Contract() {
     }
 
-    public Contract(String conStartDate, String conEndDate, Double conDeposit, Double conTotal, Set<ContractDetail> contractDetails, Employee employee, Customer customer, Service service) {
+    public Contract(String conStartDate, String conEndDate, String conDeposit, String conTotal, Set<ContractDetail> contractDetails, Employee employee, Customer customer, Service service) {
         this.conStartDate = conStartDate;
         this.conEndDate = conEndDate;
         this.conDeposit = conDeposit;
@@ -81,19 +80,19 @@ public class Contract {
         this.conEndDate = conEndDate;
     }
 
-    public Double getConDeposit() {
+    public String getConDeposit() {
         return conDeposit;
     }
 
-    public void setConDeposit(Double conDeposit) {
+    public void setConDeposit(String conDeposit) {
         this.conDeposit = conDeposit;
     }
 
-    public Double getConTotal() {
+    public String getConTotal() {
         return conTotal;
     }
 
-    public void setConTotal(Double conTotal) {
+    public void setConTotal(String conTotal) {
         this.conTotal = conTotal;
     }
 

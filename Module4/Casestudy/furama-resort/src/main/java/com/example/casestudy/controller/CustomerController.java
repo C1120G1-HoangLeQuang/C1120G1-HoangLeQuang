@@ -73,11 +73,13 @@ public class CustomerController {
     }
 
     @PostMapping("/customer/update")
-    public ModelAndView updateCustomer(@Validated Customer customers, BindingResult bindingResult,
+    public ModelAndView updateCustomer(@Validated @ModelAttribute(name = "customers") Customer customers, BindingResult bindingResult,
                                  RedirectAttributes redirect) {
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("customer/edit");
+            modelAndView.addObject("customers", customers);
             modelAndView.addObject("cusTypeList", this.customerTypeService.findAll());
+            return modelAndView;
         }
         this.customerService.save(customers);
         ModelAndView modelAndView = new ModelAndView("redirect:/customer");

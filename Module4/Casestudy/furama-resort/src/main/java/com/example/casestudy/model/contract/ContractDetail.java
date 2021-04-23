@@ -13,7 +13,7 @@ public class ContractDetail {
     private Integer conDetailId;
     @Column(name = "quantity", nullable = false)
     @Pattern(regexp = "^([1-9]{1,}|[1-9][0-9])$", message = "Quantity have to be Interger number!")
-    private Integer quantity;
+    private String quantity;
 
     @ManyToOne
     @JoinColumn(name = "attach_service_id", nullable = false, referencedColumnName = "attach_service_id")
@@ -26,7 +26,7 @@ public class ContractDetail {
     public ContractDetail() {
     }
 
-    public ContractDetail(Integer quantity, AttachService attachService, Contract contract) {
+    public ContractDetail(String quantity, AttachService attachService, Contract contract) {
         this.quantity = quantity;
         this.attachService = attachService;
         this.contract = contract;
@@ -40,11 +40,11 @@ public class ContractDetail {
         this.conDetailId = conDetailId;
     }
 
-    public Integer getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 

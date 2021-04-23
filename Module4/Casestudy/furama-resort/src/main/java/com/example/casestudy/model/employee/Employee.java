@@ -24,7 +24,7 @@ public class Employee {
     private String emIdCard;
     @Column(name = "employee_salary", nullable = false)
     @Pattern(regexp = "^[0-9]{1,}.[0-9]{1,}$", message = "Salary have to be bigger than 0")
-    private Double emSalary;
+    private String emSalary;
     @Column(name = "employee_phone", nullable = false)
     @Pattern(regexp = "^((090|091)([\\d]{7}))|((\\(\\+84\\))(90([\\d]{7})))|((\\(\\+84\\))(91([\\d]{7})))$",
             message = "Information is not correct by format (090xxxxxxx) or (091xxxxxxx) or ((+84)90xxxxxxx) or ((+84)91xxxxxxx)")
@@ -58,7 +58,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String emName, String emBirthday, String emIdCard, Double emSalary, String emPhone, String emEmail, String emAddress, Position position, EducationDegree educationDegree, Division division, User user, List<Contract> contracts) {
+    public Employee(String emName, String emBirthday, String emIdCard, String emSalary, String emPhone, String emEmail, String emAddress, Position position, EducationDegree educationDegree, Division division, User user, List<Contract> contracts) {
         this.emName = emName;
         this.emBirthday = emBirthday;
         this.emIdCard = emIdCard;
@@ -105,11 +105,11 @@ public class Employee {
         this.emIdCard = emIdCard;
     }
 
-    public Double getEmSalary() {
+    public String getEmSalary() {
         return emSalary;
     }
 
-    public void setEmSalary(Double emSalary) {
+    public void setEmSalary(String emSalary) {
         this.emSalary = emSalary;
     }
 
