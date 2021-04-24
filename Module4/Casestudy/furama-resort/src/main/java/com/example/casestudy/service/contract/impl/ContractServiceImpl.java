@@ -1,6 +1,7 @@
 package com.example.casestudy.service.contract.impl;
 
 import com.example.casestudy.model.contract.Contract;
+import com.example.casestudy.model.contract.ContractDetail;
 import com.example.casestudy.repository.contract.ContractRepository;
 import com.example.casestudy.service.contract.ContractService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -27,6 +29,7 @@ public class ContractServiceImpl implements ContractService {
 
     @Override
     public void save(Contract contract) {
+        contract.setConTotal(calculateTotal(contract));
         contractRepository.save(contract);
     }
 
@@ -55,17 +58,36 @@ public class ContractServiceImpl implements ContractService {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date checkInDate;
         Date checkOutDate;
-        Long totalDate = null;
+        double totalMoney = 0;
+        double totalAttach = 0;
+        long getDiff;
+        int totalDate = 0;
         try {
             checkInDate = dateFormat.parse(contract.getConStartDate());
             checkOutDate = dateFormat.parse(contract.getConEndDate());
-            Long getDiff = checkOutDate.getTime() - checkInDate.getTime();
-            totalDate = TimeUnit.MILLISECONDS.toDays(getDiff);
+            getDiff = checkOutDate.getTime() - checkInDate.getTime();
+            totalDate = (int) TimeUnit.MILLISECONDS.toDays(getDiff);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        Double serviceCost = Double.parseDouble(contract.getService().getSerCost());
-        String totalMoney = totalDate * serviceCost + "";
-        return totalMoney;
+
+        double serviceCost = Double.parseDouble(contract.getService().getSerCost());
+        totalMoney = totalDate * serviceCost;
+
+        if (contract.getConId() != null){
+            Set<ContractDetail> contractDetailSet = contract.getContractDetails();
+            if (!contractDetailSet.isEmpty()) {
+                for (ContractDetail conDetail : contractDetailSet) {
+                    Double attachCost = Double.parseDouble(conDetail.getAttachService().getAttachSerCost());
+                    Double detailQuantity = Double.parseDouble(conDetail.getQuantity());
+                    totalAttach += (attachCost * detailQuantity);
+                }
+            }
+        }
+
+        totalMoney += totalAttach;
+        return totalMoney+"";
     }
+
+    
 }

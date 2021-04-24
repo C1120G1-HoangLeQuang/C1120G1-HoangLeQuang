@@ -13,4 +13,5 @@ public interface ContractService {
     Page<Contract> getCustomerByEndDate(String inputDate, Pageable pageable);
     Page<Contract> getListContractByName(String cusName, String inputDate, Pageable pageable);
     String calculateTotal(Contract contract);
+    void validateDateContract(Object object, Error error);
 }

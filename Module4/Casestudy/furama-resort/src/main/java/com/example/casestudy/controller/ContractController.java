@@ -75,7 +75,6 @@ public class ContractController {
             return modelAndView;
         }
         ModelAndView modelAndView = new ModelAndView("redirect:/contract");
-        contract.setConTotal(this.contractService.calculateTotal(contract));
         this.contractService.save(contract);
         redirect.addFlashAttribute("message", "Contract " + contract.getConId() + " is created");
         return modelAndView;
@@ -114,8 +113,9 @@ public class ContractController {
         }
         Contract contract = this.contractService.findById(idContract);
         contractDetail.setContract(contract);
-        this.contractDetailService.save(contractDetail);
-        ModelAndView modelAndView = new ModelAndView("redirect:/contract/customerEXP");
+        this.contractDetailService.save(contractDetail); // add new Contract detail
+        this.contractService.save(contract); // update lai contract : totalMoney
+        ModelAndView modelAndView = new ModelAndView("redirect:/contract");
         redirect.addFlashAttribute("message", "Contract detail in contract id: " + contract.getConId() + " is created");
         return modelAndView;
     }

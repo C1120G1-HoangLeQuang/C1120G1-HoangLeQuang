@@ -34,8 +34,8 @@ public class ContractDetailServiceImpl implements ContractDetailService {
                 contractDetail.setConDetailId(conDetail.getConDetailId());
                 int conQty = Integer.parseInt(conDetail.getQuantity());
                 contractDetail.setQuantity(conQty + newQuantity + "");
+                break;
             }
-            break;
         }
         contractDetailRepository.save(contractDetail);
     }

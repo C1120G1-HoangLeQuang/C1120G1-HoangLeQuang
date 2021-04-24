@@ -16,7 +16,7 @@ public class AttachService {
     @Column(name = "attach_service_name", nullable = false)
     private String attachSerName;
     @Column(name = "attach_service_cost", nullable = false)
-    private Integer attachSerCost;
+    private String attachSerCost;
     @Column(name = "attach_service_unit", nullable = false)
     private Integer attachSerUnit;
     @Column(name = "attach_service_status", nullable = false)
@@ -29,7 +29,7 @@ public class AttachService {
     public AttachService() {
     }
 
-    public AttachService(String attachSerName, Integer attachSerCost, Integer attachSerUnit, String attachSerStatus, List<ContractDetail> contractDetails) {
+    public AttachService(String attachSerName, String attachSerCost, Integer attachSerUnit, String attachSerStatus, List<ContractDetail> contractDetails) {
         this.attachSerName = attachSerName;
         this.attachSerCost = attachSerCost;
         this.attachSerUnit = attachSerUnit;
@@ -53,11 +53,11 @@ public class AttachService {
         this.attachSerName = attachSerName;
     }
 
-    public Integer getAttachSerCost() {
+    public String getAttachSerCost() {
         return attachSerCost;
     }
 
-    public void setAttachSerCost(Integer attachSerCost) {
+    public void setAttachSerCost(String attachSerCost) {
         this.attachSerCost = attachSerCost;
     }
 

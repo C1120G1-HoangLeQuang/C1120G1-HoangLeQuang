@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 
 @Entity(name = "contract_detail")
-@Table
+@Table(uniqueConstraints = @UniqueConstraint(name = "CON_ATTACH_UK", columnNames = {"contract_id", "attach_service_id"}))
 public class ContractDetail {
 
     @Id
