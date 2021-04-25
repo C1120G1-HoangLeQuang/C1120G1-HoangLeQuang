@@ -5,6 +5,7 @@ import com.example.casestudy.model.contract.ContractDetail;
 import com.example.casestudy.service.contract.AttachServiceService;
 import com.example.casestudy.service.contract.ContractDetailService;
 import com.example.casestudy.service.contract.ContractService;
+import com.example.casestudy.service.contract.impl.ContractServiceImpl;
 import com.example.casestudy.service.customer.CustomerService;
 import com.example.casestudy.service.employee.EmployeeService;
 import com.example.casestudy.service.services.ServiceServices;
@@ -15,6 +16,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -64,9 +66,10 @@ public class ContractController {
     }
 
     @PostMapping("/contract/save")
-    public ModelAndView createNewContract(Contract contract,
+    public ModelAndView createNewContract(@Validated @ModelAttribute(name = "contracts") Contract contract,
                                     BindingResult bindingResult,
                                     RedirectAttributes redirect) {
+        new ContractServiceImpl().validate(contract, bindingResult);
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("contract/createContract");
             modelAndView.addObject("employeeList", this.employeeService.findAll());

@@ -124,7 +124,8 @@ public class EmployeeController {
     }
 
     @PostMapping("/employee/delete")
-    public String deleteEmployee(@RequestParam Integer id, RedirectAttributes redirect) {
+    public String deleteEmployee(@RequestParam Integer id, Employee employee, RedirectAttributes redirect) {
+        employee.getUser().setEnabled(false);
         this.employeeService.deleteById(id);
         redirect.addFlashAttribute("message", "Employee " + id + " was deleted");
         return "redirect:/employee";

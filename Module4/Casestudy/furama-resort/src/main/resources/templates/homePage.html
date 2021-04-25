@@ -14,7 +14,6 @@
 
     <link rel="stylesheet" th:href="@{/assert/style/fontawesome/css/all.min.css}" />
     <link rel="stylesheet" th:href="@{/assert/style/bootstrap/css/bootstrap.min.css}" />
-<!--    <link rel="stylesheet" href="../static/assert/style/datatables/css/dataTables.bootstrap4.min.css">-->
     <script th:src="@{/assert/style/bootstrap/js/jquery-3.3.1.slim.min.js}"></script>
     <script th:src="@{/assert/style/bootstrap/js/popper.min.js}"></script>
     <script th:src="@{/assert/style/bootstrap/js/popper.min.js.map}"></script>
@@ -28,7 +27,7 @@
     </div>
     <div th:fragment="main-navbar">
         <nav  class="sticky-top navbar navbar-expand-lg navbar-dark" style="background-color: #004d00">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/furama">
                 <i class="fa fa-home fa-lg" aria-hidden="true"></i>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -57,7 +56,7 @@
                 <form style="padding-left: 20px">
                 <ul class="navbar-nav mr-auto" >
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: white">
+                        <a class="nav-link" href="/login" style="color: white">
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
                         Sign in</a>
                     </li>

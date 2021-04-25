@@ -7,7 +7,12 @@ import com.example.casestudy.service.contract.ContractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+import org.thymeleaf.util.Validate;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -17,7 +22,8 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 @Service
-public class ContractServiceImpl implements ContractService {
+@Component
+public class ContractServiceImpl implements ContractService, Validator {
 
     @Autowired
     ContractRepository contractRepository;
@@ -89,5 +95,30 @@ public class ContractServiceImpl implements ContractService {
         return totalMoney+"";
     }
 
-    
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return Contract.class.isAssignableFrom(clazz);
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        Contract contract = (Contract) target;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String startDate = contract.getConStartDate();
+        String endDate = contract.getConEndDate();
+        Date checkInDate = null;
+        Date checkOutDate = null;
+        ValidationUtils.rejectIfEmpty(errors, "conStartDate", "conStartDate.empty");
+        ValidationUtils.rejectIfEmpty(errors, "conEndDate", "conEndDate.empty");
+        try {
+             checkInDate = dateFormat.parse(startDate);
+             checkOutDate = dateFormat.parse(endDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if (checkOutDate.before(checkInDate)) {
+            errors.rejectValue("conEndDate", "conEndDate.before");
+        }
+    }
+
 }

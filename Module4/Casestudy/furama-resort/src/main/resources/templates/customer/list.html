@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:replace="~{layout :: head}">
     <meta charset="UTF-8">
     <title>Title</title>
@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-sm-6">
 <!--                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i><span>Add New Customer</span></a>-->
-                        <a th:href="@{/customer/create}" class="btn btn-success"><i class="material-icons">&#xE147;</i><span>Add New Customer</span></a>
+                        <a th:href="@{/customer/create}" class="btn btn-success" sec:authorize="hasAnyAuthority('ROLE_ADMIN', 'ROLE_GIAMDOC')"><i class="material-icons">&#xE147;</i><span>Add New Customer</span></a>
                         <form th:action="@{/customer/search}" class="form-inline mt-2 mt-md-0" >
                             <input class="form-control mr-sm-2" type="text" placeholder="Search..." name="cusName" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -69,13 +69,13 @@
 <!--                                <i class="fas fa-edit"></i>-->
 <!--                            </button>-->
                             <a th:href="@{/customer/edit(id=${customers.cusId})}">
-                                <button type="button" class="btn btn-warning btn-sm">
+                                <button type="button" class="btn btn-warning btn-sm" sec:authorize="hasAnyAuthority('ROLE_GIAMDOC')">
                                     <i class="fas fa-edit"></i>
                                 </button>
                             </a>
                         </td>
                         <td>
-                            <button type="button" class="btnModalDelete btn btn-danger btn-sm" th:value="${customers.cusId}">
+                            <button type="button" class="btnModalDelete btn btn-danger btn-sm" th:value="${customers.cusId}" sec:authorize="hasAnyAuthority('ROLE_GIAMDOC')">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                         </td>

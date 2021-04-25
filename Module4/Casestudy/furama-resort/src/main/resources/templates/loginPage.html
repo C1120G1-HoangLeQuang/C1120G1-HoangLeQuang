@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/solid.css" integrity="sha384-osqezT+30O6N/vsMqwW8Ch6wKlMofqueuia2H7fePy42uC05rm1G+BUPSd2iBSJL" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/fontawesome.css" integrity="sha384-BzCy2fixOYd0HObpx3GMefNqdbA7Qjcc91RgYeDjrHTIEXqiF00jKvgQG0+zY/7I" crossorigin="anonymous">
+
+    <link rel="stylesheet" th:href="@{/assert/style/fontawesome/css/all.min.css}" />
+    <link rel="stylesheet" th:href="@{/assert/style/bootstrap/css/bootstrap.min.css}" />
+    <script th:src="@{/assert/style/bootstrap/js/jquery-3.3.1.slim.min.js}"></script>
+    <script th:src="@{/assert/style/bootstrap/js/popper.min.js}"></script>
+    <script th:src="@{/assert/style/bootstrap/js/popper.min.js.map}"></script>
+    <script th:src="@{/assert/style/bootstrap/js/bootstrap.min.js}"></script>
+    <style>
+        #image{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            background: url("/picture/furama3.jpeg") no-repeat;
+            background-size: cover;
+        }
+        .container-fluid{
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .login-box{
+            width: 280px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+        #form-login{
+            /*-webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);*/
+            /*-moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);*/
+            /*box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);*/
+            /*!*position: center;*!*/
+            /*margin: 5%;*/
+            /*padding: 5%;*/
+        }
+        .login-box h1{
+            display: inline-block;
+            font-size: 40px;
+            border-bottom: 6px solid #4caf50;
+            margin-bottom: 40px;
+            padding: 13px 0;
+        }
+        .text-box{
+            width: 100%;
+            overflow: hidden;
+            font-size: 20px;
+            padding: 8px 0;
+            margin: 8px 0;
+            border-bottom: 1px solid #4caf50;
+        }
+        .text-box i{
+            /*position: absolute;*/
+            /*font-size: 20px;*/
+            /*line-height: 45px;*/
+            width: 26px;
+            display: inline-block;
+            text-align: center;
+        }
+        .text-box input{
+            border: none;
+            outline: none;
+            background:  none;
+            color: white;
+            font-size: 16px;
+            width: 80%;
+            margin: 0 6px;
+        }
+        .text-box input::placeholder{
+            color: white;
+        }
+        .btn{
+            width: 100%;
+            background: none;
+            border: 2px solid #4caf50;
+            color: #fff;
+            padding: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn:hover{
+            background: #4caf50;
+        }
+    </style>
+</head>
+<body id="image">
+<div class="container-fluid">
+    <form class="login-box" id="form-login" th:action="@{/j_spring_security_check}" method="post">
+    <h1 class="mb-5">Login</h1>
+    <div class="text-box">
+        <i class="fas fa-user"></i>
+        <input type="text" name="username" placeholder="Username" required>
+    </div>
+    <div class="text-box">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" placeholder="Password" required>
+    </div>
+    <button type="submit" class="btn">Sign In</button>
+    </form>
+</div>
+</body>
+</html>

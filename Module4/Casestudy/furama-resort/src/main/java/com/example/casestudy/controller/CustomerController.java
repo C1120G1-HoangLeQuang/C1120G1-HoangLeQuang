@@ -27,7 +27,7 @@ public class CustomerController {
     @Autowired
     CustomerTypeService customerTypeService;
 
-    @GetMapping("/")
+    @GetMapping("/furama")
     public String getHomePage() {
         return "homePage";
     }

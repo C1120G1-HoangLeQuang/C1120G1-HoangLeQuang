@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:replace="~{layout :: head}">
     <meta charset="UTF-8">
     <title>Title</title>
@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-sm-6">
 <!--                        <a id="btnModalCreate" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>-->
-                        <a th:href="@{/contract/create}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>
+                        <a th:href="@{/contract/create}" class="btn btn-success" sec:authorize="hasAnyAuthority('ROLE_ADMIN', 'ROLE_GIAMDOC')"><i class="material-icons">&#xE147;</i> <span>Add New Contract</span></a>
                         <a th:href="@{/contract/customerEXP}" class="btn btn-warning"><i class="material-icons">&#xE147;</i> <span>Show Customer EXP</span></a>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
 <!--                        <button type="button" class="btnModalCreateDetail btn btn-warning btn-sm" th:value="${contracts.conId}">-->
 <!--                            <i class="fas fa-plus-circle"></i>-->
 <!--                        </button>-->
-                        <a th:href="@{/contract-detail/create(idContract=${contracts.conId})}">
+                        <a th:href="@{/contract-detail/create(idContract=${contracts.conId})}" sec:authorize="hasAnyAuthority('ROLE_ADMIN', 'ROLE_GIAMDOC')">
                             <button type="button" class="btn btn-warning btn-sm">
                                 <i class="fas fa-plus-circle"></i>
                             </button>

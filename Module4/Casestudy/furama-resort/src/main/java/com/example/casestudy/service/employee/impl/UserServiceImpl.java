@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
                 return null;
             }
         }
-        User user = new User(username, password);
+        User user = new User(username, password, true);
         save(user);
         return user;
     }

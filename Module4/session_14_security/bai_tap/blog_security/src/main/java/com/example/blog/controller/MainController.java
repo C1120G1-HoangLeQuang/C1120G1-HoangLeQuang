@@ -28,19 +28,19 @@ public class MainController {
         String userInfo = WebUtils.toString(loginedUser);
         model.addAttribute("userInfo", userInfo);
 
-        return "redirect:/blog";
+        return "redirect:/blog";  //furama
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage(Model model) {
 
-        return "/login/loginPage";
+        return "/login/loginPage";  //loginPage
     }
 
     @RequestMapping(value = "/logoutSuccessful", method = RequestMethod.GET)
     public String logoutSuccessfulPage(Model model) {
         model.addAttribute("title", "Logout");
-        return "/login/logoutSuccessfulPage";
+        return "/login/logoutSuccessfulPage"; //logoutPage
     }
 
     @RequestMapping(value = "/userInfo", method = RequestMethod.GET)
@@ -56,7 +56,7 @@ public class MainController {
         String userInfo = WebUtils.toString(loginedUser);
         model.addAttribute("userInfo", userInfo);
 
-        return "redirect:/blog";
+        return "redirect:/blog";  //furama
     }
 
     @RequestMapping(value = "/403", method = RequestMethod.GET)
