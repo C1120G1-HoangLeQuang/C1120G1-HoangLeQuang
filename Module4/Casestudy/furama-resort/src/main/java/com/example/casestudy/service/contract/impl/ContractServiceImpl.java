@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 @Component
-public class ContractServiceImpl implements ContractService, Validator {
+public class ContractServiceImpl implements ContractService {
 
     @Autowired
     ContractRepository contractRepository;
@@ -82,7 +82,7 @@ public class ContractServiceImpl implements ContractService, Validator {
 
         if (contract.getConId() != null){
             Set<ContractDetail> contractDetailSet = contract.getContractDetails();
-            if (!contractDetailSet.isEmpty()) {
+            if (!contractDetailSet.isEmpty()) { // co the su dung contractDetailSet != null(cach 2)
                 for (ContractDetail conDetail : contractDetailSet) {
                     Double attachCost = Double.parseDouble(conDetail.getAttachService().getAttachSerCost());
                     Double detailQuantity = Double.parseDouble(conDetail.getQuantity());
@@ -95,30 +95,6 @@ public class ContractServiceImpl implements ContractService, Validator {
         return totalMoney+"";
     }
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return Contract.class.isAssignableFrom(clazz);
-    }
-
-    @Override
-    public void validate(Object target, Errors errors) {
-        Contract contract = (Contract) target;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String startDate = contract.getConStartDate();
-        String endDate = contract.getConEndDate();
-        Date checkInDate = null;
-        Date checkOutDate = null;
-        ValidationUtils.rejectIfEmpty(errors, "conStartDate", "conStartDate.empty");
-        ValidationUtils.rejectIfEmpty(errors, "conEndDate", "conEndDate.empty");
-        try {
-             checkInDate = dateFormat.parse(startDate);
-             checkOutDate = dateFormat.parse(endDate);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        if (checkOutDate.before(checkInDate)) {
-            errors.rejectValue("conEndDate", "conEndDate.before");
-        }
-    }
-
+    // !null = khong co du lieu o vung nho heap
+    // isEmpty = khong co du lieu trong database de check
 }

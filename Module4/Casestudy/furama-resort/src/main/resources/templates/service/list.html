@@ -33,6 +33,7 @@
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
+                        <th>STT</th>
                         <th>ID</th>
                         <th>Service Type</th>
                         <th>Rent Type</th>
@@ -49,7 +50,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="services : ${serviceList}">
+                    <tr th:each="services, stt : ${serviceList}">
+                        <td th:text="${stt.count}"></td>
                         <td th:text="${services.serId}"></td>
                         <td th:text="${services.serviceType.serTypeName}"></td>
                         <td th:text="${services.rentType.rentTypeName}"></td>

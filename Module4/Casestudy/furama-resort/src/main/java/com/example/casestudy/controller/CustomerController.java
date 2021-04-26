@@ -3,6 +3,7 @@ package com.example.casestudy.controller;
 import com.example.casestudy.model.customer.Customer;
 import com.example.casestudy.service.customer.CustomerService;
 import com.example.casestudy.service.customer.CustomerTypeService;
+import com.example.casestudy.service.customer.impl.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -53,6 +54,7 @@ public class CustomerController {
     public ModelAndView createNewCustomer(@Validated @ModelAttribute(name = "customers") Customer customer,
                                     BindingResult bindingResult,
                                     RedirectAttributes redirect) {
+        this.customerService.validateCustomerIdExist(customer, bindingResult);
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("customer/create");
             modelAndView.addObject("cusTypeList", this.customerTypeService.findAll());
@@ -73,11 +75,12 @@ public class CustomerController {
     }
 
     @PostMapping("/customer/update")
-    public ModelAndView updateCustomer(@Validated @ModelAttribute(name = "customers") Customer customers, BindingResult bindingResult,
+    public ModelAndView updateCustomer(@Validated @ModelAttribute(name = "customers") Customer customers,
+                                       BindingResult bindingResult,
                                  RedirectAttributes redirect) {
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("customer/edit");
-            modelAndView.addObject("customers", customers);
+            modelAndView.addObject("customers", customers); // tra ve doi tuong de nhan thong tin
             modelAndView.addObject("cusTypeList", this.customerTypeService.findAll());
             return modelAndView;
         }

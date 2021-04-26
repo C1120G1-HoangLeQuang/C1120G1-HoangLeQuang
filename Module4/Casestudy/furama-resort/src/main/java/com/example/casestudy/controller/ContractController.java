@@ -69,7 +69,7 @@ public class ContractController {
     public ModelAndView createNewContract(@Validated @ModelAttribute(name = "contracts") Contract contract,
                                     BindingResult bindingResult,
                                     RedirectAttributes redirect) {
-        new ContractServiceImpl().validate(contract, bindingResult);
+        new Contract().validate(contract, bindingResult);
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("contract/createContract");
             modelAndView.addObject("employeeList", this.employeeService.findAll());

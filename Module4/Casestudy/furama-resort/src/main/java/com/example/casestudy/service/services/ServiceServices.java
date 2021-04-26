@@ -4,6 +4,7 @@ import com.example.casestudy.model.customer.Customer;
 import com.example.casestudy.model.service.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.validation.Errors;
 
 import java.util.List;
 
@@ -15,4 +16,5 @@ public interface ServiceServices {
     Service findBySerId(String id);
     void deleteById(String id);
     void save(Service service);
+    void validateServiceIdExist(Service service, Errors errors);
 }

@@ -14,6 +14,7 @@ public interface CustomerRepository extends JpaRepository<Customer, String> {
     void deleteCustomerByCusId(String id);
     void deleteByCusId(String id);
 
+
     @Query(value = "select * " +
                     "from customer " +
                     "where concat(customer_name, customer_address) like %?1%", nativeQuery = true)

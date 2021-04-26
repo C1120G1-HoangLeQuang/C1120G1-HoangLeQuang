@@ -2,7 +2,11 @@ package com.example.casestudy.controller;
 
 import com.example.casestudy.model.employee.Employee;
 import com.example.casestudy.model.employee.User;
+import com.example.casestudy.model.user.UserRole;
+import com.example.casestudy.repository.user.AppRoleRepository;
 import com.example.casestudy.service.employee.*;
+import com.example.casestudy.service.user.AppRoleService;
+import com.example.casestudy.service.user.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +37,10 @@ public class EmployeeController {
     PositionService positionService;
     @Autowired
     UserService userService;
+    @Autowired
+    UserRoleService userRoleService;
+    @Autowired
+    AppRoleService appRoleService;
 
     @GetMapping("/employee")
     public ModelAndView getEmployeeList(Pageable pageable) {
@@ -129,5 +137,28 @@ public class EmployeeController {
         this.employeeService.deleteById(id);
         redirect.addFlashAttribute("message", "Employee " + id + " was deleted");
         return "redirect:/employee";
+    }
+
+    @GetMapping("/user-role/create")
+    public ModelAndView getCreateForm(@RequestParam(name = "idEmployee") Integer idEmployee) {
+        ModelAndView modelAndView = new ModelAndView("employee/createUserRole");
+        Employee employee = this.employeeService.findById(idEmployee);
+        modelAndView.addObject(employee);
+        modelAndView.addObject("appRoleList", this.appRoleService.findAll());
+        modelAndView.addObject("userRoles", new UserRole());
+        return modelAndView;
+    }
+
+    @PostMapping("/user-role/save")
+    public ModelAndView createNewUserRole(@ModelAttribute(name = "userRoles") UserRole userRole,
+                                          @RequestParam(name = "idEmployee") Integer idEmployee,
+                                          RedirectAttributes redirect) {
+        Employee employee = this.employeeService.findById(idEmployee);  //truyen lai idEmployee
+        User user = employee.getUser();   // su dung employee de lay username tu employee
+        userRole.setUser(user);  //set User lai cho table UserRole
+        this.userRoleService.save(userRole);
+        ModelAndView modelAndView = new ModelAndView("redirect:/employee");
+        redirect.addFlashAttribute("message", "UserRole is created");
+        return modelAndView;
     }
 }

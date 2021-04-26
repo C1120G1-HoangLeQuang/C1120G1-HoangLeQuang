@@ -4,6 +4,7 @@ import com.example.casestudy.model.service.Service;
 import com.example.casestudy.service.services.RentTypeService;
 import com.example.casestudy.service.services.ServiceServices;
 import com.example.casestudy.service.services.ServiceTypeService;
+import com.example.casestudy.service.services.impl.ServiceServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -67,6 +68,7 @@ public class ServiceController {
     private ModelAndView createNewVilla(@Validated @ModelAttribute(name = "services") Service service,
                                     BindingResult bindingResult,
                                     RedirectAttributes redirect) {
+        this.serviceServices.validateServiceIdExist(service, bindingResult);
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("service/createVilla");
             modelAndView.addObject("rentTypeList", this.rentTypeService.findAll());
@@ -83,6 +85,7 @@ public class ServiceController {
     private ModelAndView createNewHouse(@Validated @ModelAttribute(name = "services") Service service,
                                           BindingResult bindingResult,
                                           RedirectAttributes redirect) {
+        this.serviceServices.validateServiceIdExist(service, bindingResult);
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("service/createHouse");
             modelAndView.addObject("rentTypeList", this.rentTypeService.findAll());
@@ -99,6 +102,7 @@ public class ServiceController {
     private ModelAndView createNewRoom(@Validated @ModelAttribute(name = "services") Service service,
                                           BindingResult bindingResult,
                                           RedirectAttributes redirect) {
+        this.serviceServices.validateServiceIdExist(service, bindingResult);
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("service/createRoom");
             modelAndView.addObject("rentTypeList", this.rentTypeService.findAll());

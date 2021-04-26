@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
 
 import java.util.List;
 
@@ -58,5 +61,22 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void save(Customer customer) {
         customerRepository.save(customer);
+    }
+
+//    @Override
+//    public void validateCustomerIdExist(Customer customer, Errors errors) {
+//        for(Customer c : findAll()){
+//            if (c.getCusId().equals(customer.getCusId())) {
+//                errors.rejectValue("cusId", "cusId.duplicate");
+//            }
+//        }
+//    }
+
+    @Override
+    public void validateCustomerIdExist(Customer customer, Errors errors) {
+//        Customer customer1 = findByCusId(customer.getCusId());
+        if (findByCusId(customer.getCusId()) != null) {
+            errors.rejectValue("cusId", "cusId.duplicate");
+        }
     }
 }

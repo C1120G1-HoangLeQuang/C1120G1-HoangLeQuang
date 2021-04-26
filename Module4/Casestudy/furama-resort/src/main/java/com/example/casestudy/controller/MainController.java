@@ -12,7 +12,7 @@ import java.security.Principal;
 @Controller
 public class MainController {
 
-    @GetMapping(value = {"/", "/login"})
+    @GetMapping("/login")
     public String getLogin() {
         return "loginPage";
     }
@@ -35,5 +35,10 @@ public class MainController {
     @GetMapping("/403")
     public String accessDenied() {
         return "login/403Page";
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+        return "redirect:/login";
     }
 }

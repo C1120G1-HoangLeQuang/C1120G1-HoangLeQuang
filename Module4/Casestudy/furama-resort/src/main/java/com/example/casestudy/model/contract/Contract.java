@@ -3,15 +3,21 @@ package com.example.casestudy.model.contract;
 import com.example.casestudy.model.customer.Customer;
 import com.example.casestudy.model.employee.Employee;
 import com.example.casestudy.model.service.Service;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 @Entity(name = "contract")
 @Table
-public class Contract {
+public class Contract implements Validator {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -126,5 +132,31 @@ public class Contract {
 
     public void setService(Service service) {
         this.service = service;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return Contract.class.isAssignableFrom(clazz);
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        Contract contract = (Contract) target; // ep kieu Obj ve Contract
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String startDate = contract.getConStartDate();  // khai bao bien tuong ung voi doi tuong can tuong tac
+        String endDate = contract.getConEndDate();
+        ValidationUtils.rejectIfEmpty(errors, "conStartDate", "conStartDate.empty"); //  if empty
+        ValidationUtils.rejectIfEmpty(errors, "conEndDate", "conEndDate.empty");
+        try {
+            Date checkInDate = dateFormat.parse(startDate);
+            Date checkOutDate = dateFormat.parse(endDate);
+
+            if (checkOutDate.before(checkInDate)) {  // thuc hien dat dieu kien
+                errors.rejectValue("conEndDate", "conEndDate.before");
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
     }
 }

@@ -33,6 +33,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                 <tr>
+                    <th>STT</th>
                     <th>ID</th>
                     <th>Name Customer</th>
                     <th>Start date</th>
@@ -45,7 +46,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="contracts : ${contractList}">
+                <tr th:each="contracts, stt : ${contractList}">
+                    <td th:text="${stt.count}"></td>
                     <td th:text="${contracts.conId}"></td>
                     <td th:text="${contracts.customer.cusName}"></td>
                     <td th:text="${contracts.conStartDate}"></td>

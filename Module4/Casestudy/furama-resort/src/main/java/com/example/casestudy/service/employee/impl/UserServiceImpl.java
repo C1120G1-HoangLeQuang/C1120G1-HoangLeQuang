@@ -4,6 +4,8 @@ import com.example.casestudy.model.employee.User;
 import com.example.casestudy.repository.employee.UserRepository;
 import com.example.casestudy.service.employee.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,13 +34,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public User createNewUser(String username, String password) {
         List<User> userList = findAll();
+        String hashPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         for (User user : userList) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 return null;
             }
         }
-        User user = new User(username, password, true);
+        User user = new User(username, hashPassword, true);
         save(user);
         return user;
     }
+
+
 }

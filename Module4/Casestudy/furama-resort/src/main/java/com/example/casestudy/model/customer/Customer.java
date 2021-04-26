@@ -1,6 +1,10 @@
 package com.example.casestudy.model.customer;
 
 import com.example.casestudy.model.contract.Contract;
+import com.example.casestudy.service.customer.impl.CustomerServiceImpl;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -143,4 +147,5 @@ public class Customer {
     public void setContracts(List<Contract> contracts) {
         this.contracts = contracts;
     }
+
 }

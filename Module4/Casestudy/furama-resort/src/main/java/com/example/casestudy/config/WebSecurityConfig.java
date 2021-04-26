@@ -68,7 +68,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/service/createHouse",
                 "/service/createRoom",
                 "/contract/create",
-                "/contract-detail/create").access("hasAnyRole('ROLE_ADMIN', 'ROLE_GIAMDOC')");
+                "/contract-detail/create",
+                "/user-role/create").access("hasAnyRole('ROLE_ADMIN', 'ROLE_GIAMDOC')");
 
         // Trang chỉ dành cho GIAMDOC
         http.authorizeRequests().antMatchers("/customer/edit",
@@ -92,13 +93,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("username")//
                 .passwordParameter("password")
                 // Cấu hình cho Logout Page.
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/logoutSuccessful");
+//                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/logoutSuccessful"); //cach 1
+                 .and().logout().logoutUrl("/logout"); // cach 2
 
         // Cấu hình Remember Me.
         http.authorizeRequests().and() //
-                .rememberMe().tokenRepository(this.persistentTokenRepository()) //
+            //    .rememberMe().tokenRepository(this.persistentTokenRepository()) // dung token
+                .rememberMe().key("uniqueAndSecret")
+                .rememberMeParameter("rememberMe")
+                .rememberMeCookieName("login-info")
                 .tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
-
     }
 
     @Bean
