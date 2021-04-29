@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<div class="container">
+    <h1 style="color: teal" class="text-center">Edit Customer</h1>
+    <form th:action="@{/product-bill/update}" method="post" th:object="${productBills}" novalidate="novalidate">
+        <table class="table table-hover">
+            <thead></thead>
+            <tbody>
+            <input type="hidden" class="form-control" th:field="*{productBillId}">
+<!--            <input type="hidden" class="form-control" th:field="*{product.productType.productTypeName}">-->
+<!--            <input type="hidden" class="form-control" th:field="*{product.productCost}">-->
+            <tr>
+                <th>Product Name</th>
+                <td>
+                    <select th:field="*{product}" class="form-control">
+                        <option th:each="product : ${productList}" th:value="${product.productId}"
+                                th:text="${product.productName}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Product Type</th>
+                <td>
+                    <select th:field="*{product}" class="form-control">
+                        <option th:each="product : ${productList}" th:value="${product.productId}"
+                                th:text="${product.productType.productTypeName}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Product Cost</th>
+                <td>
+                    <select th:field="*{product}" class="form-control">
+                        <option th:each="product : ${productList}" th:value="${product.productId}"
+                                th:text="${product.productCost}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Buy Date</th>
+                <td>
+                    <input type="date" class="form-control" th:field="*{buyDate}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td>
+                    <input type="text" class="form-control" th:field="*{quantity}" required>
+<!--                    <p th:if="${#fields.hasErrors('cusIdCard')}" th:errors="*{cusIdCard}" style="color: red"></p>-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+<!--                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>-->
+                    <a th:href="@{/product-bill}">
+                        <button type="button" class="btn btn-info btn-sm">Close
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <button class="btn btn-success" type="submit">Save</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+</body>
+</html>
