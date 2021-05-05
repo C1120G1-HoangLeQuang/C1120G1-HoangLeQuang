@@ -1,0 +1,3 @@
+interface IAreaTwo {
+    area(): number;
+}
