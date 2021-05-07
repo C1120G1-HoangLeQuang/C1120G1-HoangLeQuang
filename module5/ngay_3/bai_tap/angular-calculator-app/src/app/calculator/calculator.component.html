@@ -1,0 +1,11 @@
+<h1>CALCULATOR</h1>
+<input type="number" (change)="updateA(inputA.value)" #inputA>
+<input  type="number" (change)="updateB(inputB.value)" #inputB>
+<br/>
+<button type="button" (click)="Add()">Addition(+)</button>
+<button type="button" (click)="Sub()">Subtraction(-)</button>
+<button type="button" (click)="Multi()">Multiplication(*)</button>
+<button type="button" (click)="Div()">Division(/)</button>
+<p>Result: {{result}}</p>
+
+

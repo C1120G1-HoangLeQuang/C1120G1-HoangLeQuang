@@ -1,0 +1,14 @@
+<h3>Change Color</h3>
+<div>
+  <label>Choose color</label>
+  <select>
+<!--    <option *ngFor="let i of color">{{i}}</option>-->
+    <option #element (change)="colorPicker(element.value)">Blue</option>
+    <option #element1 (change)="colorPicker(element1.value)">Green</option>
+    <option #element2 (change)="colorPicker(element2.value)">Orange</option>
+    <option #element3 (change)="colorPicker(element3.value)">Pink</option>
+  </select>
+</div>
+<p class="output" [style]="selectColor">
+  This is test color
+</p>
