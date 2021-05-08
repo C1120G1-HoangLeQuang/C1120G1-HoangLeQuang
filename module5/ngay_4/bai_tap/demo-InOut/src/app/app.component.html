@@ -18,7 +18,10 @@
             <tbody>
               <tr *ngFor="let item of students; let i = index" (click)="showDetail(item)">
                 <td>{{i + 1}}</td>
-                <td>{{item.name}}</td>
+<!--                <td [ngClass]="item.name == 'Nguyen Van B' ? 'txt-color, txt-font-weight' : ''">{{item.name}}</td>-->
+                <td [ngStyle]="{
+                'color': item.name == 'Nguyen Van B' ? 'red' : '',
+                'font-weight': item.name == 'Nguyen Van B' ? 'bold' : ''}">{{item.name}}</td>
                 <td [ngSwitch]="item.gender">
                   <span *ngSwitchCase="0">Female</span>
                   <span *ngSwitchCase="1">Male</span>

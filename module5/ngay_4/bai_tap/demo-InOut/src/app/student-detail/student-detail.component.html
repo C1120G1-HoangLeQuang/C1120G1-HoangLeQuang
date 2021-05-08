@@ -4,8 +4,13 @@
     <h4 class="card-title">Student Detail</h4>
     <div *ngIf="studentDetail1; else nodata">
       <div>Name: {{studentDetail1.name}}</div>
-      <div>Name: {{studentDetail1.gender}}</div>
-      <div>Name: {{studentDetail1.point}}</div>
+      <div [ngSwitch]="studentDetail1.gender">Gender:
+        <span *ngSwitchCase="0">Female</span>
+        <span *ngSwitchCase="1">Male</span>
+        <span *ngSwitchDefault>LGBT</span>
+      </div>
+<!--      <div>Gender: {{studentDetail1.gender}}</div>-->
+      <div>Point: {{studentDetail1.point}}</div>
     </div>
     <ng-template #nodata>
       <p style="color: red">No data</p>
