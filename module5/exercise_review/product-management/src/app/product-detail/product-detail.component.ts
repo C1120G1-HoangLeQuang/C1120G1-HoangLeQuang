@@ -11,16 +11,17 @@ export class ProductDetailComponent implements OnInit {
   @Input('productDetail') productDetails: Product | undefined;
   // tslint:disable-next-line:no-output-rename no-output-on-prefix
   @Output('productEdit') onEdit = new EventEmitter<number>();
-  public oldSoLuong: number;
+  // public oldSoLuong: number;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  edit(soLuong: string) {
+  edit(productDetails: Product, soLuong: string) {
     // tslint:disable-next-line:radix
-    this.oldSoLuong = parseInt(soLuong);
-    this.onEdit.emit(this.oldSoLuong);
+    productDetails.status = parseInt(soLuong);
+    // @ts-ignore
+    this.onEdit.emit(productDetails);
   }
 }
