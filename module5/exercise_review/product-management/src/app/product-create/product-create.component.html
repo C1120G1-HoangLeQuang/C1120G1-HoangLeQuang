@@ -1,0 +1,30 @@
+<div class="card border-warning mt-4">
+  <h3 class="card-header bg-warning">Product Create</h3>
+  <div class="card-body">
+    <div class="form-group">
+      <label>Ten san pham</label>
+      <input class="form-control" type="text" #tenSP>
+    </div>
+    <div class="form-group">
+      <label>Gia san pham</label>
+      <input class="form-control" type="text" #giaSP>
+    </div>
+    <div class="form-group">
+      <label>Ngay san xuat</label>
+      <input class="form-control" type="text" #ngaySX>
+    </div>
+    <div class="form-group">
+      <label>So luong</label>
+      <input class="form-control" type="number" #soLuong>
+    </div>
+    <div class="form-group">
+      <label>Noi Xuat xu</label>
+      <select #xuatXuElement (change)="choosePlace(xuatXuElement.value)" class="form-control">
+        <option *ngFor="let i of xuatXu">{{i}}</option>
+      </select>
+    </div>
+    <br/>
+    <button type="button" class="btn btn-primary" (click)="create(tenSP.value, giaSP.value, ngaySX.value,
+    soLuong.value, xuatXuElement.value)">Create</button>
+  </div>
+</div>
