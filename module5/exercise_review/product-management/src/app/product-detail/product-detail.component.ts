@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import { Product } from '../module/product';
 
 @Component({
@@ -6,12 +6,12 @@ import { Product } from '../module/product';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit, OnChanges {
   // tslint:disable-next-line:no-input-rename
   @Input('productDetail') productDetails: Product | undefined;
   // tslint:disable-next-line:no-output-rename no-output-on-prefix
   @Output('productEdit') onEdit = new EventEmitter<number>();
-  // public oldSoLuong: number;
+  public actionOld: Product;
 
   constructor() { }
 
@@ -23,5 +23,10 @@ export class ProductDetailComponent implements OnInit {
     productDetails.status = parseInt(soLuong);
     // @ts-ignore
     this.onEdit.emit(productDetails);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+    this.actionOld = changes.productDetails.previousValue;
   }
 }
