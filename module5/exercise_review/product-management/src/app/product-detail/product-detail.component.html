@@ -16,6 +16,6 @@
     <ng-template #nodata>
       <p style="color: red">No data</p>
     </ng-template>
-    <div>Products that you saw: {{actionOld}}</div>
+    <p *ngFor="let action of actionOld">{{action}}</p>
   </div>
 </div>

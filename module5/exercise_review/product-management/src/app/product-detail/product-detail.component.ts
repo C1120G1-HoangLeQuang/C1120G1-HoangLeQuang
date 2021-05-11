@@ -11,7 +11,7 @@ export class ProductDetailComponent implements OnInit, OnChanges {
   @Input('productDetail') productDetails: Product | undefined;
   // tslint:disable-next-line:no-output-rename no-output-on-prefix
   @Output('productEdit') onEdit = new EventEmitter<number>();
-  public actionOld: Product;
+  public actionOld: string[] = [];
 
   constructor() { }
 
@@ -23,10 +23,16 @@ export class ProductDetailComponent implements OnInit, OnChanges {
     productDetails.status = parseInt(soLuong);
     // @ts-ignore
     this.onEdit.emit(productDetails);
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-    this.actionOld = changes.productDetails.previousValue;
+    // tslint:disable-next-line:forin
+    for (const propName in changes) {
+      const change = changes[propName];
+      const prevVal = JSON.stringify(change.previousValue);
+      this.actionOld.unshift(prevVal);
+      console.log(this.actionOld);
+    }
   }
 }
