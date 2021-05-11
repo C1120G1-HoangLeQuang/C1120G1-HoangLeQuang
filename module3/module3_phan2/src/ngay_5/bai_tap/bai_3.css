@@ -1,0 +1,140 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+li{
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.wrapper{
+    border: 1px solid #000;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+.header{
+    background-image: url("imageheader/d7yj3ln-99ca00fe-b0bb-48df-b51d-abb9252e5f8b.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 250px;
+    border: 1px solid #ff80ff;
+    height: 180px;
+    width: 100%;
+}
+.menu{
+    border: 1px solid #1aff8c;
+    height: 50px;
+    width: 100%;
+    background: #00e6ac;
+}
+ul.list_menu{
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    width: 58%;
+    border: 1px;
+    line-height: 27px;
+}
+ul.list_menu li{
+    float: left;
+    padding: 5px;
+    margin: 7px;
+}
+ul.list_menu li:hover{
+    background: lightblue;
+    color: blue;
+}
+ul.list_menu li a{
+    text-decoration: none;
+    text-align: center;
+    color: chartreuse;
+}
+#main{
+    border: 1px solid #00ff80;
+    height: auto;
+    width: 100%;
+}
+.sidebar{
+    /*border: 1px solid #000060;*/
+    height: auto;
+    width: 20%;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: left;
+    font-weight: bold;
+}
+ul.list_sidebar{
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    border: 1px;
+    line-height: 27px;
+    margin: 0;
+}
+ul.list_sidebar li{
+    padding: 5px;
+    margin: 7px;
+}
+ul.list_sidebar li:hover{
+    background: lightblue;
+    color: blue;
+}
+ul.list_sidebar li a{
+    text-decoration: none;
+    text-align: left;
+    color: chartreuse;
+    display: block;
+}
+.maincontent{
+    /*border: 1px solid #ff0000;*/
+    height: auto;
+    width: 78%;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: right;
+}
+ul.product_list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+}
+ul.product_list li{
+    width: 21%;
+    border: 1px dashed #000;
+    margin: 5%;
+    float: left;
+    background: burlywood;
+    height: 370px;
+}
+ul.product_list li img{
+    width: 100%;
+}
+ul.product_list li a{
+    text-decoration: none;
+
+}
+p.product_name{
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+p.product_chapter{
+    text-align: center;
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
+.footer{
+    border: 1px solid #000;
+    height: 150px;
+    width: 100%;
+    background: #00cc99;
+}
+p.footer_copyright{
+    text-align: center;
+    color: #f2f2f2;
+}
+.clear{
+    clear: both;
+}

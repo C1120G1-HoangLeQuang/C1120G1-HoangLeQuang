@@ -20,7 +20,7 @@ public class ProductManager {
         float price = Float.parseFloat(scanner.nextLine());
         Product product = new Product(id, name, price);
         list.add(product);
-        ReadAndWrite.writeProduct(list, true);
+        ReadAndWrite.writeProduct(list, false);
     }
     public void showProduct() {
         List<Product> list = ReadAndWrite.readProduct();

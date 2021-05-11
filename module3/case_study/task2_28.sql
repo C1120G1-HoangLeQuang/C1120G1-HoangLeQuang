@@ -6,7 +6,7 @@ use Casestudy;
 select ho_ten, ngay_sinh, so_cmnd, luong, sdt, email, dia_chi from nhan_vien
 where 
 		(substring_index(ho_ten, ' ', -1) LIKE 'H%' or
-		 substring_index(ho_ten, ' ', -1) LIKE 'T%' or
+		 substring_index(ho_ten, ' ', -1) LIKE 'T%' orusers
 		 substring_index(ho_ten, ' ', -1) LIKE 'K%') and length(ho_ten) <= 30; 
 
 /* Task 3 Case study */

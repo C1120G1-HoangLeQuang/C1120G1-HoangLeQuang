@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Product</title>
+</head>
+<body>
+<a href="/home">Go Back Home</a>
+<div th:replace="~{common::headerProduct}"></div>
+<h2>Id: <span th:text="${productView.id}"></span></h2>
+<h2>Name: <span th:text="${productView.name}"></span></h2>
+<h2>Price: <span th:text="${productView.price}"></span></h2>
+<div th:replace="~{common::footerProduct}"></div>
+
+</body>
+</html>
