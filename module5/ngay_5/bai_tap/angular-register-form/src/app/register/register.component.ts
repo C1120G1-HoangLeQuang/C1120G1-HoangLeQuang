@@ -8,7 +8,7 @@ import { Register } from '../register';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  rfRegister = FormGroup;
+  rfRegister: FormGroup;
   public country: string[] = ['VN', 'USA', 'CN', 'AU'];
   public tempCountry: string;
 
@@ -19,17 +19,17 @@ export class RegisterComponent implements OnInit {
     this.rfRegister = new FormGroup({
       email: new FormControl('', [Validators.email, Validators.required]),
       password: new FormControl('', [Validators.minLength(6), Validators.required]),
-      confirmPassword: new FormControl('', this.checkPasswords),
+      confirmPassword: new FormControl('',  Validators.compose([Validators.required])),
       country: new FormControl('', [Validators.required]),
-      age: new FormControl('', this.checkDateOfBirth),
-      gender: new FormControl(''),
+      age: new FormControl('', Validators.compose([Validators.required, this.checkDateOfBirth])),
       phone: new FormControl('', [Validators.required, Validators.pattern('^\\+84\\d{9,10}$')])
-    });
+    }, {validators: this.checkPasswords});
   }
-  checkPasswords(group: FormGroup) { // here we have the 'passwords' group
-    const password = group.get('password').value;
-    const confirmPassword = group.get('confirmPassword').value;
-    return password === confirmPassword ? null : { notSame: true };
+  checkPasswords(absControl: AbstractControl): any { // here we have the 'passwords' group
+    const check = absControl.value;
+    return (check.password === check.confirmPassword) ? null : { notSame : true };
+    console.log(check.password);
+    console.log(check.confirmPassword);
   }
 
   checkDateOfBirth(absControl: AbstractControl): any {

@@ -8,7 +8,7 @@ import { Register } from '../register';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  rfRegister = FormGroup;
+  rfRegister: FormGroup;
 
   constructor() { }
 

@@ -5,30 +5,56 @@
     <form [formGroup]="rfRegister">
     <div class="form-group row">
         <label>Mail: </label>
-        <input type="text" placeholder="Username" formControlName="email" class="form-control">
-        <span *ngIf="rfRegister"></span>
+        <input type="text" formControlName="email">
+        <span *ngIf="rfRegister.controls.email.touched && rfRegister.controls.email.errors?.required"
+        style="color: red">Required input</span>
+      <span *ngIf="rfRegister.controls.email.touched && rfRegister.controls.email.errors?.email"
+            style="color: red">Email is not right format</span>
       </div>
+
       <div class="form-group row">
         <label>Password: </label>
-        <input type="password" placeholder="Password" class="form-control">
+        <input type="text" formControlName="password">
+        <span *ngIf="rfRegister.controls.password.touched && rfRegister.controls.password.errors?.required"
+              style="color: red">Required input</span>
+        <span *ngIf="rfRegister.controls.password.touched && rfRegister.controls.password.errors?.minlength"
+              style="color: red">Password have to be 6 character at least</span>
       </div>
+
       <div class="form-group row">
         <label>Confirm password: </label>
-        <input type="password" placeholder="Confirm password" class="form-control">
+        <input type="text" formControlName="confirmPassword">
+        <span *ngIf="rfRegister.controls.confirmPassword.touched && rfRegister.controls.confirmPassword.errors?.required"
+              style="color: red">Required input</span>
+        <span *ngIf="rfRegister.get('confirmPassword').touched && rfRegister.get('confirmPassword').hasError('notSame')"
+              style="color: red">Password not same</span>
       </div>
+
       <div class="form-group row">
         <label>Country: </label>
-          <select #countryElement (click)="chooseCountry(countryElement.value)" class="form-control">
+          <select class="form-control" #countryElement (click)="chooseCountry(countryElement.value)" formControlName="country">
             <option *ngFor="let i of country">{{i}}</option>
           </select>
+        <span *ngIf="rfRegister.controls.country.touched && rfRegister.controls.country.errors?.required"
+              style="color: red">Required input</span>
       </div>
+
       <div class="form-group row">
         <label>Age: </label>
-        <input type="number" placeholder="Age" class="form-control">
+        <input type="date" formControlName="age">
+        <span *ngIf="rfRegister.controls.age.touched && rfRegister.controls.age.errors?.required"
+              style="color: red">Required input</span>
+        <span *ngIf="rfRegister.get('age').touched && rfRegister.get('age').hasError('errorAge')"
+              style="color: red">User have be high 18 years old</span>
       </div>
+
       <div class="form-group row">
         <label>Phone: </label>
-        <input type="password" placeholder="Phone" class="form-control">
+        <input type="text" formControlName="phone">
+        <span *ngIf="rfRegister.controls.phone.touched && rfRegister.controls.phone.errors?.required"
+              style="color: red">Required input</span>
+        <span *ngIf="rfRegister.controls.phone.touched && rfRegister.controls.phone.errors?.pattern"
+              style="color: red">Phone have to be format +84XXXXXXXXX</span>
       </div>
       <br/>
       <button type="button" class="btn btn-primary">Sign In</button>
