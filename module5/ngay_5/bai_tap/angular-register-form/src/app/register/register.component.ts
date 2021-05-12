@@ -28,8 +28,6 @@ export class RegisterComponent implements OnInit {
   checkPasswords(absControl: AbstractControl): any { // here we have the 'passwords' group
     const check = absControl.value;
     return (check.password === check.confirmPassword) ? null : { notSame : true };
-    console.log(check.password);
-    console.log(check.confirmPassword);
   }
 
   checkDateOfBirth(absControl: AbstractControl): any {
@@ -40,6 +38,10 @@ export class RegisterComponent implements OnInit {
 
   chooseCountry(value: string) {
     this.tempCountry = value;
+  }
+  onSubmit() {
+    alert('Hello');
+    console.log(this.rfRegister);
   }
 
 }

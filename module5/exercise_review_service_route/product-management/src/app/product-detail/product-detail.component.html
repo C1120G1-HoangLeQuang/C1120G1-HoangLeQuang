@@ -1,0 +1,22 @@
+<div class="card border-success">
+  <h3 class="card-header bg-success">Product Detail</h3>
+  <div class="card-body">
+    <div *ngIf="product; else nodata">
+      <div>Ten san pham: {{product.nameProduct | titlecase}}</div>
+      <div>Gia san pham: {{product.priceProduct | currency: 'VND'}}</div>
+      <div>Ngay san xuat: {{product.dateRelease | date: 'dd/MM/yyyy'}}</div>
+
+      <div *ngIf="product.status > 0; else editSL">So luong: {{product.status}}</div>
+        <ng-template #editSL>
+          <label>So Luong: </label>
+          <input type="number" class="form-control" #editSoLuong>
+          <br/>
+          <button type="button" class="btn btn-primary" (click)="edit(product, editSoLuong.value)">Edit</button>
+        </ng-template>
+    </div>
+    <ng-template #nodata>
+      <p style="color: red">No data</p>
+    </ng-template>
+    <p *ngFor="let action of actionOld">{{action}}</p>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 <div class="card border-warning">
   <h3 class="card-header bg-warning">Register</h3>
   <div class="card-body">
-    <form [formGroup]="rfRegister">
+    <form [formGroup]="rfRegister" (submit)="onSubmit()">
     <div class="form-group row">
         <label>Mail: </label>
         <input type="text" formControlName="email">
@@ -26,7 +26,7 @@
         <input type="text" formControlName="confirmPassword">
         <span *ngIf="rfRegister.controls.confirmPassword.touched && rfRegister.controls.confirmPassword.errors?.required"
               style="color: red">Required input</span>
-        <span *ngIf="rfRegister.get('confirmPassword').touched && rfRegister.get('confirmPassword').hasError('notSame')"
+        <span *ngIf="rfRegister.get('confirmPassword').touched && rfRegister.hasError('notSame')"
               style="color: red">Password not same</span>
       </div>
 
@@ -57,7 +57,7 @@
               style="color: red">Phone have to be format +84XXXXXXXXX</span>
       </div>
       <br/>
-      <button type="button" class="btn btn-primary">Sign In</button>
+      <button type="submit" class="btn btn-primary">Sign In</button>
     </form>
   </div>
 </div>
