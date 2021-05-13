@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-primary">
+      <h3 class="card-header bg-primary">Product List</h3>
+      <div class="card-body">
+        <div *ngIf="productList; else nodata">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>Ten</th>
+              <th>Gia</th>
+              <th>Ngay SX</th>
+              <th>Noi SX</th>
+              <th>So Luong</th>
+              <th>Trang thai</th>
+              <th>Tuy chinh</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of productList">
+<!--              (click)="showDetail(i)-->
+              <td>{{item.id}}</td>
+              <td>{{item.nameProduct | titlecase}}</td>
+              <td>{{item.priceProduct | currency:'VND'}}</td>
+              <td>{{item.dateRelease | date: 'dd/MM/yyyy'}}</td>
+              <td>{{item.nationRelease}}</td>
+              <td>{{item.status}}</td>
+              <td [ngStyle]="{'color': item.status == 0 ? 'red' : ''}">
+                <span *ngIf="item.status == 0">Het hang</span>
+                <span *ngIf="item.status > 0 && item.status < 10">Ton kho it</span>
+                <span *ngIf="item.status >= 10">Ton kho nhieu</span>
+              </td>
+              <td>
+                <a class="btn btn-warning" role="button" [routerLink]="['edit', item.id]">Edit</a>
+                <a class="btn btn-danger" role="button" [routerLink]="['delete', item.id]">Delete</a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <ng-template #nodata>
+          <p style="color: red">Nothing else, need to create new</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <!--      <app-product-detail [productDetail]="product" (productEdit)="onEditSL($event)"></app-product-detail>-->
+    <!--      <app-product-create></app-product-create>-->
+  </div>
+</div>
+
+
