@@ -14,10 +14,12 @@
               <th>Noi SX</th>
               <th>So Luong</th>
               <th>Trang thai</th>
+              <th>Tuy chinh</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let item of productList; let i = index" (click)="showDetail(i)">
+            <tr *ngFor="let item of productList; let i = index">
+<!--              (click)="showDetail(i)-->
               <td>{{i + 1}}</td>
               <td>{{item.nameProduct | titlecase}}</td>
               <td>{{item.priceProduct | currency:'VND'}}</td>
@@ -28,6 +30,10 @@
                 <span *ngIf="item.status == 0">Het hang</span>
                 <span *ngIf="item.status > 0 && item.status < 10">Ton kho it</span>
                 <span *ngIf="item.status >= 10">Ton kho nhieu</span>
+              </td>
+              <td>
+                <a class="btn btn-warning" role="button" [routerLink]="['edit', item.id]">Edit</a>
+                <a class="btn btn-danger" role="button" [routerLink]="['delete', item.id]">Delete</a>
               </td>
             </tr>
             </tbody>

@@ -25,10 +25,6 @@ export class ProductListComponent implements OnInit {
     this._router.navigate(["/detail", index]);
   }
 
-  // onGetProduct($event: Product) {
-  //   this.products.unshift($event);
-  // }
-
   onEditSL($event: number) {
     this.newSoLuong = $event;
   }

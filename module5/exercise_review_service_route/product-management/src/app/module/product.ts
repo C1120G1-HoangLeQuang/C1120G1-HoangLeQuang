@@ -1,4 +1,5 @@
 export class Product {
+  private _id: number;
   // tslint:disable-next-line:variable-name
   private _nameProduct: string;
   // tslint:disable-next-line:variable-name
@@ -11,7 +12,8 @@ export class Product {
   private _status: number;
 
 
-  constructor(nameProduct: string, priceProduct: number, dateRelease: string, nationRelease: string, status: number) {
+  constructor(id: number, nameProduct: string, priceProduct: number, dateRelease: string, nationRelease: string, status: number) {
+    this._id = id;
     this._nameProduct = nameProduct;
     this._priceProduct = priceProduct;
     this._dateRelease = dateRelease;
@@ -19,6 +21,14 @@ export class Product {
     this._status = status;
   }
 
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
+  }
 
   get nameProduct(): string {
     return this._nameProduct;

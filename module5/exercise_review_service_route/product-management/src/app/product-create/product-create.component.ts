@@ -33,10 +33,6 @@ export class ProductCreateComponent implements OnInit {
     });
   }
 
-  // create() {
-  //   this.onCreate.emit(this.createForm.value);
-  // }
-
   choosePlace(value: string) {
     this.tempXuatXu = value;
   }
