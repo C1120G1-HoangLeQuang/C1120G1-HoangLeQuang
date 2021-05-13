@@ -22,15 +22,17 @@ export class ProductEditComponent implements OnInit {
   ngOnInit(): void {
     let index = this._activatedRoute.snapshot.params['id'];
     this.productEdit = this._productService.getProductByIndex(index);
+    this.editFormFunction();
   }
 
   editFormFunction() {
     this.editForm = new FormGroup({
-      nameProduct: new FormControl('', [Validators.required]),
-      priceProduct: new FormControl('', [Validators.required]),
-      dateRelease: new FormControl('', [Validators.required]),
-      nationRelease: new FormControl('', [Validators.required]),
-      status: new FormControl('', [Validators.required])
+      id: new FormControl(this.productEdit.id),
+      nameProduct: new FormControl(this.productEdit.nameProduct, [Validators.required]),
+      priceProduct: new FormControl(this.productEdit.priceProduct, [Validators.required]),
+      dateRelease: new FormControl(this.productEdit.dateRelease, [Validators.required]),
+      nationRelease: new FormControl(this.productEdit.nationRelease, [Validators.required]),
+      status: new FormControl(this.productEdit.status, [Validators.required])
     });
   }
 
@@ -39,10 +41,10 @@ export class ProductEditComponent implements OnInit {
   }
 
   onEdit() {
+    console.log(this.editForm.value);
     if(this.editForm.valid) {
       this._productService.update(this.editForm.value);
-      this._router.navigateByUrl("/home");
+      this._router.navigateByUrl("home");
     }
   }
-
 }

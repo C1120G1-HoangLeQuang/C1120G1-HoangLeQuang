@@ -13,6 +13,7 @@ export class ProductService {
     new Product(5, 'ban phim', 1200, '2021/12/12', 'Anh', 14),
     new Product(6,'pin dien thoai', 1600, '2021/01/12', 'VN', 0),
   ];
+  public product: Product;
 
   constructor() { }
 
@@ -24,14 +25,29 @@ export class ProductService {
     this._products.unshift(product);
   }
 
-  getProductByIndex(index: number) {  //dung cho detail, edit va delete
-    return this._products[index];
+  getProductByIndex(id: number) {  //dung cho detail, edit va delete
+    for (let i = 0; i <= this._products.length; i ++) {
+      if (this._products[i].id == id) {
+        return this._products[i];
+        break;
+      }
+    }
   }
 
   update(product: Product) {
-    for (let i = 0; i <= this._products.length; i++) {
+    for (let i = 0; i <= this._products.length ; i++) {
       if(this._products[i].id == product.id) {
         this._products[i] = product;
+        break;
+      }
+    }
+  }
+
+  deleteById(productDelete: Product) {
+    for (let i = 0; i <= this._products.length ; i++) {
+      if (this._products[i].id == productDelete.id) {
+        this._products.splice(i, 1);
+        break;
       }
     }
   }

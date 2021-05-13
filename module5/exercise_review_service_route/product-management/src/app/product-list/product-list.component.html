@@ -18,9 +18,9 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let item of productList; let i = index">
+            <tr *ngFor="let item of productList">
 <!--              (click)="showDetail(i)-->
-              <td>{{i + 1}}</td>
+              <td>{{item.id}}</td>
               <td>{{item.nameProduct | titlecase}}</td>
               <td>{{item.priceProduct | currency:'VND'}}</td>
               <td>{{item.dateRelease | date: 'dd/MM/yyyy'}}</td>
