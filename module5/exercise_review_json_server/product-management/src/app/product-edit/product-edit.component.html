@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-warning">
+      <h3 class="card-header bg-warning">Product Edit</h3>
+      <div class="card-body">
+        <form [formGroup]="editForm" (ngSubmit)="onEdit()">
+          <div class="form-group row">
+            <input type="hidden" formControlName="id">
+          </div>
+          <div class="form-group row">
+            <label>Ten san pham</label>
+            <input type="text" formControlName="nameProduct">
+            <span *ngIf="editForm.controls.nameProduct.touched && editForm.controls.nameProduct.errors?.required"
+                  style="color: red">Required input</span>
+          </div>
+          <div class="form-group row">
+            <label>Gia san pham</label>
+            <input type="text" formControlName="priceProduct">
+            <span *ngIf="editForm.controls.priceProduct.touched && editForm.controls.priceProduct.errors?.required"
+                  style="color: red">Required input</span>
+          </div>
+          <div class="form-group row">
+            <label>Ngay san xuat</label>
+            <input type="date" formControlName="dateRelease">
+            <span *ngIf="editForm.controls.dateRelease.touched && editForm.controls.dateRelease.errors?.required"
+                  style="color: red">Required input</span>
+          </div>
+          <div class="form-group row">
+            <label>So luong</label>
+            <input type="number" formControlName="status">
+            <span *ngIf="editForm.controls.status.touched && editForm.controls.status.errors?.required"
+                  style="color: red">Required input</span>
+          </div>
+          <div class="form-group row">
+            <label>Noi Xuat xu</label>
+            <select #xuatXuElement (change)="choosePlace(xuatXuElement.value)" formControlName="nationRelease">
+              <option *ngFor="let i of xuatXu">{{i}}</option>
+            </select>
+            <span
+              *ngIf="editForm.controls.nationRelease.touched && editForm.controls.nationRelease.errors?.required"
+              style="color: red">Required input</span>
+          </div>
+          <br/>
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

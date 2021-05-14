@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-danger">
+      <h3 class="card-header bg-danger">Product Delete</h3>
+      <div class="card-body">
+        <div>
+          <div>ID: {{productDelete.id}}</div>
+          <div>Ten san pham: {{productDelete.nameProduct | titlecase}}</div>
+          <div>Gia san pham: {{productDelete.priceProduct | currency: 'VND'}}</div>
+          <div>Ngay san xuat: {{productDelete.dateRelease | date: 'dd/MM/yyyy'}}</div>
+          <div>Quoc gia: {{productDelete.nationRelease}}</div>
+          <div>So luong: {{productDelete.status}}</div>
+          <br/>
+          <a role="button" class="btn btn-danger" (click)="onDelete()">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
