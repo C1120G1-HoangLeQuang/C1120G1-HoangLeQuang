@@ -13,6 +13,11 @@ export class ProductListComponent implements OnInit {
   public product: Product | undefined;
   public newSoLuong: number;
   private _productList: Product[] = [];
+  keySearch = '';
+  optionSearch = 1;
+  keySearch2 = '';
+  fromDate: any;
+  toDate: any;
 
   constructor(private _productService: ProductService,
               private _router: Router) { }
@@ -37,5 +42,36 @@ export class ProductListComponent implements OnInit {
 
   get productList(): Product[] {
     return this._productList;
+  }
+
+  search() {
+    // -------------SEARCH BY MANY FIELDS---------------
+    // this._productService.searchFields(this.keySearch).subscribe(data => {
+    //   this._productList = data;
+    // });
+
+    // -------------SEARCH NEAR-CORRECT BY nameProduct OR SOMETHING------------
+    if (this.optionSearch == 1) {
+      this._productService.searchNearByName(this.keySearch).subscribe(data => {
+        this._productList = data;
+      });
+    } else if (this.optionSearch == 2) {
+      this._productService.searchNearByDate(this.keySearch).subscribe(data => {
+        this._productList = data;
+      });
+    } else if (this.optionSearch == 3) {
+      this._productService.searchNearByNationAndName(this.keySearch, this.keySearch2).subscribe(data => {
+        this._productList = data;
+      });
+    } else {
+      this._productService.searchFromDateToDate(this.fromDate, this.toDate).subscribe(data => {
+        this._productList = data;
+      })
+    }
+
+    // -------------SEARCH EXACTLY BY nameProduct OR SOMETHING------------
+    // this._productService.searchExactlyByName(this.keySearch).subscribe(data => {
+    //   this._productList = data;
+    // })
   }
 }

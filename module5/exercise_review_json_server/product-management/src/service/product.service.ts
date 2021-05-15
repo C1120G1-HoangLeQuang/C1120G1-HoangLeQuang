@@ -32,4 +32,28 @@ export class ProductService {
   deleteById(id: number): Observable<Product> { //dung cho delete
     return this._httpClient.delete<Product>(`${this.API_URL}/${id}`);
   }
+
+  // -------------SEARCH BY MANY FIELDS---------------
+  // searchFields(keySearch: string): Observable<Product[]> {
+  //   return this._httpClient.get<Product[]>(this.API_URL + "?q=" + keySearch);
+  // }
+
+  // -------------SEARCH NEAR-CORRECT BY nameProduct OR SOMETHING------------
+  searchNearByName(keySearch: string): Observable<Product[]> {
+    return this._httpClient.get<Product[]>(this.API_URL + "?nameProduct_like=" + keySearch);
+  }
+  searchNearByDate(keySearch: string): Observable<Product[]> {
+    return this._httpClient.get<Product[]>(this.API_URL + "?dateRelease_like=" + keySearch);
+  }
+  searchNearByNationAndName(keySearch: string, keySearch2: string): Observable<Product[]> {
+    return this._httpClient.get<Product[]>(this.API_URL + "?nationRelease_like=" + keySearch + "&nameProduct_like=" + keySearch2);
+  }
+  searchFromDateToDate(fromDate: any, toDate: any): Observable<Product[]> {
+    return this._httpClient.get<Product[]>(this.API_URL + "?dateRelease=" + fromDate + "&dateRelease=" + toDate);
+  }
+
+  // -------------SEARCH EXACTLY BY nameProduct OR SOMETHING------------
+  // searchExactlyByName(keySearch: string): Observable<Product[]> {
+  //   return this._httpClient.get<Product[]>(this.API_URL + "?nameProduct=" + keySearch);
+  // }
 }

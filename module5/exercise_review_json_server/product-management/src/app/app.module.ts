@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductCreateComponent } from './product-create/product-create.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductDeleteComponent } from './product-delete/product-delete.component';
@@ -24,7 +24,8 @@ import {HttpClientModule} from '@angular/common/http';
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

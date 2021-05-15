@@ -4,7 +4,7 @@
       "id": 1,
       "nameProduct": "dien thoai1",
       "priceProduct": "2700",
-      "dateRelease": "2021/03/12",
+      "dateRelease": "2021-03-12",
       "nationRelease": "My",
       "status": 0
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "nameProduct": "may giat",
       "priceProduct": 2500,
-      "dateRelease": "2021/05/21",
+      "dateRelease": "2021-05-21",
       "nationRelease": "TQ",
       "status": 4
     },
@@ -20,7 +20,7 @@
       "id": 5,
       "nameProduct": "ban phim",
       "priceProduct": 2100,
-      "dateRelease": "2021/12/12",
+      "dateRelease": "2021-12-12",
       "nationRelease": "My",
       "status": 0
     },
