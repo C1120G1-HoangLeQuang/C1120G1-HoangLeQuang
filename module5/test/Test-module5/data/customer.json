@@ -1,0 +1,28 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "nameCustomer": "Nguyen Van A1",
+      "gender": 0,
+      "birthday": "12-03-2020",
+      "sdt": "123456789",
+      "typeCustomer": "Silver"
+    },
+    {
+      "id": 2,
+      "nameCustomer": "Nguyen Van B",
+      "gender": 1,
+      "birthday": "12-03-2020",
+      "sdt": "123456789",
+      "typeCustomer": "Gold"
+    },
+    {
+      "id": 3,
+      "nameCustomer": "Nguyen Van C",
+      "gender": 2,
+      "birthday": "12-03-2020",
+      "sdt": "123456789",
+      "typeCustomer": "Silver"
+    }
+  ]
+}

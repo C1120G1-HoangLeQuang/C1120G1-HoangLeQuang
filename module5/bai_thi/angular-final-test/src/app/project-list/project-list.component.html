@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-primary">
+      <h3 class="card-header bg-primary">Project List</h3>
+      <div class="card-body">
+        <div>
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>ID</th>
+              <th>Student</th>
+              <th>Group</th>
+              <th>Project</th>
+              <th>Teacher</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Options</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of projectList; let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{item.id}}</td>
+              <td>{{item.nameStudent | titlecase}}</td>
+              <td>{{item.nameGroup}}</td>
+              <td>{{item.nameProject}}</td>
+              <td>{{item.nameTeacher | titlecase}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.phone}}</td>
+              <td>
+                <a role="button" class="btn btn-warning" [routerLink]="['edit', item.id]">Edit</a>
+                <a role="button" class="btn btn-danger" [routerLink]="['delete', item.id]">Delete</a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

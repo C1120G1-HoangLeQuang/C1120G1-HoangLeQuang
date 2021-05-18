@@ -32,7 +32,7 @@ export class ProductListComponent implements OnInit {
   }
 
   showDetail(index: number) {
-    this._router.navigate(["/detail", index]);
+    this._router.navigate(["/detail", index]); // same same router link
   }
 
   onEditSL($event: number) {

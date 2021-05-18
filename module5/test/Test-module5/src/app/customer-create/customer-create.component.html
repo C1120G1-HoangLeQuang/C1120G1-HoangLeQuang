@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-warning">
+      <h3 class="card-header bg-warning">Customer Create</h3>
+      <div class="card-body">
+        <form [formGroup]="createForm"(ngSubmit)="onSubmit()">
+<!--          <div class="form-group row">-->
+<!--            <label>Name</label>-->
+<!--            <input type="text" formControlName="nameCustomer">-->
+<!--            <span *ngIf="createForm.controls.nameCustomer.touched && createForm.controls.nameCustomer.errors?.required"-->
+<!--                  style="color: red">Required input</span>-->
+<!--          </div>-->
+<!--          <div class="form-group row">-->
+<!--            <label>Gender</label>-->
+<!--            <input type="number" formControlName="gender">-->
+<!--            <span *ngIf="createForm.controls.gender.touched && createForm.controls.gender.errors?.required"-->
+<!--                  style="color: red">Required input</span>-->
+<!--          </div>-->
+<!--          <div class="form-group row">-->
+<!--            <label>Birthday</label>-->
+<!--            <input type="date" formControlName="birthday">-->
+<!--            <span *ngIf="createForm.controls.birthday.touched && createForm.controls.birthday.errors?.required"-->
+<!--                  style="color: red">Required input</span>-->
+<!--          </div>-->
+<!--          <div class="form-group row">-->
+<!--            <label>Phone</label>-->
+<!--            <input type="text" formControlName="sdt">-->
+<!--            <span *ngIf="createForm.controls.sdt.touched && createForm.controls.sdt.errors?.required"-->
+<!--                  style="color: red">Required input</span>-->
+<!--          </div>-->
+<!--          <div class="form-group row">-->
+<!--            <label>Type Customer</label>-->
+<!--            <select #typeElement (change)="chooseType(typeElement.value)" formControlName="typeCustomer">-->
+<!--              <option *ngFor="let i of typeCustomers">{{i}}</option>-->
+<!--            </select>-->
+<!--            <span *ngIf="createForm.controls.typeCustomer.touched && createForm.controls.typeCustomer.errors?.required"-->
+<!--                  style="color: red">Required input</span>-->
+<!--          </div>-->
+<!--          <br/>-->
+<!--          <button type="submit" class="btn btn-primary">Create</button>-->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
