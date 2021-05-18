@@ -10,12 +10,14 @@ import {Router} from '@angular/router';
 })
 export class ProjectListComponent implements OnInit {
   private _projectList: Project[] = [];
+  keySearch = "";
+  keySearch2 = "";
 
   constructor(private _projectService: ProjectService,
               private _router: Router) { }
 
   ngOnInit(): void {
-    this._projectService.projects.subscribe(data => {
+    this._projectService.getProjects().subscribe(data => {
       this._projectList = data;
     })
   }
@@ -23,5 +25,20 @@ export class ProjectListComponent implements OnInit {
 
   get projectList(): Project[] {
     return this._projectList;
+  }
+
+  search() {
+    this._projectService.searchByStudent(this.keySearch, this.keySearch2).subscribe(data => {
+      this._projectList = data;
+    });
+    // if (this.optionSearch == 1) {
+    //   this._projectService.searchByStudent(this.keySearch).subscribe(data => {
+    //     this._projectList = data;
+    //   });
+    // } else {
+    //   this._projectService.searchByTeacher(this.keySearch).subscribe(data => {
+    //     this._projectList = data;
+    //   });
+    // }
   }
 }

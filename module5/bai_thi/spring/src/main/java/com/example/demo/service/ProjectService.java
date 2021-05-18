@@ -9,4 +9,6 @@ public interface ProjectService {
     Project findById(Integer id);
     void save(Project project);
     void deleteById(Integer id);
+    List<Project> searchByStudent(String student, String teacher);
+    List<Project> searchByTeacher(String teacher);
 }

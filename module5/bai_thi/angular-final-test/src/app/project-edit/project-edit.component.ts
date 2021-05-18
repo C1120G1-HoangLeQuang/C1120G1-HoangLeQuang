@@ -10,7 +10,7 @@ import {ProjectService} from '../service/project.service';
   styleUrls: ['./project-edit.component.scss']
 })
 export class ProjectEditComponent implements OnInit {
-  public projectEdit: Project;
+  public projectEdit: Project = new Project(Number(''), '', '', '', '', '', '');
   public nameGroups: string[] = ["Group 1", "Group 2", "Group 3"];
   public tempGroup: string;
   public nameTeachers: string[] = ["Hoang Le Quang", "Tran Quoc Hoang", "Nguyen Ngoc Thuan"];
@@ -22,11 +22,14 @@ export class ProjectEditComponent implements OnInit {
               private _router: Router) { }
 
   ngOnInit(): void {
+    this.editFormFunction();
     let index = this._activatedRoute.snapshot.params['id'];
     this._projectService.getProjectByIndex(index).subscribe(data => {
       this.projectEdit = data;
-      this.editFormFunction();
-    })
+      // this.editForm.patchValue(data)
+      console.log(this.editForm.patchValue(data));
+      console.log(data);
+    });
   }
 
   editFormFunction() {
@@ -38,7 +41,7 @@ export class ProjectEditComponent implements OnInit {
       nameTeacher: new FormControl(this.projectEdit.nameTeacher, [Validators.required]),
       email: new FormControl(this.projectEdit.email, [Validators.required, Validators.pattern("^[a-z][a-z0-9_\\.]{5,32}@[def]{2,}(\\.[a-z0-9]{2,4}){1,2}$")]),
       phone: new FormControl(this.projectEdit.phone, [Validators.required, Validators.pattern("^[\\d]{10,12}$")]),
-    })
+    });
   }
 
   chooseGroup(value: string) {
@@ -52,8 +55,8 @@ export class ProjectEditComponent implements OnInit {
   onEdit() {
     if (this.editForm.valid) {
       this._projectService.update(this.editForm.value, this.projectEdit.id).subscribe(data => {
-        this._router.navigateByUrl("home");
-      })
+        this._router.navigateByUrl("/home");
+      });
     }
   }
 

@@ -24,7 +24,7 @@ export class ProjectDeleteComponent implements OnInit {
 
   onDelete() {
     this._projectService.delete(this.projectDelete.id).subscribe(data => {
-      this._router.navigateByUrl("home");
+      this._router.navigateByUrl("/home");
     })
   }
 
